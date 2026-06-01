@@ -2,13 +2,16 @@
 
 {% block content %}
 
-<div class="hero text-center">
+<!-- <div class="hero text-center"> -->
+<div class="hero">
 
     <h1>Mityana Pentecostal Church</h1>
 
     <p class="lead">
         Transforming Lives Through the Gospel of Jesus Christ
     </p>
+    <a href="/contact/" class="btn btn-primary btn-lg">
+    Visit Us </a>
 
 </div>
 
@@ -69,9 +72,7 @@
 
 {% endfor %}
 
-{% endblock %}
-
-<hr>
+<!-- <hr> -->
 
 <h2>Upcoming Events</h2>
 
@@ -102,3 +103,40 @@
 <p>No upcoming events available.</p>
 
 {% endfor %}
+
+<hr>
+
+<h2>Latest Sermons</h2>
+
+{% for sermon in sermons %}
+
+<div class="card mb-3">
+    <div class="card-body">
+
+        <h5>{{ sermon.title }}</h5>
+
+        <p>
+            <strong>Preacher:</strong>
+            {{ sermon.preacher }}
+        </p>
+
+        <p>
+            <strong>Bible Text:</strong>
+            {{ sermon.bible_text }}
+        </p>
+
+        <p>
+            {{ sermon.summary|truncatewords:25 }}
+        </p>
+
+    </div>
+</div>
+
+{% empty %}
+
+<p>No sermons available.</p>
+
+{% endfor %}
+
+{% endblock %}
+

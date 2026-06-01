@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from announcements.models import Announcement
 from events.models import Event
+from sermons.models import Sermon
 
 # def home(request):
 
@@ -28,9 +29,14 @@ def home(request):
         is_active=True
     )[:5]
 
+    sermons = Sermon.objects.filter(
+    is_published=True
+    )[:3]
+
     context = {
         'announcements': announcements,
-        'events': events
+        'events': events,
+        'sermons': sermons
     }
 
     return render(
