@@ -2,6 +2,7 @@ from django.shortcuts import render
 from announcements.models import Announcement
 from events.models import Event
 from sermons.models import Sermon
+# from sermons.models import Sermon
 
 # def home(request):
 
@@ -30,7 +31,7 @@ def home(request):
     )[:5]
 
     sermons = Sermon.objects.filter(
-    is_published=True
+        is_published=True
     )[:3]
 
     context = {
@@ -56,3 +57,58 @@ def leadership(request):
 def contact(request):
     return render(request, 'contact.html')
 
+# def sermons(request):
+
+#     sermons = Sermon.objects.filter(
+#         is_published=True
+#     )
+
+#     return render(
+#         request,
+#         'sermons.html',
+#         {
+#             'sermons': sermons
+#         }
+#     )
+
+def sermon_list(request):
+
+    sermons = Sermon.objects.filter(
+        is_published=True
+    )
+
+    return render(
+        request,
+        'sermons.html',
+        {
+            'sermons': sermons
+        }
+    )
+def announcement_list(request):
+
+    announcements = Announcement.objects.filter(
+        is_active=True
+    )
+
+    return render(
+        request,
+        'announcements.html',
+        {
+            'announcements': announcements
+        }
+    )
+
+
+def event_list(request):
+
+    events = Event.objects.filter(
+        is_active=True
+    )
+
+    return render(
+        request,
+        'events.html',
+        {
+            'events': events
+        }
+    )

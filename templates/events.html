@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Upcoming Events</h1>
+
+{% for event in events %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <h4>{{ event.title }}</h4>
+
+        <p>{{ event.description }}</p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ event.event_date }}
+        </p>
+
+        <p>
+            <strong>Time:</strong>
+            {{ event.event_time }}
+        </p>
+
+        <p>
+            <strong>Venue:</strong>
+            {{ event.venue }}
+        </p>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>No events available.</p>
+
+{% endfor %}
+
+{% endblock %}
