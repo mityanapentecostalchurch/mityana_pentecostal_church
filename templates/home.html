@@ -70,3 +70,35 @@
 {% endfor %}
 
 {% endblock %}
+
+<hr>
+
+<h2>Upcoming Events</h2>
+
+{% for event in events %}
+
+<div class="card mb-3">
+    <div class="card-body">
+
+        <h5>{{ event.title }}</h5>
+
+        <p>{{ event.description }}</p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ event.event_date }}
+        </p>
+
+        <p>
+            <strong>Venue:</strong>
+            {{ event.venue }}
+        </p>
+
+    </div>
+</div>
+
+{% empty %}
+
+<p>No upcoming events available.</p>
+
+{% endfor %}

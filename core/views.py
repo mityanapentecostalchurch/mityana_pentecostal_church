@@ -1,6 +1,22 @@
 from django.shortcuts import render
 from announcements.models import Announcement
+from events.models import Event
 
+# def home(request):
+
+#     announcements = Announcement.objects.filter(
+#         is_active=True
+#     )[:5]
+
+#     context = {
+#         'announcements': announcements
+#     }
+
+#     return render(
+#         request,
+#         'home.html',
+#         context
+#     )
 
 def home(request):
 
@@ -8,8 +24,13 @@ def home(request):
         is_active=True
     )[:5]
 
+    events = Event.objects.filter(
+        is_active=True
+    )[:5]
+
     context = {
-        'announcements': announcements
+        'announcements': announcements,
+        'events': events
     }
 
     return render(
@@ -17,7 +38,6 @@ def home(request):
         'home.html',
         context
     )
-
 
 def about(request):
     return render(request, 'about.html')
@@ -29,3 +49,4 @@ def leadership(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
