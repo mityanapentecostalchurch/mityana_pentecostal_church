@@ -1,8 +1,22 @@
 from django.shortcuts import render
+from announcements.models import Announcement
 
 
 def home(request):
-    return render(request, 'home.html')
+
+    announcements = Announcement.objects.filter(
+        is_active=True
+    )[:5]
+
+    context = {
+        'announcements': announcements
+    }
+
+    return render(
+        request,
+        'home.html',
+        context
+    )
 
 
 def about(request):

@@ -41,5 +41,32 @@
     </div>
 
 </div>
+<hr>
+
+<h2>Latest Announcements</h2>
+
+{% for announcement in announcements %}
+
+<div class="card mb-3">
+    <div class="card-body">
+
+        <h5>{{ announcement.title }}</h5>
+
+        <p>
+            {{ announcement.content }}
+        </p>
+
+        <small class="text-muted">
+            {{ announcement.created_at }}
+        </small>
+
+    </div>
+</div>
+
+{% empty %}
+
+<p>No announcements available.</p>
+
+{% endfor %}
 
 {% endblock %}

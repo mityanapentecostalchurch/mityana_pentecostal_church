@@ -17,4 +17,5 @@ class AnnouncementAdmin(admin.ModelAdmin):
 
     search_fields = (
         'title',
+        'content',
     )
