@@ -272,4 +272,126 @@
 
 </div> -->
 
+<hr>
+
+<h3>Recent Activity</h3>
+
+<div class="card">
+
+    <div class="card-body">
+
+        <ul class="list-group">
+
+            {% for activity in recent_activity %}
+
+            <li class="list-group-item">
+
+                <strong>
+                    {{ activity.user }}
+                </strong>
+
+                -
+                {{ activity.action }}
+
+                <br>
+
+                <small class="text-muted">
+                    {{ activity.created_at }}
+                </small>
+
+            </li>
+
+            {% empty %}
+
+            <li class="list-group-item">
+                No activity recorded.
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<hr>
+
+<h3>Monthly Giving</h3>
+
+<canvas id="givingChart"></canvas>
+
+{{ monthly_giving|json_script:"monthly-giving-data" }}
+
+<script>
+
+const givingData = JSON.parse(
+    document.getElementById(
+        'monthly-giving-data'
+    ).textContent
+);
+
+const labels = givingData.map(
+    item => item.month.substring(0, 7)
+);
+
+const totals = givingData.map(
+    item => item.total
+);
+
+new Chart(
+    document.getElementById(
+        'givingChart'
+    ),
+    {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Monthly Giving (UGX)',
+                data: totals
+            }]
+        }
+    }
+);
+
+</script>
+
+<hr>
+
+<h3>Attendance Summary</h3>
+
+<canvas id="attendanceChart"></canvas>
+
+{{ attendance_summary|json_script:"attendance-data" }}
+
+<script>
+
+const attendanceData = JSON.parse(
+    document.getElementById(
+        'attendance-data'
+    ).textContent
+);
+
+new Chart(
+    document.getElementById(
+        'attendanceChart'
+    ),
+    {
+        type: 'pie',
+        data: {
+            labels: attendanceData.map(
+                item => item.status
+            ),
+            datasets: [{
+                data: attendanceData.map(
+                    item => item.total
+                )
+            }]
+        }
+    }
+);
+
+</script>
+
 {% endblock %}

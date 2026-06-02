@@ -2,6 +2,8 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from activity.models import ActivityLog
+# from activity.models import ActivityLog
 
 from members.models import Member, Department
 from events.models import Event
@@ -23,7 +25,7 @@ from .serializers import (
     SermonSerializer,
     AttendanceSerializer,
     ServiceSerializer,
-    ContributionSerializer,
+    ContributionSerializer, ActivityLogSerializer,
 )
 
 
@@ -120,9 +122,20 @@ class AttendanceAPIView(
         IsSecretary
     ]
 
+    def perform_create(self, serializer):
+
+        attendance = serializer.save()
+
+        ActivityLog.objects.create(
+            user=self.request.user,
+            action=f"Recorded attendance for {attendance.member}"
+        )
+
     queryset = Attendance.objects.all()
 
     serializer_class = AttendanceSerializer
+
+    
 
 
 # class ContributionListAPIView(
@@ -144,6 +157,17 @@ class ContributionAPIView(
     permission_classes = [
         IsTreasurer
     ]
+    def perform_create(self, serializer):
+
+        contribution = serializer.save()
+
+        ActivityLog.objects.create(
+            user=self.request.user,
+            action=(
+                f"Recorded contribution "
+                f"{contribution.amount}"
+            )
+        )
 
     queryset = Contribution.objects.all()
 
@@ -166,6 +190,19 @@ class CurrentUserAPIView(APIView):
             'role': request.user.role,
         })
 
+class ActivityLogAPIView(
+    generics.ListAPIView
+):
+
+    permission_classes = [
+        IsAuthenticated
+    ]
+
+    queryset = ActivityLog.objects.order_by(
+        '-created_at'
+    )
+
+    serializer_class = ActivityLogSerializer
 
 class DashboardAPIView(APIView):
 
@@ -205,5 +242,6 @@ class DashboardAPIView(APIView):
                 Contribution.objects.aggregate(
                     total=Sum('amount')
                 )['total'] or 0,
+            
 
         })

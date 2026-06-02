@@ -5,7 +5,7 @@ from django.urls import path
 from .views import ( MemberListAPIView, DepartmentListAPIView, EventListAPIView, 
                     AnnouncementListAPIView, SermonListAPIView, CurrentUserAPIView, 
                     AttendanceAPIView, ServiceListAPIView, ContributionAPIView, 
-                    DashboardAPIView, MemberDetailAPIView,
+                    DashboardAPIView, MemberDetailAPIView, ActivityLogAPIView, 
 )
 
 urlpatterns = [
@@ -22,5 +22,6 @@ urlpatterns = [
     path('contributions/', ContributionAPIView.as_view(), name='api-contributions'),
     path('me/', CurrentUserAPIView.as_view(), name='api-me'),
     path('dashboard/', DashboardAPIView.as_view(), name='api-dashboard'),
+    path('activity/', ActivityLogAPIView.as_view(), name='api-activity'),
 
 ]

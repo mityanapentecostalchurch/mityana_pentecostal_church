@@ -15,7 +15,6 @@ class ContributionCategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-
 @admin.register(Contribution)
 class ContributionAdmin(admin.ModelAdmin):
 
@@ -24,14 +23,17 @@ class ContributionAdmin(admin.ModelAdmin):
         'category',
         'amount',
         'payment_method',
-        'contribution_date'
-    )
-
-    list_filter = (
-        'category',
-        'payment_method'
+        'contribution_date',
     )
 
     search_fields = (
+        'member__first_name',
+        'member__last_name',
         'reference_number',
+    )
+
+    list_filter = (
+        'payment_method',
+        'category',
+        'contribution_date',
     )

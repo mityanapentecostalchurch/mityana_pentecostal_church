@@ -9,6 +9,7 @@ from sermons.models import Sermon
 from attendance.models import Attendance
 from attendance.models import Service
 from giving.models import Contribution
+from activity.models import ActivityLog
 
 
 
@@ -76,3 +77,25 @@ class ContributionSerializer(
     class Meta:
         model = Contribution
         fields = '__all__'
+
+
+
+class ActivityLogSerializer(
+    serializers.ModelSerializer
+):
+
+    user_name = serializers.CharField(
+        source='user.username',
+        read_only=True
+    )
+
+    class Meta:
+        model = ActivityLog
+
+        fields = [
+            'id',
+            'user',
+            'user_name',
+            'action',
+            'created_at',
+        ]

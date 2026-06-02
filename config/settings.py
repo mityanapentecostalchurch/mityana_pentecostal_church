@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'giving',
     'reports',
     'api',
+    'activity',
 ]
 
 MIDDLEWARE = [

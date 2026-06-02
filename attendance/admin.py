@@ -12,18 +12,23 @@ class AttendanceAdmin(admin.ModelAdmin):
     list_display = (
         'member',
         'service',
-        'status'
+        'status',
+        'recorded_at',
     )
 
     list_filter = (
         'service',
-        'status'
+        'status',
+        'member__first_name',
+        'member__last_name',
     )
 
     search_fields = (
         'member__first_name',
-        'member__last_name'
+        'member__last_name',
     )
+
+
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):

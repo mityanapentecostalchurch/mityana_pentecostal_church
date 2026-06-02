@@ -11,25 +11,31 @@ class MemberAdmin(admin.ModelAdmin):
     list_display = (
         'first_name',
         'last_name',
+        'gender',
         'department',
         'role',
         'phone_number',
         'date_joined',
         'status',
-        'is_active'
+        'is_active',
     )
 
     search_fields = (
         'first_name',
         'last_name',
-        'phone_number'
+        'phone_number',
+        'email',
     )
 
     list_filter = (
         'is_active',
         'department',
         'role',
-        'status'
+        'status',
+    )
+
+    ordering = (
+        'first_name',
     )
 
 @admin.register(Role)
@@ -38,3 +44,4 @@ class RoleAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
