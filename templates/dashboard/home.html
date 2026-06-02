@@ -79,7 +79,139 @@
             <p>Total Giving</p>
         </div>
     </div>
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>UGX {{ total_amount }}</h2>
+            <p>Total Giving</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>UGX {{ cash_total }}</h2>
+            <p>Cash Giving</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>UGX {{ mobile_money_total }}</h2>
+            <p>Mobile Money</p>
+        </div>
+    </div>
+
+</div>
+<hr>
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <h3>Recent Members</h3>
+
+        <ul class="list-group">
+
+            {% for member in recent_members %}
+
+            <li class="list-group-item">
+                {{ member.first_name }}
+                {{ member.last_name }}
+            </li>
+
+            {% empty %}
+
+            <li class="list-group-item">
+                No members found.
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <h3>Upcoming Events</h3>
+
+        <ul class="list-group">
+
+            {% for event in upcoming_events %}
+
+            <li class="list-group-item">
+                {{ event.title }}
+                <br>
+                <small>
+                    {{ event.event_date }}
+                </small>
+            </li>
+
+            {% empty %}
+
+            <li class="list-group-item">
+                No upcoming events.
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
 
 </div>
 
+<hr>
+
+<h3>Recent Contributions</h3>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Member</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for contribution in recent_contributions %}
+
+        <tr>
+
+            <td>
+                {{ contribution.member }}
+            </td>
+
+            <td>
+                {{ contribution.category }}
+            </td>
+
+            <td>
+                UGX {{ contribution.amount }}
+            </td>
+
+            <td>
+                {{ contribution.contribution_date }}
+            </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+            <td colspan="4">
+                No contributions recorded.
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
 {% endblock %}

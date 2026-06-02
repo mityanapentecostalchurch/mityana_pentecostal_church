@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'attendance',
     'dashboard',
     'giving',
+    'reports',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Membership Report</h1>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ member_count }}</h2>
+            <p>Total Members</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ active_members }}</h2>
+            <p>Active Members</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ inactive_members }}</h2>
+            <p>Inactive Members</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ visitor_count }}</h2>
+            <p>Visitors</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
