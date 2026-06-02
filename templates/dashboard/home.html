@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Church Management Dashboard</h1>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ member_count }}</h2>
+            <p>Total Members</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ department_count }}</h2>
+            <p>Departments</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ role_count }}</h2>
+            <p>Roles</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ service_count }}</h2>
+            <p>Services</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ attendance_count }}</h2>
+            <p>Attendance Records</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ announcement_count }}</h2>
+            <p>Announcements</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ event_count }}</h2>
+            <p>Events</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ sermon_count }}</h2>
+            <p>Sermons</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>{{ total_contributions }}</h2>
+            <p>Contributions</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 mb-3">
+            <h2>UGX {{ total_amount }}</h2>
+            <p>Total Giving</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
