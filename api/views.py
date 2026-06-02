@@ -1,64 +1,31 @@
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from members.models import Member, Department
 from events.models import Event
 from announcements.models import Announcement
 from sermons.models import Sermon
-from rest_framework.permissions import IsAuthenticated
+from attendance.models import Attendance, Service
+from giving.models import Contribution
+from django.db.models import Sum
+from accounts.permissions import (
+    IsTreasurer,
+    IsSecretary
+)
 
 from .serializers import (
     MemberSerializer,
-    DepartmentSerializer, EventSerializer, AnnouncementSerializer, SermonSerializer,
+    DepartmentSerializer,
+    EventSerializer,
+    AnnouncementSerializer,
+    SermonSerializer,
+    AttendanceSerializer,
+    ServiceSerializer,
+    ContributionSerializer,
 )
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-
-from accounts.models import User
-
-
-class MemberListAPIView(
-    generics.ListAPIView
-):
-
-    queryset = Member.objects.all()
-
-    serializer_class = MemberSerializer
-
-
-class DepartmentListAPIView(
-    generics.ListAPIView
-):
-
-    queryset = Department.objects.all()
-
-    serializer_class = DepartmentSerializer
-
-
-
-class EventListAPIView(
-    generics.ListAPIView
-):
-
-    queryset = Event.objects.all()
-
-    serializer_class = EventSerializer
-
-class AnnouncementListAPIView(
-    generics.ListAPIView
-):
-
-    queryset = Announcement.objects.all()
-
-    serializer_class = AnnouncementSerializer
-
-class SermonListAPIView(
-    generics.ListAPIView
-):
-
-    queryset = Sermon.objects.all()
-
-    serializer_class = SermonSerializer
 
 class MemberListAPIView(
     generics.ListAPIView
@@ -72,9 +39,121 @@ class MemberListAPIView(
 
     serializer_class = MemberSerializer
 
+class MemberDetailAPIView(
+    generics.RetrieveAPIView
+):
+
+    permission_classes = [
+        IsAuthenticated
+    ]
+
+    queryset = Member.objects.all()
+
+    serializer_class = MemberSerializer
+
+class DepartmentListAPIView(
+    generics.ListAPIView
+):
+
+    permission_classes = [
+        IsAuthenticated
+    ]
+
+    queryset = Department.objects.all()
+
+    serializer_class = DepartmentSerializer
+
+
+class EventListAPIView(
+    generics.ListAPIView
+):
+
+    queryset = Event.objects.all()
+
+    serializer_class = EventSerializer
+
+
+class AnnouncementListAPIView(
+    generics.ListAPIView
+):
+
+    queryset = Announcement.objects.all()
+
+    serializer_class = AnnouncementSerializer
+
+
+class SermonListAPIView(
+    generics.ListAPIView
+):
+
+    queryset = Sermon.objects.all()
+
+    serializer_class = SermonSerializer
+
+
+class ServiceListAPIView(
+    generics.ListAPIView
+):
+
+    queryset = Service.objects.all()
+
+    serializer_class = ServiceSerializer
+
+
+# class AttendanceListAPIView(
+#     generics.ListAPIView
+# ):
+
+#     permission_classes = [
+#         IsSecretary
+#     ]
+
+#     queryset = Attendance.objects.all()
+
+#     serializer_class = AttendanceSerializer
+
+class AttendanceAPIView(
+    generics.ListCreateAPIView
+):
+
+    permission_classes = [
+        IsSecretary
+    ]
+
+    queryset = Attendance.objects.all()
+
+    serializer_class = AttendanceSerializer
+
+
+# class ContributionListAPIView(
+#     generics.ListAPIView
+# ):
+
+#     permission_classes = [
+#         IsTreasurer
+#     ]
+
+#     queryset = Contribution.objects.all()
+
+#     serializer_class = ContributionSerializer
+
+class ContributionAPIView(
+    generics.ListCreateAPIView
+):
+
+    permission_classes = [
+        IsTreasurer
+    ]
+
+    queryset = Contribution.objects.all()
+
+    serializer_class = ContributionSerializer
+
 class CurrentUserAPIView(APIView):
 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [
+        IsAuthenticated
+    ]
 
     def get(self, request):
 
@@ -82,5 +161,49 @@ class CurrentUserAPIView(APIView):
             'id': request.user.id,
             'username': request.user.username,
             'email': request.user.email,
+            'first_name': request.user.first_name,
+            'last_name': request.user.last_name,
             'role': request.user.role,
+        })
+
+
+class DashboardAPIView(APIView):
+
+    permission_classes = [
+        IsAuthenticated
+    ]
+    
+
+    def get(self, request):
+
+        return Response({
+
+            'members':
+                Member.objects.count(),
+
+            'departments':
+                Department.objects.count(),
+
+            'events':
+                Event.objects.count(),
+
+            'announcements':
+                Announcement.objects.count(),
+
+            'sermons':
+                Sermon.objects.count(),
+
+            'services':
+                Service.objects.count(),
+
+            'attendance':
+                Attendance.objects.count(),
+
+            'contributions':
+                Contribution.objects.count(),
+            'total_giving':
+                Contribution.objects.aggregate(
+                    total=Sum('amount')
+                )['total'] or 0,
+
         })

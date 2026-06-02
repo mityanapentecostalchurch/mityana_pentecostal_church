@@ -6,6 +6,10 @@ from members.models import Department
 from events.models import Event
 from announcements.models import Announcement
 from sermons.models import Sermon
+from attendance.models import Attendance
+from attendance.models import Service
+from giving.models import Contribution
+
 
 
 class MemberSerializer(
@@ -47,4 +51,28 @@ class SermonSerializer(
 
     class Meta:
         model = Sermon
+        fields = '__all__'
+
+class AttendanceSerializer(
+    serializers.ModelSerializer
+):
+
+    class Meta:
+        model = Attendance
+        fields = '__all__'
+
+class ServiceSerializer(
+    serializers.ModelSerializer
+):
+
+    class Meta:
+        model = Service
+        fields = '__all__'
+
+class ContributionSerializer(
+    serializers.ModelSerializer
+):
+
+    class Meta:
+        model = Contribution
         fields = '__all__'
