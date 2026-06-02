@@ -1,7 +1,8 @@
 # members/admin.py
 
 from django.contrib import admin
-from .models import Member
+# from .models import Member
+from .models import (Member, Department, Role)
 
 
 @admin.register(Member)
@@ -10,8 +11,11 @@ class MemberAdmin(admin.ModelAdmin):
     list_display = (
         'first_name',
         'last_name',
+        'department',
+        'role',
         'phone_number',
         'date_joined',
+        'status',
         'is_active'
     )
 
@@ -23,4 +27,14 @@ class MemberAdmin(admin.ModelAdmin):
 
     list_filter = (
         'is_active',
+        'department',
+        'role',
+        'status'
+    )
+
+@admin.register(Role)
+class RoleAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'name',
     )

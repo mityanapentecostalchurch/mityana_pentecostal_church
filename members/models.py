@@ -1,26 +1,72 @@
-# members/models.py
-
 from django.db import models
+
+class Role(models.Model):
+
+    name = models.CharField(
+        max_length=100,
+        unique=True
+    )
+
+    description = models.TextField(
+        blank=True
+    )
+
+    def __str__(self):
+        return self.name
+
+class Department(models.Model):
+
+    name = models.CharField(
+        max_length=100,
+        unique=True
+    )
+
+    description = models.TextField(
+        blank=True
+    )
+
+    def __str__(self):
+        return self.name
 
 
 class Member(models.Model):
 
-    GENDER_CHOICES = [
-        ('M', 'Male'),
-        ('F', 'Female'),
+    MEMBERSHIP_STATUS = [
+        ('ACTIVE', 'Active'),
+        ('VISITOR', 'Visitor'),
+        ('INACTIVE', 'Inactive'),
     ]
 
-    first_name = models.CharField(
-        max_length=100
-    )
+    first_name = models.CharField(max_length=100)
 
-    last_name = models.CharField(
-        max_length=100
-    )
+    last_name = models.CharField(max_length=100)
 
     gender = models.CharField(
         max_length=1,
-        choices=GENDER_CHOICES
+        choices=[
+            ('M', 'Male'),
+            ('F', 'Female')
+        ]
+    )
+
+    department = models.ForeignKey(
+        Department,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+
+    role = models.ForeignKey(
+    Role,
+    on_delete=models.SET_NULL,
+    null=True,
+    blank=True
+    )
+
+    status = models.CharField(
+        max_length=20,
+        choices=MEMBERSHIP_STATUS,
+        default='ACTIVE'
     )
 
     phone_number = models.CharField(

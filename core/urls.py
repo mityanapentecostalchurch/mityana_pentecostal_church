@@ -1,7 +1,5 @@
 from django.urls import path
-from .views import home, about, leadership, contact, sermon_list, announcement_list,
-event_list,
-
+from .views import home, about, leadership, contact, sermon_list, announcement_list, event_list
 
 urlpatterns = [
     path('', home, name='home'),
