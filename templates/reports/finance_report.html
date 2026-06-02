@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Financial Report</h1>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>UGX {{ total_amount }}</h2>
+            <p>Total Giving</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>UGX {{ cash_total }}</h2>
+            <p>Cash</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>UGX {{ mobile_money_total }}</h2>
+            <p>Mobile Money</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>UGX {{ bank_total }}</h2>
+            <p>Bank</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

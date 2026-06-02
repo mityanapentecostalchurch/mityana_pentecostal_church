@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Attendance Report</h1>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ attendance_count }}</h2>
+            <p>Total Records</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ present_count }}</h2>
+            <p>Present</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ absent_count }}</h2>
+            <p>Absent</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3">
+            <h2>{{ excused_count }}</h2>
+            <p>Excused</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
