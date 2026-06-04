@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'reports',
     'api',
     'activity',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -162,3 +165,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
 }
+
+CORS_ALLOW_ALL_ORIGINS = True

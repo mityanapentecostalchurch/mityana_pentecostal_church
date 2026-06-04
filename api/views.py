@@ -206,9 +206,9 @@ class ActivityLogAPIView(
 
 class DashboardAPIView(APIView):
 
-    permission_classes = [
-        IsAuthenticated
-    ]
+    # permission_classes = [
+    #     IsAuthenticated
+    # ]
     
 
     def get(self, request):
