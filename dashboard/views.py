@@ -55,7 +55,14 @@ def dashboard_home(request):
         '-created_at'
     )[:10]
 
-    monthly_giving = (
+    # monthly_giving = (
+    #     Contribution.objects
+    #     .annotate(month=TruncMonth('contribution_date'))
+    #     .values('month')
+    #     .annotate(total=Sum('amount'))
+    #     .order_by('month')
+    # )
+    monthly_giving = list(
         Contribution.objects
         .annotate(month=TruncMonth('contribution_date'))
         .values('month')
@@ -63,7 +70,12 @@ def dashboard_home(request):
         .order_by('month')
     )
 
-    attendance_summary = (
+    # attendance_summary = (
+    #     Attendance.objects
+    #     .values('status')
+    #     .annotate(total=Count('id'))
+    # )
+    attendance_summary = list(
         Attendance.objects
         .values('status')
         .annotate(total=Count('id'))
