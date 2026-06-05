@@ -3,7 +3,25 @@
 {% block content %}
 
 <!-- <div class="hero text-center"> -->
-<div class="hero">
+<div class="hero-section text-center">
+
+    <img
+        src="/static/images/logo.png"
+        height="120"
+    >
+
+    <h1>
+        Welcome to
+        Mityana Pentecostal Church
+    </h1>
+
+    <p>
+        Growing in Faith,
+        Serving in Love
+    </p>
+
+</div>
+<!-- <div class="hero">
 
     <h1>Mityana Pentecostal Church</h1>
 
@@ -13,8 +31,30 @@
     <a href="/contact/" class="btn btn-primary btn-lg">
     Visit Us </a>
 
-</div>
+</div> -->
+<div class="row text-center mt-5">
 
+    <div class="col-md-3">
+        <h2>{{ member_count }}</h2>
+        <p>Members</p>
+    </div>
+
+    <div class="col-md-3">
+        <h2>{{ department_count }}</h2>
+        <p>Departments</p>
+    </div>
+
+    <div class="col-md-3">
+        <h2>{{ event_count }}</h2>
+        <p>Events</p>
+    </div>
+
+    <div class="col-md-3">
+        <h2>{{ total_contributions }}</h2>
+        <p>Contributions</p>
+    </div>
+
+</div>
 <hr>
 
 <div class="row">
