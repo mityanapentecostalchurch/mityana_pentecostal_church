@@ -394,4 +394,29 @@ new Chart(
 
 </script>
 
+<h3>Today's Birthdays</h3>
+
+<ul class="list-group">
+
+{% for member in birthdays %}
+
+<li class="list-group-item">
+
+    🎂 {{ member.first_name }}
+    {{ member.last_name }}
+
+</li>
+
+{% empty %}
+
+<li class="list-group-item">
+
+    No birthdays today
+
+</li>
+
+{% endfor %}
+
+</ul>
+
 {% endblock %}

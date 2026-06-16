@@ -11,6 +11,9 @@ from giving.models import Contribution
 from activity.models import ActivityLog
 from django.db.models.functions import TruncMonth
 from django.db.models import Count
+from datetime import date
+
+
 
 @login_required
 def dashboard_home(request):
@@ -81,6 +84,14 @@ def dashboard_home(request):
         .annotate(total=Count('id'))
     )
 
+    # from datetime import date
+    today = date.today()
+
+    birthdays = Member.objects.filter(
+        birthday__month=today.month,
+        birthday__day=today.day
+    )
+
     context = {
         'member_count': Member.objects.count(),
         'department_count': Department.objects.count(),
@@ -106,6 +117,7 @@ def dashboard_home(request):
         'recent_activity': recent_activity,
         'monthly_giving': monthly_giving,
         'attendance_summary': attendance_summary,
+        'birthdays': birthdays,
     }
 
     return render(
