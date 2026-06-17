@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<h2>
-    Church Membership Registration
-</h2>
+<h2>Church Membership Registration</h2>
+
+{{ form.errors }}
 
 <form method="post">
 
@@ -12,10 +12,7 @@
 
     {{ form.as_p }}
 
-    <button
-        type="submit"
-        class="btn btn-primary"
-    >
+    <button type="submit">
         Register
     </button>
 

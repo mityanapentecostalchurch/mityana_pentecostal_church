@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>
+        Welcome {{ member.first_name }}
+    </h2>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            My Profile
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                <strong>Name:</strong>
+                {{ member.first_name }}
+                {{ member.last_name }}
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                {{ member.email }}
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                {{ member.phone_number }}
+            </p>
+
+            <p>
+                <strong>Department:</strong>
+                {{ member.department }}
+            </p>
+
+            <p>
+                <strong>Role:</strong>
+                {{ member.role }}
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Announcements</h5>
+
+                    <p>
+                        View church announcements.
+                    </p>
+
+                    <a href="/announcements/"
+                       class="btn btn-primary">
+                        View
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Events</h5>
+
+                    <p>
+                        Upcoming church events.
+                    </p>
+
+                    <a href="/events/"
+                       class="btn btn-success">
+                        View
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Sermons</h5>
+
+                    <p>
+                        Watch and read sermons.
+                    </p>
+
+                    <a href="/sermons/"
+                       class="btn btn-secondary">
+                        View
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
