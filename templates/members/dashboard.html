@@ -1,12 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<p>
+Logged in as:
+{{ user.email }}
+</p>
 
+<p>
+Member object:
+{{ member }}
+</p>
 <div class="container mt-4">
 
     <h2>
+        <!-- Welcome {{ member.first_name }} -->
         Welcome {{ member.first_name }}
     </h2>
+
+    {% else %}
+
+    <h2>
+        Welcome {{ user.username }}
+    </h2>
+
+    <p>
+        Your member profile has not yet been linked.
+    </p>
+
+{% endif %}
 
     <div class="card mb-3">
         <div class="card-header">

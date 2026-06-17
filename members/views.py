@@ -19,21 +19,39 @@ from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
+# @login_required
+# def member_dashboard(request):
+
+#     # member = request.user.member
+#     try:
+#         member = request.user.member
+#     except Exception:
+#         member = None
+    
+
+#     return render(
+#         request,
+#         'members/dashboard.html',
+#         {
+#             'member': member
+#         }
+#     )
+
 @login_required
 def member_dashboard(request):
 
-    # member = request.user.member
-    try:
-        member = request.user.member
-    except Exception:
-        member = None
-    
+    member = getattr(
+        request.user,
+        'member',
+        None
+    )
 
     return render(
         request,
         'members/dashboard.html',
         {
-            'member': member
+            'member': member,
+            'user': request.user,
         }
     )
 
