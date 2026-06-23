@@ -40,6 +40,8 @@ User = get_user_model()
 #     )
 def member_login(request):
 
+    error = None
+
     if request.method == "POST":
 
         email = request.POST.get("email")
@@ -59,23 +61,6 @@ def member_login(request):
                 user
             )
 
-            # if user.role == 'SUPER_ADMIN':
-
-            #     return redirect(
-            #         '/admin/'
-            #     )
-
-            # elif user.user_type == 'STAFF':
-
-            #     return redirect(
-            #         '/staff/'
-            #     )
-
-            # else:
-
-            #     return redirect(
-            #         '/members/dashboard/'
-            #     )
             if user.is_superuser:
 
                 return redirect('/admin/')
@@ -86,12 +71,23 @@ def member_login(request):
 
             else:
 
-                return redirect('/members/dashboard/')
-
-                return render(
-                    request,
-                    "members/login.html"
+                return redirect(
+                    '/members/dashboard/'
                 )
+
+        else:
+
+            error = (
+                "Invalid email or password."
+            )
+
+    return render(
+        request,
+        "members/login.html",
+        {
+            "error": error
+        }
+    )
 
 @login_required
 def member_dashboard(request):
