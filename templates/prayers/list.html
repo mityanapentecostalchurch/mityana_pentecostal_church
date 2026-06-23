@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Prayer Requests</h2>
+
+{% for prayer in requests %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <h5>
+
+            {{ prayer.title }}
+
+        </h5>
+
+        <p>
+
+            {{ prayer.request }}
+
+        </p>
+
+        <p>
+
+            <strong>Status:</strong>
+
+            {{ prayer.status }}
+
+        </p>
+
+        {% if prayer.pastor_comment %}
+
+        <p>
+
+            <strong>Pastor Comment:</strong>
+
+            {{ prayer.pastor_comment }}
+
+        </p>
+
+        {% endif %}
+
+        {% if prayer.prayed_by %}
+
+        <p>
+
+            <strong>Prayed By:</strong>
+
+            {{ prayer.prayed_by }}
+
+        </p>
+
+        {% endif %}
+
+        {% if prayer.prayed_at %}
+
+        <p>
+
+            <strong>Prayer Date:</strong>
+
+            {{ prayer.prayed_at }}
+
+        </p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>
+
+    No prayer requests submitted yet.
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

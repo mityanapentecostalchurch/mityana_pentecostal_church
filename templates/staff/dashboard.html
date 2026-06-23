@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Staff Dashboard</h2>
+
+<p>
+    Welcome {{ user.username }}
+</p>
+
+<p>
+    Role: {{ user.role }}
+</p>
+
+<div class="row">
+
+    {% if user.role == 'PASTOR' or user.role == 'INTERCESSOR' %}
+
+    <div class="col-md-3">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h5>Prayer Requests</h5>
+
+                <a href="/staff/prayers/"
+                   class="btn btn-primary">
+                    Open
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    {% if user.role == 'SECRETARY' %}
+
+    <div class="col-md-3">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h5>Members</h5>
+
+                <a href="/staff/members/"
+                   class="btn btn-success">
+                    Open
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    {% if user.role == 'TREASURER' %}
+
+    <div class="col-md-3">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h5>Finance</h5>
+
+                <a href="#"
+                   class="btn btn-warning">
+                    Open
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    {% if user.role == 'MINISTRY_LEADER' %}
+
+    <div class="col-md-3">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h5>My Ministry</h5>
+
+                <a href="#"
+                   class="btn btn-info">
+                    Open
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

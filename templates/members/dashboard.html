@@ -1,46 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>
-Logged in as:
-{{ user.email }}
-</p>
+
+{% if member %}
+
+<h2>
+    Welcome {{ member.first_name }}
+    {{ member.last_name }}
+</h2>
+
+{% else %}
+
+<h2>
+    Welcome {{ user.username }}
+</h2>
 
 <p>
-Member object:
-{{ member }}
+    Your member profile has not yet been linked.
 </p>
-<div class="container mt-4">
-
-    <h2>
-        <!-- Welcome {{ member.first_name }} -->
-        Welcome {{ member.first_name }}
-    </h2>
-
-    {% else %}
-
-    <h2>
-        Welcome {{ user.username }}
-    </h2>
-
-    <p>
-        Your member profile has not yet been linked.
-    </p>
 
 {% endif %}
 
-    <div class="card mb-3">
-        <div class="card-header">
-            My Profile
-        </div>
+
+
+<div class="container mt-4">
+
+    <!-- <div class="card mb-4">
 
         <div class="card-body">
 
-            <p>
-                <strong>Name:</strong>
-                {{ member.first_name }}
+            <h2>
+                Welcome {{ member.first_name }}
                 {{ member.last_name }}
+            </h2>
+
+            <p>
+                Department:
+                {{ member.department }}
             </p>
+
+            <p>
+                Member Since:
+                {{ member.date_joined }}
+            </p>
+
+        </div>
+
+    </div> -->
+    <div class="card mb-4">
+
+        <div class="card-body">
+
+            <h2>
+                Welcome {{ member.first_name }}
+                {{ member.last_name }}
+            </h2>
 
             <p>
                 <strong>Email:</strong>
@@ -58,39 +72,126 @@ Member object:
             </p>
 
             <p>
-                <strong>Role:</strong>
-                {{ member.role }}
+                <strong>Status:</strong>
+                {{ member.status }}
             </p>
 
         </div>
+
     </div>
 
     <div class="row">
+        <div class="alert alert-info">
 
-        <div class="col-md-4">
+        <strong>
+            Profile Completion:
+            {{ completion }}%
+        </strong>
+
+    </div>
+
+    <div class="progress mb-3">
+
+        <div class="progress-bar"
+            role="progressbar"
+            style="width: {{ completion }}%;">
+
+            {{ completion }}%
+
+        </div>
+
+    </div>
+        <div class="col-md-3 mb-3">
 
             <div class="card">
+
                 <div class="card-body">
 
-                    <h5>Announcements</h5>
+                    <h5>My Profile</h5>
 
                     <p>
-                        View church announcements.
+                        Update personal details.
                     </p>
 
-                    <a href="/announcements/"
-                       class="btn btn-primary">
-                        View
-                    </a>
+                    <!-- <a href="#" class="btn btn-primary"> Open </a> -->
+                    <a href="/members/profile/edit/" class="btn btn-primary">Edit Profile</a>
+                    <!-- <a href="/logout/" class="btn btn-danger">  Logout</a> -->
+                    <a href="/members/logout/" class="btn btn-danger"> Logout</a>
 
                 </div>
+
             </div>
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3 mb-3">
 
             <div class="card">
+
+                <div class="card-body">
+
+                    <h5>My Ministry</h5>
+
+                    <p>
+                        Ministry involvement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <div class="col-md-3 mb-3">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h5>Prayer Requests</h5>
+
+                    <p>
+                        Submit prayer requests.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+        <div class="col-md-3 mb-3">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h5>Prayer Requests</h5>
+
+                    <p>
+                        Submit prayer requests to church leaders.
+                    </p>
+
+                    <a href="/prayers/new/"
+                    class="btn btn-success">
+                    Submit Request
+                    </a>
+
+                    <a href="/prayers/my/"
+                    class="btn btn-primary">
+                    My Requests
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+
+            <div class="card">
+
                 <div class="card-body">
 
                     <h5>Events</h5>
@@ -99,34 +200,54 @@ Member object:
                         Upcoming church events.
                     </p>
 
-                    <a href="/events/"
-                       class="btn btn-success">
-                        View
-                    </a>
-
                 </div>
+
             </div>
 
         </div>
 
-        <div class="col-md-4">
+    </div>
 
-            <div class="card">
-                <div class="card-body">
+</div>
+<div class="col-md-3 mb-3">
 
-                    <h5>Sermons</h5>
+    <div class="card">
 
-                    <p>
-                        Watch and read sermons.
-                    </p>
+        <div class="card-body">
 
-                    <a href="/sermons/"
-                       class="btn btn-secondary">
-                        View
-                    </a>
+            <h5>Announcements</h5>
 
-                </div>
-            </div>
+            <p>
+                Church updates.
+            </p>
+
+            <a href="/announcements/"
+               class="btn btn-primary">
+                View
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3 mb-3">
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <h5>Sermons</h5>
+
+            <p>
+                Watch and read sermons.
+            </p>
+
+            <a href="/sermons/"
+               class="btn btn-primary">
+                View
+            </a>
 
         </div>
 

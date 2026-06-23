@@ -10,13 +10,15 @@ from django.contrib.auth import (
     login,
 )
 
-from .forms import (
-    MemberRegistrationForm
-)
 
+from .forms import (
+    MemberRegistrationForm,
+    MemberProfileForm
+)
 from django.contrib.auth.decorators import login_required
 
-
+from django.contrib.auth import logout
+from django.contrib.auth import authenticate
 User = get_user_model()
 
 # @login_required
@@ -36,14 +38,99 @@ User = get_user_model()
 #             'member': member
 #         }
 #     )
+def member_login(request):
+
+    if request.method == "POST":
+
+        email = request.POST.get("email")
+
+        password = request.POST.get("password")
+
+        user = authenticate(
+            request,
+            username=email,
+            password=password
+        )
+
+        if user is not None:
+
+            login(
+                request,
+                user
+            )
+
+            # if user.role == 'SUPER_ADMIN':
+
+            #     return redirect(
+            #         '/admin/'
+            #     )
+
+            # elif user.user_type == 'STAFF':
+
+            #     return redirect(
+            #         '/staff/'
+            #     )
+
+            # else:
+
+            #     return redirect(
+            #         '/members/dashboard/'
+            #     )
+            if user.is_superuser:
+
+                return redirect('/admin/')
+
+            elif user.is_staff:
+
+                return redirect('/staff/')
+
+            else:
+
+                return redirect('/members/dashboard/')
+
+                return render(
+                    request,
+                    "members/login.html"
+                )
 
 @login_required
 def member_dashboard(request):
 
+    # member = request.user.member
     member = getattr(
         request.user,
         'member',
         None
+    )
+
+    completed = 0
+
+    fields = [
+
+        member.phone_number,
+        member.email,
+        member.address,
+        member.next_of_kin,
+        member.next_of_kin_contact,
+        member.occupation,
+        member.education_level,
+        member.department,
+        member.date_saved,
+        member.is_baptized,
+        member.former_church,
+        member.previous_ministry,
+
+    ]
+
+    total = len(fields)
+
+    for field in fields:
+
+        if field:
+            completed += 1
+
+    completion = int(
+        (completed / total) * 100
     )
 
     return render(
@@ -51,7 +138,7 @@ def member_dashboard(request):
         'members/dashboard.html',
         {
             'member': member,
-            'user': request.user,
+            'completion': completion,
         }
     )
 
@@ -119,3 +206,41 @@ def member_register(request):
         }
     )
 
+@login_required
+def edit_profile(request):
+
+    member = request.user.member
+
+    if request.method == 'POST':
+
+        form = MemberProfileForm(
+            request.POST,
+            instance=member
+        )
+
+        if form.is_valid():
+
+            form.save()
+
+            return redirect(
+                '/members/dashboard/'
+            )
+
+    else:
+
+        form = MemberProfileForm(
+            instance=member
+        )
+
+    return render(
+        request,
+        'members/edit_profile.html',
+        {
+            'form': form
+        }
+    )
+def member_logout(request):
+
+    logout(request)
+
+    return redirect('/')

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Assigned Prayer Requests</h2>
+
+{% for prayer in prayers %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <h5>
+            {{ prayer.title }}
+        </h5>
+
+        <p>
+            {{ prayer.request }}
+        </p>
+
+        <p>
+            Status:
+            {{ prayer.status }}
+        </p>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>
+    No assigned prayer requests.
+</p>
+
+{% endfor %}
+
+{% endblock %}
