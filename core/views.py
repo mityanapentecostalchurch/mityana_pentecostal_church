@@ -112,3 +112,18 @@ def event_list(request):
             'events': events
         }
     )
+
+def services(request):
+
+    return render(
+        request,
+        'services.html'
+    )
+
+def ministries(request):
+
+    return render(
+        request,
+        'ministries.html'
+    )
+

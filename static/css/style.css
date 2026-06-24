@@ -1,120 +1,490 @@
-/* General */
-/* body {
+/* ==========================================
+   MITYANA PENTECOSTAL CHURCH WEBSITE
+========================================== */
+
+body {
+
     background-color: #f5f7fa;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
     color: #333;
-} */
- body {
-    background-color: #f5f7fa;
+
+    margin: 0;
+
+    padding: 0;
+
 }
 
+/* ==========================================
+   NAVIGATION
+========================================== */
+
 .navbar {
+
     background: linear-gradient(
         90deg,
-        #1e3a5f,
-        #2c5282
+        #0f3460,
+        #1f5f9b
     ) !important;
-}
 
-.navbar-brand,
-.nav-link {
-    color: white !important;
-}
+    box-shadow: 0 2px 10px rgba(
+        0,
+        0,
+        0,
+        0.15
+    );
 
-/* Navigation */
-.navbar {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-brand {
+
+    font-size: 1.6rem;
+
     font-weight: bold;
+
+    color: white !important;
+
 }
 
-/* Hero Section
-.hero {
-    padding: 100px 20px;
+.navbar-brand img {
+
+    border-radius: 50%;
+
+}
+
+.nav-link {
+
+    color: white !important;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    margin-left: 10px;
+
+}
+
+.nav-link:hover {
+
+    color: #ffd54f !important;
+
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+/* .hero-banner {
+
+    position: relative;
+
+    min-height: 650px;
+
+    background: url("/static/images/church2.jpeg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     text-align: center;
 
-    background: linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
-    ),
-    url('/static/images/church-banner.jpg');
+    overflow: hidden;
 
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-    border-radius: 10px;
-} */
- .hero-section {
-    padding: 80px 20px;
-    background: linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    ),
-    url('/static/images/church.jpg');
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.hero-banner::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,0.45);
+
+}
+
+.hero-banner .overlay {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: white;
+
+    max-width: 900px;
+
+    padding: 40px;
+
+}
+
+.hero-banner h1 {
+
+    color: white;
+
+    font-size: 4rem;
+
+    font-weight: 700;
+
+}
+
+.hero-banner p {
+
+    color: white;
+
+    font-size: 1.4rem;
+
+} */
+ /* HERO BANNER */
+
+/* HERO IMAGE */
+
+.hero-section {
+
+    min-height: 650px;
+
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.55)
+        ),
+        url('/static/images/logo2.jpeg');
+    /* background: url("/static/images/church21.png"); */
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    color: white;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 40px;
+
+}
+
+.hero-section h1 {
+
+    font-size: 4rem;
+
     font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 10px rgba(
+            0,
+            0,
+            0,
+            0.8
+        );
+
 }
 
-.hero p {
-    font-size: 1.3rem;
+.hero-section p {
+
+    font-size: 1.5rem;
+
+    color: white;
+
+    margin-top: 15px;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        1px 1px 6px rgba(
+            0,
+            0,
+            0,
+            0.8
+        );
+
 }
 
-/* Content Cards */
-/* .card {
+
+.hero-section img {
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.9
+    );
+
+    border-radius: 50%;
+
+    padding: 10px;
+
+    margin-bottom: 25px;
+
+}
+.hero-section {
+
+    background-attachment: fixed;
+
+}
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary {
+
+    background-color: #0d6efd;
+
     border: none;
-    border-radius: 10px;
 
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
 
-    transition: 0.3s;
-} */
+.btn-success {
+
+    background-color: #198754;
+
+    border: none;
+
+}
+
+.btn-lg {
+
+    padding: 12px 30px;
+
+    font-size: 1.1rem;
+
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1 {
+
+    font-weight: bold;
+
+}
+
+h2 {
+
+    color: #0d6efd;
+
+    font-weight: bold;
+
+    margin-top: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+h3 {
+
+    color: #0f3460;
+
+}
+
+h4 {
+
+    color: #0f3460;
+
+}
+
+/* ==========================================
+   CARDS
+========================================== */
 
 .card {
+
     border: none;
+
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(
-        0,
-        0,
-        0,
-        0.1
-    );
-    transition: 0.3s;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    transition: all 0.3s ease;
+
 }
 
 .card:hover {
-    transform: translateY(-4px);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
 }
 
-/* .card:hover {
-    transform: translateY(-3px);
-} */
+.card-body {
 
-/* Headings */
-h2 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: #0d6efd;
+    padding: 25px;
+
 }
 
+/* ==========================================
+   STATISTICS
+========================================== */
 
-/* Footer */
-.footer {
-    margin-top: 60px;
-    padding: 20px;
+.stats-card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
 
     text-align: center;
 
-    background-color: #212529;
+    box-shadow:
+        0 4px 12px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+}
+
+.stats-card h2 {
+
+    color: #0d6efd;
+
+    font-size: 2.5rem;
+
+}
+
+/* ==========================================
+   TABLES
+========================================== */
+
+.table {
+
+    background: white;
+
+    border-radius: 10px;
+
+}
+
+.table th {
+
+    background-color: #0f3460;
+
     color: white;
+
+}
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+.img-fluid {
+
+    border-radius: 15px;
+
+}
+
+.card-img-top {
+
+    height: 220px;
+
+    object-fit: cover;
+
+}
+
+/* ==========================================
+   FORMS
+========================================== */
+
+input,
+select,
+textarea {
+
+    border-radius: 8px !important;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+
+    margin-top: 60px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #1c1f26;
+
+    color: white;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero-banner {
+
+        min-height: 400px;
+
+    }
+
+    .hero-banner h1 {
+
+        font-size: 2rem;
+
+    }
+
+    .hero-banner p {
+
+        font-size: 1rem;
+
+    }
+
+    .navbar-brand {
+
+        font-size: 1.2rem;
+
+    }
+
 }

@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<!-- <div class="hero text-center"> -->
+<!-- <img src="/static/images/church2.jpeg" -->
+     <!-- style="width:100%;height:300px;object-fit:cover;"> -->
 <div class="hero-section text-center">
 
-    <img
-        src="/static/images/logo.png"
-        height="120"
-    >
+    <!-- <img -->
+        <!-- src="/static/images/logo2.jpeg" -->
+        <!-- height="120" -->
+    
+    <img src="/static/images/church2.png" 
+     height="300">
 
     <h1>
         Welcome to
@@ -20,7 +22,123 @@
         Serving in Love
     </p>
 
+    <a href="/members/register/"
+       class="btn btn-warning btn-lg me-2">
+
+        Join MPC
+
+    </a>
+
+    <a href="/prayers/new/"
+       class="btn btn-success btn-lg">
+
+        Request Prayer
+
+    </a>
+
 </div>
+<section class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h4>Prayer</h4>
+
+                    <p>
+                        Submit prayer requests and receive support.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h4>Counselling</h4>
+
+                    <p>
+                        Schedule pastoral counselling.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h4>Ministries</h4>
+
+                    <p>
+                        Discover ministry opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="container mt-5">
+
+    <h2>Church At A Glance</h2>
+
+    <div class="row text-center">
+
+        <div class="col-md-3">
+
+            <h3>500+</h3>
+
+            <p>Members</p>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h3>12</h3>
+
+            <p>Ministries</p>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h3>7</h3>
+
+            <p>Pastors</p>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h3>20+</h3>
+
+            <p>Weekly Activities</p>
+
+        </div>
+
+    </div>
+
+</section>
 <!-- <div class="hero">
 
     <h1>Mityana Pentecostal Church</h1>
@@ -32,29 +150,7 @@
     Visit Us </a>
 
 </div> -->
-<div class="row text-center mt-5">
 
-    <div class="col-md-3">
-        <h2>{{ member_count }}</h2>
-        <p>Members</p>
-    </div>
-
-    <div class="col-md-3">
-        <h2>{{ department_count }}</h2>
-        <p>Departments</p>
-    </div>
-
-    <div class="col-md-3">
-        <h2>{{ event_count }}</h2>
-        <p>Events</p>
-    </div>
-
-    <div class="col-md-3">
-        <h2>{{ total_contributions }}</h2>
-        <p>Contributions</p>
-    </div>
-
-</div>
 <hr>
 
 <div class="row">
