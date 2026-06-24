@@ -50,6 +50,8 @@ def about(request):
     return render(request, 'about.html')
 
 
+
+
 def leadership(request):
     return render(request, 'leadership.html')
 
