@@ -2,37 +2,84 @@
 
 {% block content %}
 
-<h2>Assigned Prayer Requests</h2>
+<div class="mb-3">
 
-{% for prayer in prayers %}
+    <a href="/staff/"
+       class="btn btn-dark">
 
-<div class="card mb-3">
+        ← Back to Staff Dashboard
 
-    <div class="card-body">
-
-        <h5>
-            {{ prayer.title }}
-        </h5>
-
-        <p>
-            {{ prayer.request }}
-        </p>
-
-        <p>
-            Status:
-            {{ prayer.status }}
-        </p>
-
-    </div>
+    </a>
 
 </div>
 
-{% empty %}
+<h2>Prayer Queue</h2>
 
-<p>
-    No assigned prayer requests.
-</p>
+<table class="table table-striped">
 
-{% endfor %}
+    <thead>
+
+        <tr>
+
+            <th>Title</th>
+
+            <th>Status</th>
+
+            <th>Assigned To</th>
+
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for prayer in prayers %}
+
+        <tr>
+
+            <td>
+                {{ prayer.title }}
+            </td>
+
+            <td>
+                {{ prayer.status }}
+            </td>
+
+            <td>
+                {{ prayer.assigned_to }}
+            </td>
+
+            <td>
+
+                <a href="/staff/prayers/{{ prayer.id }}/"
+                   class="btn btn-primary btn-sm">
+
+                    Open
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+
+            <td colspan="4">
+
+                No assigned prayer requests.
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
 
 {% endblock %}

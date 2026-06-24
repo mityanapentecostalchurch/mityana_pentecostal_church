@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/staff/"
+   class="btn btn-dark">
+
+   ← Back to Staff Dashboard
+
+</a>
+
+<hr>
+
+<h2>Counselling Requests</h2>
+
+<!-- <table class="table">
+
+<tr>
+
+    <th>Subject</th>
+
+    <th>Status</th>
+
+</tr>
+
+{% for request in requests %}
+
+<tr>
+
+    <td>
+
+        {{ request.subject }}
+
+    </td>
+
+    <td>
+
+        {{ request.status }}
+
+    </td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+    <td colspan="2">
+
+        No counselling requests.
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table> -->
+<table class="table">
+
+<tr>
+
+    <th>Subject</th>
+
+    <th>Status</th>
+
+    <th>Action</th>
+
+</tr>
+
+{% for request in requests %}
+
+<tr>
+
+    <td>
+        {{ request.subject }}
+    </td>
+
+    <td>
+        {{ request.status }}
+    </td>
+
+    <td>
+
+        <a href="/counselling/{{ request.id }}/"
+           class="btn btn-primary btn-sm">
+
+            Open
+
+        </a>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

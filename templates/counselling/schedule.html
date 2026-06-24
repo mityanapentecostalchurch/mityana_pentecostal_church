@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Schedule Counselling Session</h2>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <label>Date</label>
+
+    <input
+        type="date"
+        name="scheduled_date"
+        class="form-control">
+
+    <br>
+
+    <label>Time</label>
+
+    <input
+        type="time"
+        name="scheduled_time"
+        class="form-control">
+
+    <br>
+
+    <label>Location</label>
+
+    <input
+        type="text"
+        name="location"
+        class="form-control">
+
+    <br>
+
+    <button
+        type="submit"
+        class="btn btn-primary">
+
+        Schedule Session
+
+    </button>
+
+</form>
+
+{% endblock %}

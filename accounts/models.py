@@ -48,6 +48,14 @@ class User(AbstractUser):
         default='MEMBER'
     )
 
+    # def __str__(self):
+
+        # return self.username
+    
     def __str__(self):
 
-        return self.username
+        return (
+            f"{self.first_name} "
+            f"{self.last_name}"
+            f" ({self.role})"
+        )

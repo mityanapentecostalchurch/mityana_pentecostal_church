@@ -21,6 +21,10 @@ from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 User = get_user_model()
 
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from counselling.models import CounsellingRequest
+
 # @login_required
 # def member_dashboard(request):
 
@@ -240,3 +244,56 @@ def member_logout(request):
     logout(request)
 
     return redirect('/')
+
+@login_required
+def change_password(request):
+
+    if request.method == 'POST':
+
+        form = PasswordChangeForm(
+            request.user,
+            request.POST
+        )
+
+        if form.is_valid():
+
+            user = form.save()
+
+            update_session_auth_hash(
+                request,
+                user
+            )
+
+            return redirect('/')
+
+    else:
+
+        form = PasswordChangeForm(
+            request.user
+        )
+
+    return render(
+        request,
+        'members/change_password.html',
+        {
+            'form': form
+        }
+    )
+
+
+
+@login_required
+def notifications(request):
+
+    counselling = CounsellingRequest.objects.filter(
+        member=request.user,
+        status='SCHEDULED'
+    ).order_by('-created_at')
+
+    return render(
+        request,
+        'members/notifications.html',
+        {
+            'counselling': counselling
+        }
+    )

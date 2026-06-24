@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'giving',
     'reports',
     'prayers',
+    'counselling',
     'staff',
     'api',
     'activity',

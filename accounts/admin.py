@@ -6,4 +6,32 @@ from .models import User
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    pass
+
+    fieldsets = UserAdmin.fieldsets + (
+
+        (
+            'Church Information',
+            {
+                'fields': (
+
+                    'phone_number',
+                    'user_type',
+                    'role',
+
+                )
+            }
+        ),
+
+    )
+
+    list_display = (
+
+        'username',
+        'email',
+        'first_name',
+        'last_name',
+        'user_type',
+        'role',
+        'is_staff',
+
+    )

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Prayer Note</h2>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <textarea
+        name="note"
+        class="form-control"
+        rows="5">{{ note.note }}</textarea>
+
+    <br>
+
+    <button
+        type="submit"
+        class="btn btn-primary">
+
+        Save Changes
+
+    </button>
+
+</form>
+
+{% endblock %}

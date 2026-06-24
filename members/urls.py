@@ -9,6 +9,8 @@ from .views import (
     member_login,
     edit_profile,
     member_logout,
+    change_password,
+    notifications,
 )
 
 urlpatterns = [
@@ -41,5 +43,17 @@ urlpatterns = [
         'logout/',
         member_logout,
         name='member-logout'
+    ),
+
+    path(
+        'change-password/',
+        change_password,
+        name='change-password'
+    ),
+
+    path(
+        'notifications/',
+        notifications,
+        name='notifications'
     ),
 ]

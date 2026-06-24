@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Notifications</h2>
+
+<a href="/members/dashboard/"
+   class="btn btn-dark">
+
+   ← Back to Dashboard
+
+</a>
+
+<hr>
+
+{% for item in counselling %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <h5>
+            Counselling Appointment Scheduled
+        </h5>
+
+        <p>
+
+            Subject:
+            {{ item.subject }}
+
+        </p>
+
+        <p>
+
+            Date:
+            {{ item.scheduled_date }}
+
+        </p>
+
+        <p>
+
+            Time:
+            {{ item.scheduled_time }}
+
+        </p>
+
+        <p>
+
+            Location:
+            {{ item.location }}
+
+        </p>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>
+
+    No notifications.
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

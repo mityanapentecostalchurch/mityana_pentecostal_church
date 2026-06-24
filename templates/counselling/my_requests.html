@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Counselling Requests</h2>
+
+<a href="/members/dashboard/"
+   class="btn btn-dark">
+
+    ← Back to Dashboard
+
+</a>
+
+<hr>
+
+<table class="table">
+
+    <tr>
+
+        <th>Subject</th>
+
+        <th>Pastor</th>
+
+        <th>Status</th>
+
+        <th>Date</th>
+
+        <th>Time</th>
+
+        <th>Location</th>
+
+    </tr>
+
+    {% for request in requests %}
+
+    <tr>
+
+        <td>
+            {{ request.subject }}
+        </td>
+
+        <td>{{ request.assigned_to }}
+        </td>
+
+        <td>
+            {{ request.status }}
+        </td>
+
+        <td>
+            {{ request.created_at }}
+        </td>
+
+        <!-- <td>{{ request.assigned_to }}</td> -->
+        <td>{{ request.scheduled_date }}</td>
+
+        <td>{{ request.scheduled_time }}</td>
+        
+        <td>{{ request.location }}</td>
+
+    </tr>
+
+    {% empty %}
+
+    <tr>
+
+        <td colspan="4">
+
+            No counselling requests.
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

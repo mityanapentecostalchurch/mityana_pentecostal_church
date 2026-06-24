@@ -51,6 +51,22 @@ class PrayerRequest(models.Model):
         blank=True
     )
 
+    is_confidential = models.BooleanField(
+        default=False
+    )
+
+    follow_up_required = models.BooleanField(
+        default=False
+    )
+
+    answered_testimony = models.TextField(
+        blank=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
     assigned_to = models.ForeignKey(
 
         settings.AUTH_USER_MODEL,
@@ -67,3 +83,25 @@ class PrayerRequest(models.Model):
     def __str__(self):
 
         return self.title
+    
+class PrayerNote(models.Model):
+
+    prayer = models.ForeignKey(
+        PrayerRequest,
+        on_delete=models.CASCADE,
+        related_name='notes'
+    )
+
+    staff = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+
+    note = models.TextField()
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return f"Note for {self.prayer.title}"
