@@ -2,52 +2,135 @@
 
 {% block content %}
 
-<h1>Church Sermons</h1>
+<div class="container mt-4">
 
-{% for sermon in sermons %}
+    <h1 class="mb-4 text-center">
 
-<div class="card mb-3">
+        Church Sermons
 
-    <div class="card-body">
+    </h1>
 
-        <h4>{{ sermon.title }}</h4>
+    <p class="lead text-center">
 
-        <p>
-            <strong>Preacher:</strong>
-            {{ sermon.preacher }}
-        </p>
+        Grow in your faith through the preaching and teaching
+        of God's Word.
 
-        <p>
-            <strong>Bible Text:</strong>
-            {{ sermon.bible_text }}
-        </p>
+    </p>
 
-        <p>
-            <strong>Date:</strong>
-            {{ sermon.sermon_date }}
-        </p>
+    <hr>
 
-        <p>
-            {{ sermon.summary }}
-        </p>
+    {% for sermon in sermons %}
 
-        {% if sermon.youtube_link %}
-            <a
-                href="{{ sermon.youtube_link }}"
-                target="_blank"
-                class="btn btn-danger">
-                Watch Sermon
-            </a>
+    <div class="card mb-4 shadow-sm">
+
+        {% if sermon.featured_image %}
+
+            <img src="{{ sermon.featured_image.url }}"
+                 class="card-img-top"
+                 style="height:320px; object-fit:cover;">
+
         {% endif %}
+
+        <div class="card-body">
+
+            <h3 class="card-title">
+
+                {{ sermon.title }}
+
+            </h3>
+
+            <p class="text-muted">
+
+                <strong>Preacher:</strong>
+                {{ sermon.preacher }}
+
+                |
+
+                <strong>Date:</strong>
+                {{ sermon.sermon_date }}
+
+            </p>
+
+            {% if sermon.bible_text %}
+
+            <p>
+
+                <strong>Bible Text:</strong>
+
+                {{ sermon.bible_text }}
+
+            </p>
+
+            {% endif %}
+
+            <p>
+
+                {{ sermon.summary }}
+
+            </p>
+
+            <hr>
+
+            <div class="d-flex flex-wrap gap-2">
+
+                {% if sermon.youtube_link %}
+
+                <a href="{{ sermon.youtube_link }}"
+                   target="_blank"
+                   class="btn btn-danger">
+
+                    ▶ Watch Sermon
+
+                </a>
+
+                {% endif %}
+
+                {% if sermon.audio_file %}
+
+                <a href="{{ sermon.audio_file.url }}"
+                   class="btn btn-success">
+
+                    🎧 Listen Audio
+
+                </a>
+
+                {% endif %}
+
+                {% if sermon.pdf_notes %}
+
+                <a href="{{ sermon.pdf_notes.url }}"
+                   target="_blank"
+                   class="btn btn-primary">
+
+                    📄 Download Notes
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="card-footer text-muted">
+
+            Published on
+            {{ sermon.sermon_date }}
+
+        </div>
 
     </div>
 
+    {% empty %}
+
+    <div class="alert alert-info">
+
+        No sermons have been published yet.
+
+    </div>
+
+    {% endfor %}
+
 </div>
-
-{% empty %}
-
-<p>No sermons available.</p>
-
-{% endfor %}
 
 {% endblock %}

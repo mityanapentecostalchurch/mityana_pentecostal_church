@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Pastoral Visitations</h2>
+
+<a href="/visitations/new/"
+   class="btn btn-success mb-3">
+
+    Schedule New Visit
+
+</a>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>Member</th>
+
+            <th>Visit Type</th>
+
+            <th>Date</th>
+
+            <th>Status</th>
+
+            <th></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for visit in visits %}
+
+        <tr>
+
+            <td>
+
+                {{ visit.member.get_full_name|default:visit.member.username }}
+
+            </td>
+
+            <td>
+
+                {{ visit.get_visit_type_display }}
+
+            </td>
+
+            <td>
+
+                {{ visit.visit_date }}
+
+            </td>
+
+            <td>
+
+                {{ visit.status }}
+
+            </td>
+
+            <td>
+
+                <a href="/visitations/{{ visit.id }}/"
+                   class="btn btn-primary btn-sm">
+
+                    Open
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    {% empty %}
+
+        <tr>
+
+            <td colspan="5">
+
+                No scheduled visitations.
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+<a href="/staff/"
+   class="btn btn-secondary">
+
+Back to Pastor Dashboard
+
+</a>
+
+{% endblock %}

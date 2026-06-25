@@ -9,8 +9,15 @@ from .views import (
     add_prayer_note,
     edit_prayer_note,
     delete_prayer_note,
+    member_list,
+    member_profile,
+    staff_sermons,
+    new_sermon,
+    edit_sermon,
+    delete_sermon,
 )
 from counselling import views as counselling_views
+
 
 urlpatterns = [
 
@@ -66,6 +73,42 @@ urlpatterns = [
         'counselling/',
         counselling_views.counselling_queue,
         name='staff-counselling'
+    ),
+
+     path(
+        'members/',
+        member_list,
+        name='pastor-members'
+    ),
+
+    path(
+        'members/<int:member_id>/',
+        member_profile,
+        name='pastor-member-profile'
+    ),
+
+    path(
+        'sermons/',
+        staff_sermons,
+        name='staff-sermons'
+    ),
+
+    path(
+        'sermons/new/',
+        new_sermon,
+        name='new-sermon'
+    ),
+
+    path(
+        'sermons/<int:sermon_id>/',
+        edit_sermon,
+        name='edit-sermon'
+    ),
+
+    path(
+        'sermons/<int:sermon_id>/delete/',
+        delete_sermon,
+        name='delete-sermon'
     ),
 
 ]

@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>New Sermon</h2>
+
+<form
+
+method="post"
+
+enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div class="mb-3">
+
+<label>Title</label>
+
+<input
+
+type="text"
+
+name="title"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Preacher</label>
+
+<input
+
+type="text"
+
+name="preacher"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Bible Text</label>
+
+<input
+
+type="text"
+
+name="bible_text"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Sermon Date</label>
+
+<input
+
+type="date"
+
+name="sermon_date"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Summary</label>
+
+<textarea
+
+name="summary"
+
+class="form-control"
+
+rows="6"></textarea>
+
+</div>
+
+<div class="mb-3">
+
+<label>YouTube Link</label>
+
+<input
+
+type="url"
+
+name="youtube_link"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Featured Image</label>
+
+<input
+
+type="file"
+
+name="featured_image"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>PDF Notes</label>
+
+<input
+
+type="file"
+
+name="pdf_notes"
+
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>Audio File</label>
+
+<input
+
+type="file"
+
+name="audio_file"
+
+class="form-control">
+
+</div>
+
+<div class="form-check mb-3">
+
+<input
+
+class="form-check-input"
+
+type="checkbox"
+
+name="is_published"
+
+checked>
+
+<label>
+
+Publish Immediately
+
+</label>
+
+</div>
+
+<button
+
+class="btn btn-success">
+
+Save Sermon
+
+</button>
+
+<a
+
+href="/staff/sermons/"
+
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+{% endblock %}

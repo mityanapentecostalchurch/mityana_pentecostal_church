@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Church Members</h2>
+
+<form method="get">
+
+<div class="input-group mb-3">
+
+<input
+
+type="text"
+
+name="search"
+
+class="form-control"
+
+placeholder="Search member..."
+
+value="{{ search }}">
+
+<button class="btn btn-primary">
+
+Search
+
+</button>
+
+</div>
+
+</form>
+
+<table class="table table-striped">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Department</th>
+
+<th>Status</th>
+
+<th></th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for member in members %}
+
+<tr>
+
+<td>
+
+{{ member.first_name }}
+
+{{ member.last_name }}
+
+</td>
+
+<td>
+
+{{ member.phone_number }}
+
+</td>
+
+<td>
+
+{{ member.department }}
+
+</td>
+
+<td>
+
+{{ member.status }}
+
+</td>
+
+<td>
+
+<a
+
+href="/staff/members/{{ member.id }}/"
+
+class="btn btn-success btn-sm">
+
+Profile
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

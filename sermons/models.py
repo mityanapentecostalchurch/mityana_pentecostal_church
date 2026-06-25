@@ -3,9 +3,13 @@ from django.db import models
 
 class Sermon(models.Model):
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(
+        max_length=255
+    )
 
-    preacher = models.CharField(max_length=150)
+    preacher = models.CharField(
+        max_length=150
+    )
 
     bible_text = models.CharField(
         max_length=255,
@@ -21,6 +25,24 @@ class Sermon(models.Model):
         null=True
     )
 
+    featured_image = models.ImageField(
+        upload_to='sermons/images/',
+        blank=True,
+        null=True
+    )
+
+    pdf_notes = models.FileField(
+        upload_to='sermons/pdfs/',
+        blank=True,
+        null=True
+    )
+
+    audio_file = models.FileField(
+        upload_to='sermons/audio/',
+        blank=True,
+        null=True
+    )
+
     is_published = models.BooleanField(
         default=True
     )
@@ -30,7 +52,11 @@ class Sermon(models.Model):
     )
 
     class Meta:
-        ordering = ['-sermon_date']
+
+        ordering = [
+            '-sermon_date'
+        ]
 
     def __str__(self):
+
         return self.title

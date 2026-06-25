@@ -4,23 +4,119 @@
 
 {% if member %}
 
-<h2>
-    Welcome {{ member.first_name }}
-    {{ member.last_name }}
-</h2>
+<div class="card mb-4 border-primary">
 
-{% else %}
+    <div class="card-body">
 
-<h2>
-    Welcome {{ user.username }}
-</h2>
+        <h2>
 
-<p>
+            Welcome,
+            {{ member.first_name }}
+            {{ member.last_name }}
+
+        </h2>
+
+        <p>
+
+            We are delighted to have you as part of the
+            Mityana Pentecostal Church family.
+
+        </p>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <strong>Email</strong><br>
+
+                {{ member.email }}
+
+            </div>
+
+            <div class="col-md-3">
+
+                <strong>Phone</strong><br>
+
+                {{ member.phone_number }}
+
+            </div>
+
+            <div class="col-md-3">
+
+                <strong>Department</strong><br>
+
+                {{ member.department }}
+
+            </div>
+
+            <div class="col-md-3">
+
+                <strong>Status</strong><br>
+
+                {{ member.status }}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- <p>
     Your member profile has not yet been linked.
-</p>
+</p> -->
 
 {% endif %}
+<div class="card mb-4 border-success">
 
+    <div class="card-header bg-success text-white">
+
+        🔔 Notifications
+
+    </div>
+
+    <div class="card-body">
+
+        {% for notification in notifications %}
+
+            <div class="alert alert-light">
+
+                <strong>
+
+                    {{ notification.title }}
+
+                </strong>
+
+                <br>
+
+                {{ notification.message }}
+
+                <br>
+
+                <small>
+
+                    {{ notification.created_at }}
+
+                </small>
+
+            </div>
+
+        {% empty %}
+
+            <p>
+
+                No new notifications.
+
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
 
 
 <div class="container mt-4">
@@ -232,24 +328,38 @@
 
 </div>
 
-<div class="col-md-3 mb-3">
+<div class="card mb-4 border-primary">
 
-    <div class="card">
+    <div class="card-header">
 
-        <div class="card-body">
+        Latest Sermon
 
-            <h5>Sermons</h5>
+    </div>
+
+    <div class="card-body">
+
+        {% if latest_sermon %}
+
+            <h5>
+
+                {{ latest_sermon.title }}
+
+            </h5>
 
             <p>
-                Watch and read sermons.
+
+                {{ latest_sermon.preacher }}
+
             </p>
 
             <a href="/sermons/"
                class="btn btn-primary">
-                View
+
+                Read Sermon
+
             </a>
 
-        </div>
+        {% endif %}
 
     </div>
 
@@ -287,33 +397,81 @@
 
             </a>
 
-        </div>
+            <p>Notifications</p>
+
+            <a href="/members/notifications/"
+                    class="btn btn-success">
+
+                 Open
+
+            </a>    
+
+        
+
+        </div> 
 
     </div>
 
 </div>
 
-<div class="col-md-3 mb-3">
 
-    <div class="card border-success">
+<div class="col-md-4 mb-3">
+
+    <div class="card border-info">
 
         <div class="card-body">
 
-            <h5>Notifications</h5>
+            <h5>
 
-            <a href="/members/notifications/"
-               class="btn btn-success">
+                Pastoral Follow-up
 
-                Open
+            </h5>
 
-            </a>
+            {% if latest_followup %}
+
+                <p>
+
+                    <strong>Status:</strong>
+
+                    {{ latest_followup.status }}
+
+                </p>
+
+                <p>
+
+                    <strong>Type:</strong>
+
+                    {{ latest_followup.get_followup_type_display }}
+
+                </p>
+
+                {% if latest_followup.visit_required %}
+
+                    <p>
+
+                        <strong>Visit:</strong>
+
+                        {{ latest_followup.visit_date }}
+
+                    </p>
+
+                {% endif %}
+
+            {% else %}
+
+                <p>
+
+                    No follow-up assigned.
+
+                </p>
+
+            {% endif %}
 
         </div>
 
     </div>
 
 </div>
-
 
 <div class="card">
     <div class="card-body">

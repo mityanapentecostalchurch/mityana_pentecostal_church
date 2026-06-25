@@ -24,6 +24,11 @@ User = get_user_model()
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from counselling.models import CounsellingRequest
+from followup.models import MemberFollowUp
+from accounts.models import User
+from followup.models import MemberNotification
+from sermons.models import Sermon
+
 
 # @login_required
 # def member_dashboard(request):
@@ -119,6 +124,7 @@ def member_dashboard(request):
         member.is_baptized,
         member.former_church,
         member.previous_ministry,
+        
 
     ]
 
@@ -132,6 +138,24 @@ def member_dashboard(request):
     completion = int(
         (completed / total) * 100
     )
+    notifications = request.user.notifications.order_by(
+            '-created_at'
+    )[:5]
+
+    latest_followup = MemberFollowUp.objects.filter(
+        member=request.user
+    ).order_by(
+        '-created_at'
+    ).first()
+
+    unread_notifications = MemberNotification.objects.filter(
+        member=request.user,
+        is_read=False
+    ).count()
+
+    latest_sermon = Sermon.objects.filter(
+        is_published=True
+    ).first()
 
     return render(
         request,
@@ -139,6 +163,10 @@ def member_dashboard(request):
         {
             'member': member,
             'completion': completion,
+            'notifications': notifications,
+            'latest_followup': latest_followup,
+            'unread_notifications': unread_notifications,
+            'latest_sermon': latest_sermon,
         }
     )
 
@@ -146,23 +174,14 @@ def member_register(request):
 
     if request.method == "POST":
 
-        form = MemberRegistrationForm(
-            request.POST
-        )
+        form = MemberRegistrationForm(request.POST)
 
         if form.is_valid():
 
-            email = form.cleaned_data[
-                'email'
-            ]
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
 
-            password = form.cleaned_data[
-                'password'
-            ]
-
-            if User.objects.filter(
-                email=email
-            ).exists():
+            if User.objects.filter(email=email).exists():
 
                 form.add_error(
                     'email',
@@ -171,39 +190,113 @@ def member_register(request):
 
             else:
 
+                # -------------------------
+                # Create Login Account
+                # -------------------------
+
                 user = User.objects.create_user(
+
                     username=email,
+
                     email=email,
+
                     password=password
+
                 )
 
-                member = form.save(
-                    commit=False
-                )
+                # -------------------------
+                # Create Member Profile
+                # -------------------------
+
+                member = form.save(commit=False)
 
                 member.user = user
 
                 member.save()
 
-                login(
-                    request,
-                    user
-                )
+                # -------------------------
+                # Assign Pastor
+                # -------------------------
 
-                # return redirect('/')
+                pastor = User.objects.filter(
+                    role='PASTOR'
+                ).first()
+
+                if pastor:
+
+                    MemberFollowUp.objects.create(
+
+                        member=user,
+
+                        assigned_to=pastor,
+
+                        followup_type='NEW_MEMBER',
+
+                        reason=(
+                            "Welcome the new member, introduce them "
+                            "to the church, encourage participation "
+                            "in worship services, Bible study and ministries."
+                        )
+
+                    )
+
+                    MemberNotification.objects.create(
+
+                        member=user,
+
+                        title="Welcome to Mityana Pentecostal Church",
+
+                        message=(
+                            f"Welcome to the Mityana Pentecostal Church family. "
+                            f"{pastor.get_full_name() or pastor.username} "
+                            "has been assigned to welcome and support you. "
+                            "You may be contacted soon for a pastoral follow-up."
+                        )
+
+                    )
+
+                else:
+
+                    MemberNotification.objects.create(
+
+                        member=user,
+
+                        title="Welcome to Mityana Pentecostal Church",
+
+                        message=(
+                            "Welcome to the Mityana Pentecostal Church family. "
+                            "Your registration has been received successfully. "
+                            "A pastor will be assigned to you shortly."
+                        )
+
+                    )
+
+                # -------------------------
+                # Login Member
+                # -------------------------
+
+                login(request, user)
+
                 return redirect(
-                    '/members/dashboard/')
+                    '/members/dashboard/'
+                )
 
     else:
 
         form = MemberRegistrationForm()
 
     return render(
+
         request,
+
         'members/register.html',
+
         {
+
             'form': form
+
         }
+
     )
 
 @login_required

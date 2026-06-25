@@ -41,6 +41,8 @@ urlpatterns = [
     path('prayers/', include( 'prayers.urls')),
     path('staff/', include('staff.urls' )),
     path('counselling/', include( 'counselling.urls' )),
+    path('followup/', include('followup.urls')),
+    path('visitations/', include('visitations.urls')),
 
 ]
 

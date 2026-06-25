@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Member Follow-up</h2>
+
+<table class="table table-striped">
+
+    <thead>
+
+       <tr>
+
+            <th>Member</th>
+
+            <th>Follow-up Type</th>
+
+            <th>Date Created</th>
+
+            <th>Status</th>
+
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for followup in followups %}
+
+        <tr>
+
+            <td>
+
+                {{ followup.member.get_full_name|default:followup.member.username }}
+
+            </td>
+
+            <td>
+
+                {{ followup.get_followup_type_display }}
+
+            </td>
+
+            <td>
+
+                {{ followup.created_at|date:"d M Y" }}
+
+            </td>
+
+            <td>
+
+                <span class="badge bg-warning">
+
+                    {{ followup.status }}
+
+                </span>
+
+            </td>
+
+            <td>
+
+                <a
+                href="/followup/{{ followup.id }}/"
+                class="btn btn-primary btn-sm">
+
+                    Open
+
+                </a>
+
+            </td>
+
+        </tr>
+    {% empty %}
+
+        <tr>
+
+            <td colspan="4">
+
+                No follow-up cases assigned.
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+<a href="/staff/"
+   class="btn btn-secondary">
+
+    Back to Dashboard
+
+</a>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+
+Schedule Home Visit
+
+</h2>
+
+<form method="post">
+
+{% csrf_token %}
+
+<label>
+
+Visit Type
+
+</label>
+
+<select
+class="form-control"
+name="visit_type">
+
+<option>Home Visit</option>
+
+<option>Hospital Visit</option>
+
+<option>Bereavement</option>
+
+<option>Marriage</option>
+
+<option>General Visit</option>
+
+</select>
+
+<br>
+
+<label>
+
+Visit Date
+
+</label>
+
+<input
+
+type="date"
+
+name="visit_date"
+
+class="form-control">
+
+<br>
+
+<label>
+
+Visit Time
+
+</label>
+
+<input
+
+type="time"
+
+name="visit_time"
+
+class="form-control">
+
+<br>
+
+<label>
+
+Location
+
+</label>
+
+<input
+
+type="text"
+
+name="visit_location"
+
+class="form-control">
+
+<br>
+
+<button
+class="btn btn-success">
+
+Schedule Visit
+
+</button>
+
+</form>
+
+{% endblock %}

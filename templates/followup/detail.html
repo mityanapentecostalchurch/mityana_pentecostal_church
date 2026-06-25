@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+
+Follow-up Details
+
+</h2>
+
+<hr>
+
+<p>
+
+<strong>Member:</strong>
+
+{{ followup.member }}
+
+</p>
+<p>
+
+<strong>Email:</strong>
+
+{{ followup.member.email }}
+
+</p>
+<p>
+
+<strong>Date Created:</strong>
+
+{{ followup.created_at }}
+
+</p>
+<p>
+
+<strong>Follow-up Type:</strong>
+
+{{ followup.get_followup_type_display }}
+
+</p>
+
+<p>
+
+<strong>Status:</strong>
+
+{{ followup.status }}
+
+</p>
+
+<p>
+
+<strong>Reason:</strong>
+
+</p>
+
+<p>
+
+{{ followup.reason }}
+
+</p>
+
+<hr>
+
+<form method="post"
+
+      action="/followup/{{ followup.id }}/notes/">
+
+{% csrf_token %}
+
+<label>
+
+Pastor Notes
+
+</label>
+
+<textarea
+
+class="form-control"
+
+name="pastor_notes"
+
+rows="5"
+
+>{{ followup.pastor_notes }}</textarea>
+
+<br>
+
+<button
+
+class="btn btn-success">
+
+Save Notes
+
+</button>
+
+</form>
+
+<br>
+
+<a
+
+href="/followup/{{ followup.id }}/complete/"
+
+class="btn btn-primary">
+
+Mark Follow-up Complete
+
+</a>
+
+<a
+
+href="/followup/"
+
+class="btn btn-secondary">
+
+Back
+
+</a>
+
+<hr>
+
+<h4>
+
+Visit Information
+
+</h4>
+
+{% if followup.visit_required %}
+
+<p>
+
+<strong>Visit Type:</strong>
+
+{{ followup.visit_type }}
+
+</p>
+
+<p>
+
+<strong>Date:</strong>
+
+{{ followup.visit_date }}
+
+</p>
+
+<p>
+
+<strong>Time:</strong>
+
+{{ followup.visit_time }}
+
+</p>
+
+<p>
+
+<strong>Location:</strong>
+
+{{ followup.visit_location }}
+
+</p>
+
+{% if followup.visit_completed %}
+
+<span class="badge bg-success">
+
+Visit Completed
+
+</span>
+
+{% else %}
+
+<a
+
+href="/followup/{{ followup.id }}/visit/complete/"
+
+class="btn btn-success">
+
+Mark Visit Complete
+
+</a>
+
+{% endif %}
+
+{% else %}
+
+<a
+
+href="/followup/{{ followup.id }}/visit/"
+
+class="btn btn-primary">
+
+Schedule Visit
+
+</a>
+
+{% endif %}
+
+{% endblock %}

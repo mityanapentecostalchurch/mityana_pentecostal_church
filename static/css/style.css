@@ -166,7 +166,7 @@ body {
             rgba(0,0,0,0.55),
             rgba(0,0,0,0.55)
         ),
-        url('/static/images/logo2.jpeg');
+        url('/static/images/church2.png');
     /* background: url("/static/images/church21.png"); */
 
     background-size: cover;
@@ -457,6 +457,38 @@ textarea {
 
 }
 
+.footer a {
+
+    color: #f8f9fa;
+
+    text-decoration: none;
+
+}
+
+.footer a:hover {
+
+    color: gold;
+
+}
+
+.footer h4,
+.footer h5 {
+
+    color: gold;
+
+}
+
+.dropdown-menu {
+
+    border-radius: 12px;
+
+}
+
+.navbar {
+
+    box-shadow: 0 2px 12px rgba(0,0,0,.2);
+
+}
 /* ==========================================
    MOBILE
 ========================================== */

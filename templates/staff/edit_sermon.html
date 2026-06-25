@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>Edit Sermon</h2>
+
+    <form method="post"
+          enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                Sermon Title
+
+            </label>
+
+            <input type="text"
+                   name="title"
+                   class="form-control"
+                   value="{{ sermon.title }}"
+                   required>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                Preacher
+
+            </label>
+
+            <input type="text"
+                   name="preacher"
+                   class="form-control"
+                   value="{{ sermon.preacher }}"
+                   required>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                Bible Text
+
+            </label>
+
+            <input type="text"
+                   name="bible_text"
+                   class="form-control"
+                   value="{{ sermon.bible_text }}">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                Sermon Date
+
+            </label>
+
+            <input type="date"
+                   name="sermon_date"
+                   class="form-control"
+                   value="{{ sermon.sermon_date|date:'Y-m-d' }}"
+                   required>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                Summary
+
+            </label>
+
+            <textarea
+                name="summary"
+                rows="8"
+                class="form-control">{{ sermon.summary }}</textarea>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                YouTube Link
+
+            </label>
+
+            <input type="url"
+                   name="youtube_link"
+                   class="form-control"
+                   value="{{ sermon.youtube_link }}">
+
+        </div>
+
+        <hr>
+
+        <h5>Current Files</h5>
+
+        {% if sermon.featured_image %}
+
+            <p>
+
+                <strong>Current Image</strong>
+
+            </p>
+
+            <img src="{{ sermon.featured_image.url }}"
+                 width="250"
+                 class="img-thumbnail">
+
+        {% else %}
+
+            <p>No image uploaded.</p>
+
+        {% endif %}
+
+        <br><br>
+
+        <label>
+
+            Replace Featured Image
+
+        </label>
+
+        <input type="file"
+               name="featured_image"
+               class="form-control">
+
+        <br>
+
+        {% if sermon.pdf_notes %}
+
+            <p>
+
+                Current PDF:
+                <a href="{{ sermon.pdf_notes.url }}"
+                   target="_blank">
+
+                    View PDF
+
+                </a>
+
+            </p>
+
+        {% endif %}
+
+        <label>
+
+            Replace PDF Notes
+
+        </label>
+
+        <input type="file"
+               name="pdf_notes"
+               class="form-control">
+
+        <br>
+
+        {% if sermon.audio_file %}
+
+            <p>
+
+                Current Audio:
+                <a href="{{ sermon.audio_file.url }}"
+                   target="_blank">
+
+                    Listen
+
+                </a>
+
+            </p>
+
+        {% endif %}
+
+        <label>
+
+            Replace Audio
+
+        </label>
+
+        <input type="file"
+               name="audio_file"
+               class="form-control">
+
+        <br>
+
+        <div class="form-check">
+
+            <input
+                class="form-check-input"
+                type="checkbox"
+                name="is_published"
+
+                {% if sermon.is_published %}
+
+                checked
+
+                {% endif %}>
+
+            <label class="form-check-label">
+
+                Publish Sermon
+
+            </label>
+
+        </div>
+
+        <br>
+
+        <button class="btn btn-success">
+
+            Save Changes
+
+        </button>
+
+        <a href="/staff/sermons/"
+           class="btn btn-secondary">
+
+            Cancel
+
+        </a>
+
+        <a href="/staff/sermons/{{ sermon.id }}/delete/"
+           class="btn btn-danger float-end">
+
+            Delete Sermon
+
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}

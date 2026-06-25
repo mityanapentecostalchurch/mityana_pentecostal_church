@@ -1,278 +1,532 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<!-- <img src="/static/images/church2.jpeg" -->
-     <!-- style="width:100%;height:300px;object-fit:cover;"> -->
-<div class="hero-section text-center">
 
-    <!-- <img -->
-        <!-- src="/static/images/logo2.jpeg" -->
-        <!-- height="120" -->
-    
-    <img src="/static/images/church2.png" 
-     height="300">
+<!-- ================= HERO SECTION ================= -->
 
-    <h1>
+<section class="hero-section text-center">
+
+    <img src="{% static 'images/church2.png' %}"
+         class="img-fluid rounded shadow-lg mb-4"
+         style="width:100%;
+                max-height:500px;
+                object-fit:cover;">
+
+    <h1 class="display-4 fw-bold">
+
         Welcome to
+        <br>
+
         Mityana Pentecostal Church
+
     </h1>
 
-    <p>
-        Growing in Faith,
-        Serving in Love
+    <p class="lead">
+
+        <strong>
+
+            A Living Church for a Healthy Community
+
+        </strong>
+
     </p>
 
-    <a href="/members/register/"
-       class="btn btn-warning btn-lg me-2">
+    <p>
 
-        Join MPC
+        Growing in Faith • Serving in Love
 
-    </a>
+    </p>
 
-    <a href="/prayers/new/"
-       class="btn btn-success btn-lg">
+    <div class="mt-4">
 
-        Request Prayer
+        <a href="/members/register/"
+           class="btn btn-warning btn-lg me-2">
 
-    </a>
+            Join MPC
 
-</div>
-<section class="container mt-5">
+        </a>
 
-    <div class="row">
+        <a href="/prayers/new/"
+           class="btn btn-success btn-lg me-2">
 
-        <div class="col-md-4">
+            Request Prayer
 
-            <div class="card">
+        </a>
 
-                <div class="card-body">
+        <a href="/contact/"
+           class="btn btn-primary btn-lg">
 
-                    <h4>Prayer</h4>
+            Visit Us
 
-                    <p>
-                        Submit prayer requests and receive support.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h4>Counselling</h4>
-
-                    <p>
-                        Schedule pastoral counselling.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h4>Ministries</h4>
-
-                    <p>
-                        Discover ministry opportunities.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
+        </a>
 
     </div>
 
 </section>
-<section class="container mt-5">
 
-    <h2>Church At A Glance</h2>
+<!-- ================= CHURCH SUMMARY ================= -->
+
+<section class="container mt-5">
 
     <div class="row text-center">
 
         <div class="col-md-3">
 
-            <h3>500+</h3>
+            <div class="card shadow-sm">
 
-            <p>Members</p>
+                <div class="card-body">
 
-        </div>
+                    <h2>{{ member_count }}</h2>
 
-        <div class="col-md-3">
+                    <p>Members</p>
 
-            <h3>12</h3>
+                </div>
 
-            <p>Ministries</p>
-
-        </div>
-
-        <div class="col-md-3">
-
-            <h3>7</h3>
-
-            <p>Pastors</p>
+            </div>
 
         </div>
 
         <div class="col-md-3">
 
-            <h3>20+</h3>
+            <div class="card shadow-sm">
 
-            <p>Weekly Activities</p>
+                <div class="card-body">
+
+                    <h2>12</h2>
+
+                    <p>Ministries</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h2>{{ event_count }}</h2>
+
+                    <p>Upcoming Events</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+
+                    <h2>1991</h2>
+
+                    <p>Founded</p>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
 </section>
-<!-- <div class="hero">
 
-    <h1>Mityana Pentecostal Church</h1>
+<!-- ================= OUR MISSION ================= -->
 
-    <p class="lead">
-        Transforming Lives Through the Gospel of Jesus Christ
-    </p>
-    <a href="/contact/" class="btn btn-primary btn-lg">
-    Visit Us </a>
+<section class="container mt-5">
 
-</div> -->
+    <div class="card shadow">
 
-<hr>
+        <div class="card-body">
 
-<div class="row">
+            <h2 class="text-center">
 
-    <div class="col-md-6">
+                Our Mission
 
-        <h3>Service Schedule</h3>
+            </h2>
 
-        <ul>
-            <li>Sunday Service - 8:00 AM</li>
-            <li>Bible Study - Wednesday 5:00 PM</li>
-            <li>Prayer Meeting - Friday 6:00 PM</li>
-        </ul>
+            <p class="text-center">
 
-    </div>
+                To reach, disciple, equip and nurture people through
+                the preaching of God's Word, prayer, worship,
+                fellowship and community outreach, leading them into
+                a growing relationship with Jesus Christ.
 
-    <div class="col-md-6">
+            </p>
 
-        <h3>Our Mission</h3>
-
-        <p>
-            To proclaim Christ, disciple believers,
-            and impact communities through faith,
-            service, and love.
-        </p>
+        </div>
 
     </div>
 
-</div>
-<hr>
+</section>
 
-<h2>Latest Announcements</h2>
+<!-- ================= QUICK MINISTRIES ================= -->
 
-{% for announcement in announcements %}
+<section class="container mt-5">
 
-<div class="card mb-3">
-    <div class="card-body">
+    <h2 class="text-center mb-4">
 
-        <h5>{{ announcement.title }}</h5>
+        Our Ministries
 
-        <p>
-            {{ announcement.content }}
-        </p>
+    </h2>
 
-        <small class="text-muted">
-            {{ announcement.created_at }}
-        </small>
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <h4> Prayer</h4>
+
+                    <p>
+
+                        Submit prayer requests and receive
+                        pastoral support.
+
+                    </p>
+
+                    <a href="/prayers/new/"
+                       class="btn btn-success">
+
+                        Request Prayer
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <h4>Counselling</h4>
+
+                    <p>
+
+                        Receive confidential pastoral counselling.
+
+                    </p>
+
+                    <a href="/counselling/new/"
+                       class="btn btn-warning">
+
+                        Book Counselling
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card h-100">
+
+                <div class="card-body text-center">
+
+                    <h4>Ministries</h4>
+
+                    <p>
+
+                        Join one of our ministries and serve God.
+
+                    </p>
+
+                    <a href="/ministries/"
+                       class="btn btn-primary">
+
+                        Explore Ministries
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-</div>
 
-{% empty %}
+</section>
 
-<p>No announcements available.</p>
+<!-- ================= SERVICE TIMES ================= -->
 
-{% endfor %}
+<section class="container mt-5">
 
-<!-- <hr> -->
+    <div class="row">
 
-<h2>Upcoming Events</h2>
+        <div class="col-md-6">
 
-{% for event in events %}
+            <h2>
 
-<div class="card mb-3">
-    <div class="card-body">
+                Service Schedule
 
-        <h5>{{ event.title }}</h5>
+            </h2>
 
-        <p>{{ event.description }}</p>
+            <ul class="list-group">
 
-        <p>
-            <strong>Date:</strong>
-            {{ event.event_date }}
-        </p>
+                <li class="list-group-item">
 
-        <p>
-            <strong>Venue:</strong>
+                    Sunday Worship — 8:00 AM
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Wednesday Bible Study — 5:00 PM
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Friday Prayer Meeting — 6:00 PM
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <h2>
+
+                Church Motto
+
+            </h2>
+
+            <blockquote class="blockquote">
+
+                "A Living Church for a Healthy Community"
+
+            </blockquote>
+
+            <p>
+
+                We exist to transform lives through the Gospel,
+                build strong families, disciple believers,
+                and positively impact our community through
+                the power of Jesus Christ.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ANNOUNCEMENTS ================= -->
+
+<section class="container mt-5">
+
+    <h2>
+
+        Latest Announcements
+
+    </h2>
+
+    {% for announcement in announcements %}
+
+    <div class="card mb-3">
+
+        <div class="card-body">
+
+            <h5>
+
+                {{ announcement.title }}
+
+            </h5>
+
+            <p>
+
+                {{ announcement.content|truncatewords:35 }}
+
+            </p>
+
+            <small>
+
+                {{ announcement.created_at }}
+
+            </small>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <p>No announcements available.</p>
+
+    {% endfor %}
+
+</section>
+
+<!-- ================= EVENTS ================= -->
+
+<section class="container mt-5">
+
+    <h2>
+
+        Upcoming Events
+
+    </h2>
+
+    {% for event in events %}
+
+    <div class="card mb-3">
+
+        <div class="card-body">
+
+            <h5>
+
+                {{ event.title }}
+
+            </h5>
+
+            <p>
+
+                {{ event.description|truncatewords:30 }}
+
+            </p>
+
+            <strong>
+
+                {{ event.event_date }}
+
+            </strong>
+
+            |
+
             {{ event.venue }}
-        </p>
+
+        </div>
 
     </div>
-</div>
 
-{% empty %}
+    {% empty %}
 
-<p>No upcoming events available.</p>
+    <p>
 
-{% endfor %}
+        No upcoming events.
 
-<hr>
+    </p>
 
-<h2>Latest Sermons</h2>
+    {% endfor %}
 
-{% for sermon in sermons %}
+</section>
 
-<div class="card mb-3">
-    <div class="card-body">
+<!-- ================= SERMONS ================= -->
 
-        <h5>{{ sermon.title }}</h5>
+<section class="container mt-5 mb-5">
 
-        <p>
-            <strong>Preacher:</strong>
-            {{ sermon.preacher }}
-        </p>
+    <h2>
 
-        <p>
-            <strong>Bible Text:</strong>
-            {{ sermon.bible_text }}
-        </p>
+        Latest Sermons
 
-        <p>
-            {{ sermon.summary|truncatewords:25 }}
-        </p>
+    </h2>
+
+    {% for sermon in sermons %}
+
+    <div class="card mb-4">
+
+        {% if sermon.featured_image %}
+
+        <img src="{{ sermon.featured_image.url }}"
+             class="card-img-top"
+             style="height:300px;object-fit:cover;">
+
+        {% endif %}
+
+        <div class="card-body">
+
+            <h4>
+
+                {{ sermon.title }}
+
+            </h4>
+
+            <p>
+
+                <strong>
+
+                    {{ sermon.preacher }}
+
+                </strong>
+
+            </p>
+
+            <p>
+
+                {{ sermon.summary|truncatewords:35 }}
+
+            </p>
+
+            {% if sermon.youtube_link %}
+
+            <a href="{{ sermon.youtube_link }}"
+               target="_blank"
+               class="btn btn-danger">
+
+                Watch
+
+            </a>
+
+            {% endif %}
+
+            {% if sermon.audio_file %}
+
+            <a href="{{ sermon.audio_file.url }}"
+               class="btn btn-success">
+
+                Listen
+
+            </a>
+
+            {% endif %}
+
+            {% if sermon.pdf_notes %}
+
+            <a href="{{ sermon.pdf_notes.url }}"
+               class="btn btn-primary">
+
+                Notes
+
+            </a>
+
+            {% endif %}
+
+        </div>
 
     </div>
-</div>
 
-{% empty %}
+    {% empty %}
 
-<p>No sermons available.</p>
+    <p>
 
-{% endfor %}
+        No sermons available.
+
+    </p>
+
+    {% endfor %}
+
+</section>
 
 {% endblock %}
-

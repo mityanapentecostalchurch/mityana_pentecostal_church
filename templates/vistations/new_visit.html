@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Schedule Pastoral Visit</h2>
+
+<form method="post">
+
+{% csrf_token %}
+
+<label>Member</label>
+
+<select
+name="member"
+class="form-control">
+
+{% for member in members %}
+
+<option value="{{ member.id }}">
+
+{{ member.get_full_name|default:member.username }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<br>
+
+<label>Visit Type</label>
+
+<select
+name="visit_type"
+class="form-control">
+
+<option value="HOME">Home Visit</option>
+
+<option value="HOSPITAL">Hospital Visit</option>
+
+<option value="BEREAVEMENT">Bereavement Visit</option>
+
+<option value="MARRIAGE">Marriage Counselling</option>
+
+<option value="DISCIPLESHIP">Discipleship Visit</option>
+
+<option value="PRAYER">Prayer Visit</option>
+
+<option value="GENERAL">General Visit</option>
+
+</select>
+
+<br>
+
+<label>Date</label>
+
+<input
+type="date"
+name="visit_date"
+class="form-control">
+
+<br>
+
+<label>Time</label>
+
+<input
+type="time"
+name="visit_time"
+class="form-control">
+
+<br>
+
+<label>Location</label>
+
+<input
+type="text"
+name="location"
+class="form-control">
+
+<br>
+
+<label>Purpose</label>
+
+<textarea
+name="purpose"
+class="form-control"
+rows="4"></textarea>
+
+<br>
+
+<button
+class="btn btn-success">
+
+Schedule Visit
+
+</button>
+
+<a
+href="/visitations/"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+{% endblock %}

@@ -61,6 +61,146 @@
 
     </div>
 
+    <div class="col-md-3">
+
+        <div class="card">
+
+            <div class="card-body text-center">
+
+                <h5>
+
+                    Member Follow-up
+
+                </h5>
+
+                <p>
+
+                    Home visits, visitors,
+                    new members and pastoral care.
+
+                </p>
+
+                <a
+
+                href="/followup/"
+
+                class="btn btn-info">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card">
+
+            <div class="card-body text-center">
+
+                <h5>
+
+                    Visitations
+
+                </h5>
+
+                <p>
+
+                    Home visits, hospital visits, bereavement,
+                    marriage and pastoral care.
+
+                </p>
+
+                <a
+
+                href="/visitations/"
+
+                class="btn btn-primary">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+    
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card">
+
+            <div class="card-body text-center">
+
+                <h5>Church Members</h5>
+
+                <p>
+
+                    View and manage church members.
+
+                </p>
+
+                <a href="/staff/members/"
+
+                class="btn btn-primary">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-md-3 mb-3">
+
+        <div class="card border-primary shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5> Sermon Management</h5>
+
+                <hr>
+
+                <p>
+
+                    Published:
+                    <strong>{{ published_sermons }}</strong>
+
+                </p>
+
+                <p>
+
+                    Drafts:
+                    <strong>{{ draft_sermons }}</strong>
+
+                </p>
+
+                <p>
+
+                    This Month:
+                    <strong>{{ this_month_sermons }}</strong>
+
+                </p>
+
+                <a href="/staff/sermons/"
+                class="btn btn-primary">
+
+                    Manage Sermons
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
     {% endif %}
 
     {% if user.role == 'SECRETARY' %}

@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     'reports',
     'prayers',
     'counselling',
+    'followup',
+    'visitations',
     'staff',
     'api',
     'activity',

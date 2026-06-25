@@ -1,7 +1,9 @@
 from prayers.models import PrayerRequest
+
 from django.shortcuts import (
     render,
     redirect,
+    get_object_or_404,
 )
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import (
@@ -15,6 +17,22 @@ from prayers.models import (
 from django.utils import timezone
 # from prayers.models import PrayerNote
 from django.contrib import messages
+from members.models import Member
+
+from prayers.models import PrayerRequest
+
+from counselling.models import CounsellingRequest
+
+from followup.models import MemberFollowUp
+
+from visitations.models import PastoralVisit
+
+from followup.models import MemberNotification
+from sermons.models import Sermon
+from accounts.models import User
+from django.contrib import messages
+
+
 
 STAFF_ROLES = [
 
@@ -87,12 +105,30 @@ def staff_dashboard(request):
         return redirect(
             '/members/dashboard/'
         )
+    published_sermons = Sermon.objects.filter(
+        is_published=True
+    ).count()
+
+    draft_sermons = Sermon.objects.filter(
+        is_published=False
+    ).count()
+
+    this_month_sermons = Sermon.objects.filter(
+        sermon_date__month=timezone.now().month,
+        sermon_date__year=timezone.now().year
+    ).count()
 
     return render(
         request,
         'staff/dashboard.html',
         {
-            'user': request.user
+            'user': request.user,
+            'published_sermons': published_sermons,
+
+            'draft_sermons': draft_sermons,
+
+            'this_month_sermons': this_month_sermons,
+
         }
     )
 
@@ -227,3 +263,323 @@ def delete_prayer_note(request, note_id):
     return redirect(
         f'/staff/prayers/{prayer_id}/'
     )
+
+@login_required
+def member_list(request):
+
+    search = request.GET.get("search")
+
+    members = Member.objects.all()
+
+    if search:
+
+        members = members.filter(
+
+            first_name__icontains=search
+
+        ) | members.filter(
+
+            last_name__icontains=search
+
+        )
+
+    return render(
+
+        request,
+
+        "staff/member_list.html",
+
+        {
+
+            "members": members,
+
+            "search": search
+
+        }
+
+    )
+
+@login_required
+def member_profile(request, member_id):
+
+    member = get_object_or_404(
+
+        Member,
+
+        id=member_id
+
+    )
+
+    prayers = PrayerRequest.objects.filter(
+
+        member=member.user
+
+    ).order_by("-created_at")
+
+    counselling = CounsellingRequest.objects.filter(
+
+        member=member.user
+
+    ).order_by("-created_at")
+
+    followups = MemberFollowUp.objects.filter(
+
+        member=member.user
+
+    ).order_by("-created_at")
+
+    visits = PastoralVisit.objects.filter(
+
+        member=member.user
+
+    ).order_by("-visit_date")
+
+    notifications = MemberNotification.objects.filter(
+
+        member=member.user
+
+    ).order_by("-created_at")[:10]
+
+    return render(
+
+        request,
+
+        "staff/member_profile.html",
+
+        {
+
+            "member": member,
+
+            "prayers": prayers,
+
+            "counselling": counselling,
+
+            "followups": followups,
+
+            "visits": visits,
+
+            "notifications": notifications,
+
+        }
+
+    )
+@login_required
+def staff_sermons(request):
+
+    sermons = Sermon.objects.all().order_by(
+        '-sermon_date'
+    )
+
+    return render(
+
+        request,
+
+        'staff/sermons.html',
+
+        {
+
+            'sermons': sermons,
+
+            'total_sermons': sermons.count(),
+
+            'published_sermons': sermons.filter(
+                is_published=True
+            ).count(),
+
+            'draft_sermons': sermons.filter(
+                is_published=False
+            ).count(),
+
+        }
+
+    )
+
+
+
+@login_required
+def new_sermon(request):
+
+    if request.method == "POST":
+
+        sermon = Sermon.objects.create(
+
+            title=request.POST.get("title"),
+
+            preacher=request.POST.get("preacher"),
+
+            bible_text=request.POST.get("bible_text"),
+
+            sermon_date=request.POST.get("sermon_date"),
+
+            summary=request.POST.get("summary"),
+
+            youtube_link=request.POST.get("youtube_link"),
+
+            featured_image=request.FILES.get(
+                "featured_image"
+            ),
+
+            pdf_notes=request.FILES.get(
+                "pdf_notes"
+            ),
+
+            audio_file=request.FILES.get(
+                "audio_file"
+            ),
+
+            is_published=(
+                request.POST.get("is_published") == "on"
+            )
+
+        )
+
+        # Notify church members
+
+        if sermon.is_published:
+
+            members = User.objects.filter(
+                role="MEMBER"
+            )
+
+            notifications = []
+
+            for member in members:
+
+                notifications.append(
+
+                    MemberNotification(
+
+                        member=member,
+
+                        title=" New Sermon Available",
+
+                        message=(
+                            f'"{sermon.title}" by '
+                            f'{sermon.preacher} '
+                            f'is now available. '
+                            "Visit the Sermons page to read, "
+                            "watch or download it."
+                        )
+
+                    )
+
+                )
+
+            MemberNotification.objects.bulk_create(
+                notifications
+            )
+
+        messages.success(
+
+            request,
+
+            "Sermon has been saved successfully."
+
+        )
+
+        return redirect(
+            "/staff/sermons/"
+        )
+
+    return render(
+
+        request,
+
+        "staff/new_sermon.html"
+
+    )
+
+@login_required
+def edit_sermon(request, sermon_id):
+
+    sermon = get_object_or_404(
+        Sermon,
+        id=sermon_id
+    )
+
+    if request.method == "POST":
+
+        sermon.title = request.POST.get("title")
+
+        sermon.preacher = request.POST.get("preacher")
+
+        sermon.bible_text = request.POST.get(
+            "bible_text"
+        )
+
+        sermon.sermon_date = request.POST.get(
+            "sermon_date"
+        )
+
+        sermon.summary = request.POST.get(
+            "summary"
+        )
+
+        sermon.youtube_link = request.POST.get(
+            "youtube_link"
+        )
+
+        if request.FILES.get(
+            "featured_image"
+        ):
+            sermon.featured_image = request.FILES.get(
+                "featured_image"
+            )
+
+        if request.FILES.get(
+            "pdf_notes"
+        ):
+            sermon.pdf_notes = request.FILES.get(
+                "pdf_notes"
+            )
+
+        if request.FILES.get(
+            "audio_file"
+        ):
+            sermon.audio_file = request.FILES.get(
+                "audio_file"
+            )
+
+        sermon.is_published = (
+            request.POST.get(
+                "is_published"
+            ) == "on"
+        )
+
+        sermon.save()
+
+        return redirect(
+            "/staff/sermons/"
+        )
+
+    return render(
+
+        request,
+
+        "staff/edit_sermon.html",
+
+        {
+
+            "sermon": sermon
+
+        }
+
+    )
+
+@login_required
+def delete_sermon(request, sermon_id):
+
+    sermon = get_object_or_404(
+
+        Sermon,
+
+        id=sermon_id
+
+    )
+
+    sermon.delete()
+
+    return redirect(
+        "/staff/sermons/"
+    )
+

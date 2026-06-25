@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+
+{{ member.first_name }}
+
+{{ member.last_name }}
+
+</h2>
+
+<hr>
+
+<p>
+
+<strong>Email:</strong>
+
+{{ member.email }}
+
+</p>
+
+<p>
+
+<strong>Phone:</strong>
+
+{{ member.phone_number }}
+
+</p>
+
+<p>
+
+<strong>Department:</strong>
+
+{{ member.department }}
+
+</p>
+
+<p>
+
+<strong>Status:</strong>
+
+{{ member.status }}
+
+</p>
+
+<hr>
+
+<a
+
+href="/visitations/new/"
+
+class="btn btn-primary">
+
+Schedule Visit
+
+</a>
+
+<a
+
+href="/counselling/new/"
+
+class="btn btn-warning">
+
+Counselling
+
+</a>
+
+<hr>
+
+<h3>Prayer Requests</h3>
+
+{% for prayer in prayers %}
+
+<div class="card mb-2">
+
+<div class="card-body">
+
+{{ prayer.title }}
+
+</div>
+
+</div>
+
+{% empty %}
+
+<p>No prayer requests.</p>
+
+{% endfor %}
+
+<hr>
+
+<h3>Visitations</h3>
+
+{% for visit in visits %}
+
+<div class="card mb-2">
+
+<div class="card-body">
+
+{{ visit.get_visit_type_display }}
+
+-
+
+{{ visit.visit_date }}
+
+</div>
+
+</div>
+
+{% empty %}
+
+<p>No visits.</p>
+
+{% endfor %}
+
+<hr>
+
+<h3>Follow-up History</h3>
+
+{% for item in followups %}
+
+<div class="card mb-2">
+
+<div class="card-body">
+
+{{ item.reason }}
+
+</div>
+
+</div>
+
+{% empty %}
+
+<p>No follow-up records.</p>
+
+{% endfor %}
+
+{% endblock %}
