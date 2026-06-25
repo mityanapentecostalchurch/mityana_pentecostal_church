@@ -22,7 +22,7 @@ from counselling import views as counselling_views
 urlpatterns = [
 
     path(
-        '',
+        'dashboard/',
         staff_dashboard,
         name='staff-dashboard'
     ),
