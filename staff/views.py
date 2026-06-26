@@ -31,7 +31,8 @@ from followup.models import MemberNotification
 from sermons.models import Sermon
 from accounts.models import User
 from django.contrib import messages
-
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 STAFF_ROLES = [
@@ -72,7 +73,7 @@ def staff_login(request):
                 )
 
                 return redirect(
-                    '/staff/'
+                    'staff-dashboard'
                 )
 
             else:
@@ -94,7 +95,6 @@ def staff_login(request):
             'error': error
         }
     )
-
 
 @login_required
 def staff_dashboard(request):
@@ -581,5 +581,81 @@ def delete_sermon(request, sermon_id):
 
     return redirect(
         "/staff/sermons/"
+    )
+@login_required
+def staff_profile(request):
+
+    return render(
+
+        request,
+
+        "staff/profile.html",
+
+        {
+
+            "user": request.user
+
+        }
+
+    )
+
+
+@login_required
+def edit_staff_profile(request):
+
+    user = request.user
+
+    if request.method == "POST":
+
+        user.first_name = request.POST.get(
+            "first_name"
+        )
+
+        user.last_name = request.POST.get(
+            "last_name"
+        )
+
+        user.email = request.POST.get(
+            "email"
+        )
+
+        if hasattr(user, "phone_number"):
+
+            user.phone_number = request.POST.get(
+                "phone_number"
+            )
+
+        if request.FILES.get("profile_photo"):
+
+            user.profile_photo = request.FILES.get(
+                "profile_photo"
+            )
+
+        user.save()
+
+        messages.success(
+
+            request,
+
+            "Profile updated successfully."
+
+        )
+
+        return redirect(
+            "staff-profile"
+        )
+
+    return render(
+
+        request,
+
+        "staff/edit_profile.html",
+
+        {
+
+            "user": user
+
+        }
+
     )
 

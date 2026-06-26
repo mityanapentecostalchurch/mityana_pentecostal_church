@@ -15,6 +15,8 @@ from .views import (
     new_sermon,
     edit_sermon,
     delete_sermon,
+    staff_profile,
+    edit_staff_profile,
 )
 from counselling import views as counselling_views
 
@@ -109,6 +111,18 @@ urlpatterns = [
         'sermons/<int:sermon_id>/delete/',
         delete_sermon,
         name='delete-sermon'
+    ),
+
+    path(
+        'profile/',
+        staff_profile,
+        name='staff-profile'
+    ),
+
+    path(
+        'profile/edit/',
+        edit_staff_profile,
+        name='edit-staff-profile'
     ),
 
 ]

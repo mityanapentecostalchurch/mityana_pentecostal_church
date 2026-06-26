@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-3 text-center">
+
+{% if user.profile_photo %}
+
+<img
+
+src="{{ user.profile_photo.url }}"
+
+class="img-fluid rounded-circle"
+
+style="height:180px;width:180px;object-fit:cover;">
+
+{% else %}
+
+<img
+
+src="/static/images/default-user.png"
+
+class="img-fluid rounded-circle"
+
+style="height:180px;width:180px;">
+
+{% endif %}
+
+</div>
+
+<div class="col-md-9">
+
+<h2>
+
+{{ user.get_full_name }}
+
+</h2>
+
+<p>
+
+<strong>Username:</strong>
+
+{{ user.username }}
+
+</p>
+
+<p>
+
+<strong>Email:</strong>
+
+{{ user.email }}
+
+</p>
+
+<p>
+
+<strong>Role:</strong>
+
+{{ user.role }}
+
+</p>
+
+<p>
+
+<strong>Last Login:</strong>
+
+{{ user.last_login }}
+
+</p>
+
+<a
+
+href="/staff/profile/edit/"
+
+class="btn btn-primary">
+
+Edit Profile
+
+</a>
+
+<a
+
+href="/members/change-password/"
+
+class="btn btn-warning">
+
+Change Password
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
