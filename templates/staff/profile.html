@@ -1,108 +1,248 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<div class="container mt-4">
+<div class="container mt-5">
 
-<div class="card shadow">
+    <div class="card shadow-lg">
 
-<div class="card-body">
+        <div class="card-header bg-primary text-white">
 
-<div class="row">
+            <h3 class="mb-0">
+                My Profile
+            </h3>
 
-<div class="col-md-3 text-center">
+        </div>
 
-{% if user.profile_photo %}
+        <div class="card-body">
 
-<img
+            <div class="row">
 
-src="{{ user.profile_photo.url }}"
+                <!-- Profile Photo -->
 
-class="img-fluid rounded-circle"
+                <div class="col-md-4 text-center">
 
-style="height:180px;width:180px;object-fit:cover;">
+                    {% if user.profile_photo %}
 
-{% else %}
+                        <img
+                            src="{{ user.profile_photo.url }}"
+                            class="rounded-circle shadow"
+                            style="width:220px;
+                                   height:220px;
+                                   object-fit:cover;">
 
-<img
+                    {% else %}
 
-src="/static/images/default-user.png"
+                        <img
+                            src="{% static 'images/default-user.png' %}"
+                            class="rounded-circle shadow"
+                            style="width:220px;
+                                   height:220px;
+                                   object-fit:cover;">
 
-class="img-fluid rounded-circle"
+                    {% endif %}
 
-style="height:180px;width:180px;">
+                    <br><br>
 
-{% endif %}
+                    <h4>
 
-</div>
+                        {{ user.first_name }}
+                        {{ user.last_name }}
 
-<div class="col-md-9">
+                    </h4>
 
-<h2>
+                    <span class="badge bg-success">
 
-{{ user.get_full_name }}
+                        {{ user.get_role_display }}
 
-</h2>
+                    </span>
 
-<p>
+                    {% if user.position %}
 
-<strong>Username:</strong>
+                        <br><br>
 
-{{ user.username }}
+                        <h6 class="text-muted">
 
-</p>
+                            {{ user.position }}
 
-<p>
+                        </h6>
 
-<strong>Email:</strong>
+                    {% endif %}
 
-{{ user.email }}
+                </div>
 
-</p>
+                <!-- Profile Details -->
 
-<p>
+                <div class="col-md-8">
 
-<strong>Role:</strong>
+                    <table class="table table-striped">
 
-{{ user.role }}
+                        <tr>
 
-</p>
+                            <th width="30%">
 
-<p>
+                                Username
 
-<strong>Last Login:</strong>
+                            </th>
 
-{{ user.last_login }}
+                            <td>
 
-</p>
+                                {{ user.username }}
 
-<a
+                            </td>
 
-href="/staff/profile/edit/"
+                        </tr>
 
-class="btn btn-primary">
+                        <tr>
 
-Edit Profile
+                            <th>
 
-</a>
+                                Email
 
-<a
+                            </th>
 
-href="/members/change-password/"
+                            <td>
 
-class="btn btn-warning">
+                                {{ user.email }}
 
-Change Password
+                            </td>
 
-</a>
+                        </tr>
 
-</div>
+                        <tr>
 
-</div>
+                            <th>
 
-</div>
+                                Phone Number
 
-</div>
+                            </th>
+
+                            <td>
+
+                                {{ user.phone_number|default:"Not provided" }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Department
+
+                            </th>
+
+                            <td>
+
+                                {{ user.department|default:"Not assigned" }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Office
+
+                            </th>
+
+                            <td>
+
+                                {{ user.office|default:"Not specified" }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Position
+
+                            </th>
+
+                            <td>
+
+                                {{ user.position|default:"Not specified" }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Date Joined Ministry
+
+                            </th>
+
+                            <td>
+
+                                {{ user.date_joined_ministry|default:"Not specified" }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Last Login
+
+                            </th>
+
+                            <td>
+
+                                {{ user.last_login }}
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <h5 class="mt-4">
+
+                        Biography
+
+                    </h5>
+
+                    <div class="border rounded p-3 bg-light">
+
+                        {{ user.biography|default:"No biography has been added yet." }}
+
+                    </div>
+
+                    <br>
+
+                    <a href="/staff/profile/edit/"
+                       class="btn btn-primary">
+
+                        Edit Profile
+
+                    </a>
+
+                    <a href="/members/change-password/"
+                       class="btn btn-warning">
+
+                        Change Password
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 

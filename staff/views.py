@@ -619,11 +619,25 @@ def edit_staff_profile(request):
             "email"
         )
 
-        if hasattr(user, "phone_number"):
+        user.phone_number = request.POST.get(
+            "phone_number"
+        )
 
-            user.phone_number = request.POST.get(
-                "phone_number"
-            )
+        user.position = request.POST.get(
+            "position"
+        )
+
+        user.office = request.POST.get(
+            "office"
+        )
+
+        user.department = request.POST.get(
+            "department"
+        )
+
+        user.biography = request.POST.get(
+            "biography"
+        )
 
         if request.FILES.get("profile_photo"):
 

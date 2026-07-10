@@ -7,7 +7,6 @@ class User(AbstractUser):
     USER_TYPES = [
 
         ('STAFF', 'Staff'),
-
         ('VISITOR', 'Visitor'),
 
     ]
@@ -15,17 +14,11 @@ class User(AbstractUser):
     ROLE_CHOICES = [
 
         ('MEMBER', 'Member'),
-
         ('PASTOR', 'Pastor'),
-
         ('SECRETARY', 'Secretary'),
-
         ('TREASURER', 'Treasurer'),
-
         ('MINISTRY_LEADER', 'Ministry Leader'),
-
         ('INTERCESSOR', 'Intercessor'),
-
         ('SUPER_ADMIN', 'Super Admin'),
 
     ]
@@ -48,14 +41,63 @@ class User(AbstractUser):
         default='MEMBER'
     )
 
-    # def __str__(self):
+    # --------------------------
+    # NEW PROFILE INFORMATION
+    # --------------------------
 
-        # return self.username
-    
+    profile_photo = models.ImageField(
+        upload_to="profiles/",
+        blank=True,
+        null=True
+    )
+
+    position = models.CharField(
+        max_length=120,
+        blank=True
+    )
+
+    biography = models.TextField(
+        blank=True
+    )
+
+    office = models.CharField(
+        max_length=150,
+        blank=True
+    )
+
+    department = models.CharField(
+        max_length=120,
+        blank=True
+    )
+
+    facebook = models.URLField(
+        blank=True,
+        null=True
+    )
+
+    youtube = models.URLField(
+        blank=True,
+        null=True
+    )
+
+    whatsapp = models.CharField(
+        max_length=20,
+        blank=True
+    )
+
+    date_joined_ministry = models.DateField(
+        blank=True,
+        null=True
+    )
+    is_head_leader = models.BooleanField(
+        default=False,
+        help_text="Check this for the Senior Pastor or overall head of the church."
+    )
+
+    def full_name(self):
+
+        return f"{self.first_name} {self.last_name}"
+
     def __str__(self):
 
-        return (
-            f"{self.first_name} "
-            f"{self.last_name}"
-            f" ({self.role})"
-        )
+        return f"{self.first_name} {self.last_name} ({self.role})"

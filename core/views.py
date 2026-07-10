@@ -2,6 +2,7 @@ from django.shortcuts import render
 from announcements.models import Announcement
 from events.models import Event
 from sermons.models import Sermon
+from accounts.models import User
 # from sermons.models import Sermon
 
 # def home(request):
@@ -51,10 +52,49 @@ def about(request):
 
 
 
-
 def leadership(request):
-    return render(request, 'leadership.html')
 
+    leaders = User.objects.filter(
+
+        role__in=[
+
+            "PASTOR",
+
+            "SECRETARY",
+
+            "TREASURER",
+
+            "MINISTRY_LEADER",
+
+            "INTERCESSOR",
+
+            "SUPER_ADMIN",
+
+        ]
+
+    )
+
+    print("LEADERS FOUND:", leaders.count())
+
+    for leader in leaders:
+        print(
+            leader.first_name,
+            leader.role
+        )
+
+    return render(
+
+        request,
+
+        "leadership.html",
+
+        {
+
+            "leaders": leaders
+
+        }
+
+    )
 
 def contact(request):
     return render(request, 'contact.html')

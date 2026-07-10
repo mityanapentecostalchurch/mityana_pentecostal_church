@@ -78,6 +78,86 @@ value="{{ user.email }}">
 
 </div>
 
+
+<div class="mb-3">
+
+<label>
+
+Phone
+
+</label>
+
+<input
+type="text"
+name="phone_number"
+class="form-control"
+value="{{ user.phone_number }}">
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Position
+
+</label>
+
+<input
+type="text"
+name="position"
+class="form-control"
+value="{{ user.position }}">
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Office
+
+</label>
+
+<input
+type="text"
+name="office"
+class="form-control"
+value="{{ user.office }}">
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Department
+
+</label>
+
+<input
+type="text"
+name="department"
+class="form-control"
+value="{{ user.department }}">
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Biography
+
+</label>
+
+<textarea
+name="biography"
+class="form-control"
+rows="6">{{ user.biography }}</textarea>
+
+</div>
+
 <div class="mb-3">
 
 <label>
@@ -87,14 +167,13 @@ Profile Photo
 </label>
 
 <input
-
 type="file"
-
 name="profile_photo"
-
 class="form-control">
 
 </div>
+
+
 
 <button
 
