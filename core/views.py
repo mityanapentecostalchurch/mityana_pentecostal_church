@@ -3,6 +3,8 @@ from announcements.models import Announcement
 from events.models import Event
 from sermons.models import Sermon
 from accounts.models import User
+from django.db.models import Case, When, Value, IntegerField
+
 # from sermons.models import Sermon
 
 # def home(request):
@@ -52,6 +54,9 @@ def about(request):
 
 
 
+
+
+
 def leadership(request):
 
     leaders = User.objects.filter(
@@ -72,15 +77,35 @@ def leadership(request):
 
         ]
 
-    )
+    ).annotate(
 
-    print("LEADERS FOUND:", leaders.count())
+        hierarchy=Case(
 
-    for leader in leaders:
-        print(
-            leader.first_name,
-            leader.role
+            When(role="PASTOR", then=Value(1)),
+
+            When(role="SECRETARY", then=Value(2)),
+
+            When(role="TREASURER", then=Value(3)),
+
+            When(role="MINISTRY_LEADER", then=Value(4)),
+
+            When(role="INTERCESSOR", then=Value(5)),
+
+            default=Value(99),
+
+            output_field=IntegerField(),
+
         )
+
+    ).order_by(
+
+        "hierarchy",
+
+        "position",
+
+        "first_name"
+
+    )
 
     return render(
 
@@ -95,6 +120,50 @@ def leadership(request):
         }
 
     )
+
+# def leadership(request):
+
+#     leaders = User.objects.filter(
+
+#         role__in=[
+
+#             "PASTOR",
+
+#             "SECRETARY",
+
+#             "TREASURER",
+
+#             "MINISTRY_LEADER",
+
+#             "INTERCESSOR",
+
+#             "SUPER_ADMIN",
+
+#         ]
+
+#     )
+
+#     print("LEADERS FOUND:", leaders.count())
+
+#     for leader in leaders:
+#         print(
+#             leader.first_name,
+#             leader.role
+#         )
+
+#     return render(
+
+#         request,
+
+#         "leadership.html",
+
+#         {
+
+#             "leaders": leaders
+
+#         }
+
+#     )
 
 def contact(request):
     return render(request, 'contact.html')
