@@ -1,0 +1,4551 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-06-01T14:18:40.693Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Sunday Worship Service",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-06-01T14:19:08.232Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Youth Conference",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-06-01T14:28:39.182Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Church Building Fund",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-06-01T17:03:44.818Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Sunday Worship Service",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-06-01T17:04:40.969Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Youth Conference",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-06-01T17:27:44.081Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Youth Conference",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-06-01T20:00:15.546Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Walking by Faith",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-06-01T20:02:16.704Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Power of Prayer",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-06-01T22:05:16.098Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "John Kato",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-06-01T22:06:54.357Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "John Kato",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Phone number\", \"Email\", \"Address\", \"Date joined\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-06-01T22:10:00.398Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Mary Namusoke",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-06-01T22:14:51.911Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Peter Senfuma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-06-01T22:46:35.654Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Peter Senfuma",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-06-01T22:47:12.225Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Mary Namusoke",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-06-02T07:06:27.682Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Mary Namusoke",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-06-02T07:15:44.923Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "John Kato - 2026-06-07",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-06-02T07:16:59.217Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Mary Namusoke - 2025-06-07",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-06-02T07:48:28.312Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Sunday Worship (2025-08-03)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-06-02T07:48:59.176Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Wednesday Bible Study (2026-06-03)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-06-02T07:51:47.451Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Wednesday Bible Study (2026-06-03)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-06-02T07:52:13.442Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Mary Namusoke - Sunday Worship (2025-08-03)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Service\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-06-02T07:52:26.709Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "John Kato - Wednesday Bible Study (2026-06-03)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Service\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-06-02T07:56:08.725Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Mary Namusoke - Sunday Worship (2025-08-03)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-06-02T07:56:30.291Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "John Kato - Wednesday Bible Study (2026-06-03)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Remarks\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-06-16T11:05:04.923Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "admin",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-06-16T11:05:04.923Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "6",
+    "object_repr": "choirleader",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-06-16T11:05:04.923Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "secretary",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-06-16T11:05:04.923Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "treasurer",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-06-16T11:05:04.923Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "5",
+    "object_repr": "youthleader",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-06-16T11:11:17.744Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Robina Ddumba",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-06-16T11:15:39.581Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-06-16T11:22:42.728Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-06-16T11:24:05.653Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "w.lukanga",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-06-16T11:24:41.847Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "w.lukanga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-06-16T11:24:50.960Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-06-16T11:25:47.484Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Willy Lukanga",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-06-16T11:26:33.921Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "s.kyenalaba",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-06-16T11:26:47.409Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "s.kyenalaba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-06-16T11:30:07.751Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "17",
+    "object_repr": "Marrieds",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-06-16T11:33:49.435Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "21",
+    "object_repr": "Marrieds Leader",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-06-16T11:35:07.649Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Suzan Kyenalaba",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-06-16T11:36:01.953Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "s.kyenalaba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-06-16T11:53:44.009Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "12",
+    "object_repr": "jb.sewante",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-06-16T12:12:05.437Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-06-16T12:12:16.966Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "s.kyenalaba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-06-16T12:12:39.187Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "7",
+    "object_repr": "staff",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-06-16T12:12:55.007Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "w.lukanga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-06-16T12:13:16.343Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "12",
+    "object_repr": "jb.sewante",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-06-16T12:13:57.813Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "13",
+    "object_repr": "jb.sewante",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-06-16T12:14:39.035Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "13",
+    "object_repr": "jb.sewante",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-06-16T12:19:32.264Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "7",
+    "object_repr": "John Baptist Sewante",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-06-16T12:20:14.044Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "14",
+    "object_repr": "s.tamale",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-06-16T12:20:54.763Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "14",
+    "object_repr": "s.tamale",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-06-16T12:22:39.862Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "8",
+    "object_repr": "Steven Tamale",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-06-16T12:23:13.491Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "15",
+    "object_repr": "g.tabera",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-06-16T12:23:41.185Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "15",
+    "object_repr": "g.tabera",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-06-16T12:25:10.050Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "9",
+    "object_repr": "Geofrey Tabera",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-06-16T12:26:10.829Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "16",
+    "object_repr": "j.nabagulanyi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-06-16T12:26:45.509Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "16",
+    "object_repr": "j.nabagulanyi",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-06-16T12:28:30.326Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "10",
+    "object_repr": "Jane Nabagulanyi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-06-16T12:29:02.381Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "bwesonga",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-06-16T12:29:30.972Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "bwesonga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-06-16T12:31:20.728Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "11",
+    "object_repr": "Brenda Wesonga",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-06-16T12:48:56.402Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "18",
+    "object_repr": "Ephraim",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-06-16T12:49:27.968Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "18",
+    "object_repr": "Ephraim",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-06-16T12:50:58.460Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "12",
+    "object_repr": "Ephraim .",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-06-16T12:51:46.017Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "m.byamukama",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-06-16T12:52:22.277Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "m.byamukama",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2026-06-16T12:53:57.080Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "22",
+    "object_repr": "development Chairperson",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2026-06-16T12:54:51.826Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "13",
+    "object_repr": "Moses Byamukama",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2026-06-16T12:55:25.947Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "rnamuddu",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2026-06-16T12:56:25.674Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "r.namuddu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2026-06-16T12:58:33.850Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "14",
+    "object_repr": "Rehema Namuddu",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2026-06-16T13:01:55.353Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "w.sande",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2026-06-16T13:02:37.889Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "w.ssande",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2026-06-16T13:03:57.411Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "15",
+    "object_repr": "Willy Ssande",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2026-06-16T13:04:21.748Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "jrubahinda",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2026-06-16T13:04:55.595Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "jrubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2026-06-16T13:05:39.424Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "j.rubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2026-06-16T13:07:18.842Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "16",
+    "object_repr": "Jenifer Rubahinda",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2026-06-16T13:07:49.854Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "23",
+    "object_repr": "j.ekot",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2026-06-16T13:08:14.618Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "23",
+    "object_repr": "j.ekot",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2026-06-16T13:09:38.366Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "17",
+    "object_repr": "Joseph Ekot",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2026-06-16T13:10:23.530Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "24",
+    "object_repr": "p.enyipu",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2026-06-16T13:10:50.302Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "24",
+    "object_repr": "p.enyipu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2026-06-16T13:12:07.334Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "18",
+    "object_repr": "Peter Enyipu",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2026-06-16T13:12:36.582Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "25",
+    "object_repr": "f.kawuma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2026-06-16T13:13:10.408Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "25",
+    "object_repr": "f.kawuma",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2026-06-16T13:14:24.594Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "19",
+    "object_repr": "Fred Kawuma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 90,
+  "fields": {
+    "action_time": "2026-06-16T13:15:20.640Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "26",
+    "object_repr": "jnakasumba",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 91,
+  "fields": {
+    "action_time": "2026-06-16T13:16:06.416Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "26",
+    "object_repr": "jnakasumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 92,
+  "fields": {
+    "action_time": "2026-06-16T13:16:28.788Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "26",
+    "object_repr": "j.nakasumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 93,
+  "fields": {
+    "action_time": "2026-06-16T13:18:24.058Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "20",
+    "object_repr": "Josephine Nakasumba",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 94,
+  "fields": {
+    "action_time": "2026-06-16T13:19:14.700Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "27",
+    "object_repr": "d.lubahinda",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 95,
+  "fields": {
+    "action_time": "2026-06-16T13:19:45.850Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "27",
+    "object_repr": "d.lubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 96,
+  "fields": {
+    "action_time": "2026-06-16T13:20:40.555Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "23",
+    "object_repr": "Bishop",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 97,
+  "fields": {
+    "action_time": "2026-06-16T13:22:10.974Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "21",
+    "object_repr": "David Rubahinda",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 98,
+  "fields": {
+    "action_time": "2026-06-16T13:23:17.543Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "b.wesonga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 99,
+  "fields": {
+    "action_time": "2026-06-16T14:39:47.058Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 100,
+  "fields": {
+    "action_time": "2026-06-16T14:39:58.685Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "b.wesonga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 101,
+  "fields": {
+    "action_time": "2026-06-18T08:23:30.927Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "22",
+    "object_repr": "Isabela Sibi",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 102,
+  "fields": {
+    "action_time": "2026-06-18T08:23:46.451Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "22",
+    "object_repr": "Isabela Sibi",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 103,
+  "fields": {
+    "action_time": "2026-06-18T08:24:07.366Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "23",
+    "object_repr": "Isabela Sibitenda",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 104,
+  "fields": {
+    "action_time": "2026-06-18T08:26:12.545Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "29",
+    "object_repr": "harysinguzi1@gmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 105,
+  "fields": {
+    "action_time": "2026-06-18T15:00:08.071Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "18",
+    "object_repr": "Ephraim",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 106,
+  "fields": {
+    "action_time": "2026-06-18T15:04:01.844Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "27",
+    "object_repr": "d.lubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 107,
+  "fields": {
+    "action_time": "2026-06-18T15:04:09.530Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "25",
+    "object_repr": "f.kawuma",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 108,
+  "fields": {
+    "action_time": "2026-06-18T15:04:19.712Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "15",
+    "object_repr": "g.tabera",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 109,
+  "fields": {
+    "action_time": "2026-06-18T15:04:46.109Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "23",
+    "object_repr": "j.ekot",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 110,
+  "fields": {
+    "action_time": "2026-06-18T15:05:05.026Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "16",
+    "object_repr": "j.nabagulanyi",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 111,
+  "fields": {
+    "action_time": "2026-06-18T15:05:14.351Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "26",
+    "object_repr": "j.nakasumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 112,
+  "fields": {
+    "action_time": "2026-06-18T15:05:32.768Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "j.rubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 113,
+  "fields": {
+    "action_time": "2026-06-18T15:05:43.341Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "13",
+    "object_repr": "jb.sewante",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 114,
+  "fields": {
+    "action_time": "2026-06-18T15:05:52.533Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "13",
+    "object_repr": "jb.sewante",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 115,
+  "fields": {
+    "action_time": "2026-06-18T15:06:02.275Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "m.byamukama",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 116,
+  "fields": {
+    "action_time": "2026-06-18T15:06:14.757Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "24",
+    "object_repr": "p.enyipu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 117,
+  "fields": {
+    "action_time": "2026-06-18T15:06:27.075Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 118,
+  "fields": {
+    "action_time": "2026-06-18T15:06:36.747Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "r.namuddu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 119,
+  "fields": {
+    "action_time": "2026-06-18T15:06:46.990Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "s.kyenalaba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 120,
+  "fields": {
+    "action_time": "2026-06-18T15:07:02.541Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "w.lukanga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 121,
+  "fields": {
+    "action_time": "2026-06-18T15:07:10.886Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "w.ssande",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 122,
+  "fields": {
+    "action_time": "2026-06-18T18:48:46.271Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "23",
+    "object_repr": "Bishop",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 123,
+  "fields": {
+    "action_time": "2026-06-19T10:16:45.151Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "14",
+    "object_repr": "s.tamale",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 124,
+  "fields": {
+    "action_time": "2026-06-23T18:19:58.847Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "w.ssande",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 125,
+  "fields": {
+    "action_time": "2026-06-23T18:20:17.563Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "18",
+    "object_repr": "Ephraim",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 126,
+  "fields": {
+    "action_time": "2026-06-23T18:20:34.738Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "b.wesonga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 127,
+  "fields": {
+    "action_time": "2026-06-23T18:20:50.219Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "27",
+    "object_repr": "d.lubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 128,
+  "fields": {
+    "action_time": "2026-06-23T18:22:38.744Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "25",
+    "object_repr": "f.kawuma",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 129,
+  "fields": {
+    "action_time": "2026-06-23T18:24:08.509Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "15",
+    "object_repr": "g.tabera",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 130,
+  "fields": {
+    "action_time": "2026-06-23T18:24:25.524Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "23",
+    "object_repr": "j.ekot",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 131,
+  "fields": {
+    "action_time": "2026-06-23T18:25:13.287Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "16",
+    "object_repr": "j.nabagulanyi",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 132,
+  "fields": {
+    "action_time": "2026-06-23T18:25:28.763Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "26",
+    "object_repr": "j.nakasumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 133,
+  "fields": {
+    "action_time": "2026-06-23T18:25:42.935Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "j.rubahinda",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 134,
+  "fields": {
+    "action_time": "2026-06-23T18:26:08.644Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "13",
+    "object_repr": "jb.sewante",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 135,
+  "fields": {
+    "action_time": "2026-06-23T18:26:32.267Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "m.byamukama",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 136,
+  "fields": {
+    "action_time": "2026-06-23T18:26:56.217Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "24",
+    "object_repr": "p.enyipu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 137,
+  "fields": {
+    "action_time": "2026-06-23T18:28:10.771Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 138,
+  "fields": {
+    "action_time": "2026-06-23T18:31:18.720Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "r.namuddu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 139,
+  "fields": {
+    "action_time": "2026-06-23T18:32:59.483Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "r.ddumba",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 140,
+  "fields": {
+    "action_time": "2026-06-23T18:33:31.301Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "s.kyenalaba",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 141,
+  "fields": {
+    "action_time": "2026-06-23T18:37:45.701Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "14",
+    "object_repr": "s.tamale",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 142,
+  "fields": {
+    "action_time": "2026-06-23T18:38:14.522Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "w.lukanga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 143,
+  "fields": {
+    "action_time": "2026-06-23T18:38:25.857Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "w.ssande",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 144,
+  "fields": {
+    "action_time": "2026-07-10T07:16:15.450Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "Willy Ssande (PASTOR)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 145,
+  "fields": {
+    "action_time": "2026-07-10T07:16:20.570Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "Willy Ssande (PASTOR)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7zz9dyae6bedk2dc5c255o44vkdbre57",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSE8Bqbj0r3fQKZApWogKe3K-O_apAvd3nPOfYnA21rC1vMS5iTOQovT7zZyfOS6g3Tnemsytrou8yh3RR60y2tL-Xk53L-Dwr18a_IWABCVpojWg3MZGS0jIQHQAIZMtKNDzd4lnJgVqsEwuTSR5SzeH5QpNnY:1wU0kW:llP--9LRXFygzhkRUpTBj2HzacF13m12CjzsKIAE5fU",
+    "expire_date": "2026-06-15T11:24:04.123Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "drki2t7ikhm4zgc5lh4cq9y5z3x0nrv1",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSFDwQ64dO83kBkeUjWQlHZl_HdD0oVu7znnvoWnfSt-72n1SxQXoZU4_Y5M4ZnqIPFB9d5kaHVbF5ZDkQft8tZiel0P9--gUC-jxsyAswEbAXV0ypC2LjECQU5Kh1mzdQguKzAmGVZntBPxZCk6CEZ8vvK0N3E:1wciWt:ohKmX6DtBF_C5PbTjpTvb9CHh9ijWT0TNX_gn5WPY2Y",
+    "expire_date": "2026-07-09T11:45:59.217Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o7jeh5f7i48y401bu265336btlg9yjrn",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln471DS5wzW7nqNA8iW8qkQd4dIKaB9M_NeIsG21rQtPKcpi4vQgzj9jgj04LaTfId265J6W-cJ5a7Igy5y7Jmf18P9O6iw1G9trFZIoEIAzQNEo4oz2duoySNn4wC9VepMmh0HolIGdDZjIOZouIj3Bw9rOPY:1wi5Dd:N6HSY2GQ6O3VyvfLbXRV5SqTThTSxpY9W2JwDTtkbyI",
+    "expire_date": "2026-07-24T07:00:17.480Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pm7s3bufyoartxzgem18lzlj9v3jyzac",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln471DS5wzW7nqNA8iW8qkQd4dIKaB9M_NeIsG21rQtPKcpi4vQgzj9jgj04LaTfId265J6W-cJ5a7Igy5y7Jmf18P9O6iw1G9trFZIoEIAzQNEo4oz2duoySNn4wC9VepMmh0HolIGdDZjIOZouIj3Bw9rOPY:1wi5Dd:N6HSY2GQ6O3VyvfLbXRV5SqTThTSxpY9W2JwDTtkbyI",
+    "expire_date": "2026-07-24T07:00:17.641Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tdjax9p8bmhrv4yu6giw7kb05prwhl1d",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCGAtO6dO8ZCAyDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-TuIstBan3zEGenDdSbqHemuSWl2XOcpdkQft8toSPy-H-3dQQi_fmg0DWZjIOeTJjNahQ3A6KxqzJpcND4A4ACiOBoPSyIOFoLIGwxHF-wPlojcX:1wi5Tr:ZV6crTf_kbFIfJvAnmcFDh9jDvNBEnTzHQkEwSOU0JI",
+    "expire_date": "2026-07-24T07:17:03.958Z"
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ppOrGG4YZLcDU9L1poOloW$NcWCEvPvfIPfuOw4/7MHmPETGrxOHWu2mCPdqhY6QRE=",
+    "last_login": "2026-07-10T07:15:44.960Z",
+    "is_superuser": true,
+    "username": "mpc",
+    "first_name": "",
+    "last_name": "",
+    "email": "mityanapentecostalc@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-01T11:18:57.203Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$KyuKVM6qaRVAKYySuBwEcl$uhfQBeCpOHiTqZZO+0gJssnM4Ds4cK2tB0xgcVPFjtw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "staff",
+    "first_name": "",
+    "last_name": "",
+    "email": "staff@mpc.org",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-16T10:41:33Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Isx4LfboeLTwjJeuYCUS1k$r6gEmbwXAORamlXXSHcsCEOtm5BNINoR1w75AwNDBJg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "visitor",
+    "first_name": "",
+    "last_name": "",
+    "email": "visitor@mpc.org",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-16T10:41:33.992Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$GIkuYEIz57KOouiscrc9l3$S1diwInZIFkiNZ+8kTiWSN/bC09676yHG3ixw++nwX4=",
+    "last_login": "2026-06-18T18:43:50Z",
+    "is_superuser": false,
+    "username": "r.ddumba",
+    "first_name": "Robina",
+    "last_name": "Ddumba",
+    "email": "rddumba@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T11:15:39Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": [
+      24
+    ]
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$lmRdqvhUWptaj8Jjg3RK79$XjnUIjO0jZ29Cmd/3r4jjru3Vq9GaY8p2EVjDIgLN+s=",
+    "last_login": "2026-06-25T07:58:02.343Z",
+    "is_superuser": false,
+    "username": "w.lukanga",
+    "first_name": "Willy",
+    "last_name": "Lukanga",
+    "email": "wlukanga@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T11:24:05Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$bVwzJJf6RZAF1cX54hXIoR$RLDnrNXMTAcUxNkmAxNbG8tZlVBaebxzgc46244AGEQ=",
+    "last_login": "2026-06-16T11:57:36Z",
+    "is_superuser": false,
+    "username": "s.kyenalaba",
+    "first_name": "Suzan",
+    "last_name": "Kyenalaba",
+    "email": "skyenalaba@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T11:26:33Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$fWUp1AuAVGgjVb6675H4W7$FjK7rbq4q2elSeBJ3TXza7oxGN5E4YG5TYJpbojfYL4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jb.sewante",
+    "first_name": "John Baptist",
+    "last_name": "Sewante",
+    "email": "jbsewante@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:13:57Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$GNHpwkPq6Db0zchAzTrVSv$mlv06zz3/vZuM0u79eiDhFmSRNIVURDQtWLuOA8mxho=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "s.tamale",
+    "first_name": "Steven",
+    "last_name": "Tamale",
+    "email": "stamale@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:20:13Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 15,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$MZf0nPvkf3CACgZQZNtCYj$vhNlk31sCzfWtL1X4Y1j7MRjqaSmUAYbm38mWKOj6S8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "g.tabera",
+    "first_name": "Geofrey",
+    "last_name": "Tabera",
+    "email": "gtabera@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:23:13Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qGi3x9ppF27aktjR4VNfOx$VwbqO7eLQzVfhCZqoz8JAVkd8dUuUaExzSPXF7g+JsI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "j.nabagulanyi",
+    "first_name": "Jane",
+    "last_name": "Nabagulanyi",
+    "email": "jnabagulanyi@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:26:10Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$kf8fgsfXudepBNssBNt3Ct$jIUWatdYnznIRMKMYgIYOnFzQG4Q1068wBucJgfQ2hk=",
+    "last_login": "2026-06-18T15:03:05Z",
+    "is_superuser": false,
+    "username": "b.wesonga",
+    "first_name": "Brenda",
+    "last_name": "Wesonga",
+    "email": "bwesonga@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:29:02Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Th940pK1310OKmiSm0gpce$hGDcVYmRtPUT52vLSE0VgjcyeGNakKqmEfbUXW8hPrU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Ephraim",
+    "first_name": "Ephraim",
+    "last_name": "",
+    "email": "e@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:48:56Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 19,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$aTdOFvRG9GpCFfQwTpmVUQ$45FIX5BVs8CjHMxTebTftZk1Wb9tomUhWex32ASdid4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "m.byamukama",
+    "first_name": "Moses",
+    "last_name": "Byamukama",
+    "email": "mbyamukama@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:51:45Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "MINISTRY_LEADER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$z8LcNbeEpGrmS2OHX1334J$+TfF+kQV5rWKrzG8u6egaToFSeScgp2Qj9lq8964iIU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "r.namuddu",
+    "first_name": "Rehema",
+    "last_name": "Namuddu",
+    "email": "rnamuddu@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T12:55:25Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "INTERCESSOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Icrh9UjnJWul9dKQMCPcHZ$xCLsNEtMTLO4LauGy5HhIMT3RQUUqs+wUKfvaxxKk+c=",
+    "last_login": "2026-06-26T11:55:04Z",
+    "is_superuser": false,
+    "username": "w.ssande",
+    "first_name": "Willy",
+    "last_name": "Ssande",
+    "email": "wssande@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:01:54Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$yjXUt3gHrTPBtBjeol43lG$vEjSyRkIfOULoH0O8nsRxYYTs6nJTfQvM6Hm1rCGFJY=",
+    "last_login": "2026-07-10T07:17:03.954Z",
+    "is_superuser": false,
+    "username": "j.rubahinda",
+    "first_name": "Jenifer",
+    "last_name": "Rubahinda",
+    "email": "rrubahinda@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:04:21Z",
+    "phone_number": "None",
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "profiles/jrubahinda.png",
+    "position": "Married Couples Pastor",
+    "biography": "Mother of members, pastoring all and leading marrieds ministry",
+    "office": "Pastrol Team",
+    "department": "Pastrol Team",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$OcZQj6fCqOt0hMLIp6SACV$K6fzmaz03e1ejwVz2hXiaDMvsj+zoOF+0GoNgBeeygs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "j.ekot",
+    "first_name": "Joseph",
+    "last_name": "Ekot",
+    "email": "jekot@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:07:49Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 24,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$erFsb4f27EaqLC0T76CCKp$x5n5nl3+3uJwkaIT0jjR6gXd8fSvxa+fTMqaozks69c=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "p.enyipu",
+    "first_name": "Peter",
+    "last_name": "Enyipu",
+    "email": "penyipu@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:10:23Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 25,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$udAcbJz9F0Qis6lZx7JToH$ctpOaScFXDrWsR2BaSphYaP2hnTmEQ93Jqt3Ys6QPG4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "f.kawuma",
+    "first_name": "Fred",
+    "last_name": "Kawuma",
+    "email": "fkawuma@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:12:36Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 26,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$lRRYS9tziFrxiOWeeMnnOL$j4Gp7ohvigTzaNwDbDxxQ60TVa49hmtoHmBT9pAmyWY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "j.nakasumba",
+    "first_name": "Josephine",
+    "last_name": "Nakasumba",
+    "email": "jnakasumba@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:15:20Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 27,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$cRG5eT3uz2qTtXjcm87BN6$WqPGWXyEADSar5vPorj1qMwVQHV8AdVjryGqASe6zMk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "d.lubahinda",
+    "first_name": "David",
+    "last_name": "Lubahinda",
+    "email": "dlubahinda@mpc.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-16T13:19:14Z",
+    "phone_number": null,
+    "user_type": "STAFF",
+    "role": "PASTOR",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 28,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$tb6hL0GCjQye5UsPzsALUc$/CXa2LSefagO/LVyw01+8ZYUNbBnJlgb1dbulj3YDQY=",
+    "last_login": "2026-06-18T14:48:20.857Z",
+    "is_superuser": false,
+    "username": "nkarietn@gmail.com",
+    "first_name": "",
+    "last_name": "",
+    "email": "nkarietn@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-17T13:36:14.112Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 29,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$476gaivC3bwQjg3MVLRTNs$vB4GdM7QfngJ2yq4noSbXwFI8cMRBwV0yZFQn0sFhFo=",
+    "last_login": "2026-07-10T07:00:17.822Z",
+    "is_superuser": false,
+    "username": "harysinguzi1@gmail.com",
+    "first_name": "",
+    "last_name": "",
+    "email": "harysinguzi1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-17T13:41:58.833Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 30,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$J9o32pii9UFXVrA9xMMkvZ$W31/a+Cjb9uA87c9dhklGsKqAKhIfoDxOpqRkOKJfXo=",
+    "last_login": "2026-06-18T08:50:57.962Z",
+    "is_superuser": false,
+    "username": "hsibitenda@umu.ac.ug",
+    "first_name": "",
+    "last_name": "",
+    "email": "hsibitenda@umu.ac.ug",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-18T08:15:19.871Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 31,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$LXqyMsYZ82Za0KAQOhfAys$EeMcmu37rC26iNWKf/Jrp7equfo0syJ4aHgfgaW7uK4=",
+    "last_login": "2026-06-25T11:45:59.215Z",
+    "is_superuser": false,
+    "username": "jnakato@gmail.com",
+    "first_name": "",
+    "last_name": "",
+    "email": "jnakato@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-25T05:31:59.566Z",
+    "phone_number": null,
+    "user_type": "VISITOR",
+    "role": "MEMBER",
+    "profile_photo": "",
+    "position": "",
+    "biography": "",
+    "office": "",
+    "department": "",
+    "facebook": null,
+    "youtube": null,
+    "whatsapp": "",
+    "date_joined_ministry": null,
+    "is_head_leader": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "announcements.announcement",
+  "pk": 1,
+  "fields": {
+    "title": "Sunday Worship Service",
+    "content": "Join us this Sunday at 7:00 AM for the first service; worship and fellowship.",
+    "created_at": "2026-06-01T14:18:40.693Z",
+    "is_active": true
+  }
+},
+{
+  "model": "announcements.announcement",
+  "pk": 2,
+  "fields": {
+    "title": "Youth Conference",
+    "content": "The annual youth conference will take place next month.",
+    "created_at": "2026-06-01T14:19:08.232Z",
+    "is_active": true
+  }
+},
+{
+  "model": "announcements.announcement",
+  "pk": 3,
+  "fields": {
+    "title": "Church Building Fund",
+    "content": "Support the church building project through your contributions.",
+    "created_at": "2026-06-01T14:28:39.182Z",
+    "is_active": true
+  }
+},
+{
+  "model": "events.event",
+  "pk": 1,
+  "fields": {
+    "title": "Sunday Worship Service",
+    "description": "Weekly worship service.",
+    "event_date": "2026-06-07",
+    "event_time": "08:00:00",
+    "venue": "Main Church Auditorium",
+    "is_active": true,
+    "created_at": "2026-06-01T17:03:44.816Z"
+  }
+},
+{
+  "model": "events.event",
+  "pk": 2,
+  "fields": {
+    "title": "Youth Conference",
+    "description": "Annual youth conference.",
+    "event_date": "2026-07-15",
+    "event_time": "09:00:00",
+    "venue": "Church Grounds",
+    "is_active": true,
+    "created_at": "2026-06-01T17:04:40.968Z"
+  }
+},
+{
+  "model": "sermons.sermon",
+  "pk": 1,
+  "fields": {
+    "title": "Walking by Faith",
+    "preacher": "Pastor John",
+    "bible_text": "Hebrews 11:1",
+    "sermon_date": "2026-06-01",
+    "summary": "Understanding faith and trusting God.",
+    "youtube_link": null,
+    "featured_image": "",
+    "pdf_notes": "",
+    "audio_file": "",
+    "is_published": true,
+    "created_at": "2026-06-01T20:00:15.541Z"
+  }
+},
+{
+  "model": "sermons.sermon",
+  "pk": 2,
+  "fields": {
+    "title": "Power of Prayer",
+    "preacher": "Pastor Sarah",
+    "bible_text": "James 5:16",
+    "sermon_date": "2026-05-25",
+    "summary": "The importance of prayer in Christian life.",
+    "youtube_link": null,
+    "featured_image": "",
+    "pdf_notes": "",
+    "audio_file": "",
+    "is_published": true,
+    "created_at": "2026-06-01T20:02:16.697Z"
+  }
+},
+{
+  "model": "sermons.sermon",
+  "pk": 3,
+  "fields": {
+    "title": "Good morning Holy Spirit",
+    "preacher": "Pr. Ssande Willy",
+    "bible_text": "Acts 1",
+    "sermon_date": "2026-06-26",
+    "summary": "",
+    "youtube_link": "",
+    "featured_image": "",
+    "pdf_notes": "",
+    "audio_file": "",
+    "is_published": true,
+    "created_at": "2026-06-25T08:46:29.646Z"
+  }
+},
+{
+  "model": "members.role",
+  "pk": 1,
+  "fields": {
+    "name": "Lead Apostle",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 2,
+  "fields": {
+    "name": "Lead Pastor",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 3,
+  "fields": {
+    "name": "Associate Pastor",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 4,
+  "fields": {
+    "name": "Assistant Pastor",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 5,
+  "fields": {
+    "name": "Secretary",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 6,
+  "fields": {
+    "name": "Treasurer",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 7,
+  "fields": {
+    "name": "Youth Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 8,
+  "fields": {
+    "name": "Choir Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 9,
+  "fields": {
+    "name": "Women's Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 10,
+  "fields": {
+    "name": "Men's Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 11,
+  "fields": {
+    "name": "Children's Ministry Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 12,
+  "fields": {
+    "name": "Media Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 13,
+  "fields": {
+    "name": "Evangelism Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 14,
+  "fields": {
+    "name": "Hospitality Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 15,
+  "fields": {
+    "name": "Chief Usher",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 16,
+  "fields": {
+    "name": "Intercessory Leader",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 17,
+  "fields": {
+    "name": "Elder",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 18,
+  "fields": {
+    "name": "Deacon",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 19,
+  "fields": {
+    "name": "Chairperson",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 20,
+  "fields": {
+    "name": "Department Member",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 21,
+  "fields": {
+    "name": "Marrieds Leader",
+    "description": "Leads the married group of leaders"
+  }
+},
+{
+  "model": "members.role",
+  "pk": 22,
+  "fields": {
+    "name": "development Chairperson",
+    "description": ""
+  }
+},
+{
+  "model": "members.role",
+  "pk": 23,
+  "fields": {
+    "name": "Bishop",
+    "description": ""
+  }
+},
+{
+  "model": "members.department",
+  "pk": 1,
+  "fields": {
+    "name": "Pastoral Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 2,
+  "fields": {
+    "name": "Administration",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 3,
+  "fields": {
+    "name": "Finance",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 4,
+  "fields": {
+    "name": "Youth Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 5,
+  "fields": {
+    "name": "Music / Choir Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 6,
+  "fields": {
+    "name": "Women's Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 7,
+  "fields": {
+    "name": "Men's Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 8,
+  "fields": {
+    "name": "Children's Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 9,
+  "fields": {
+    "name": "Media Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 10,
+  "fields": {
+    "name": "Evangelism Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 11,
+  "fields": {
+    "name": "Hospitality Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 12,
+  "fields": {
+    "name": "Ushering Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 13,
+  "fields": {
+    "name": "Prayer Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 14,
+  "fields": {
+    "name": "Elders Council",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 15,
+  "fields": {
+    "name": "Deacons Ministry",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 16,
+  "fields": {
+    "name": "Development Committee",
+    "description": "",
+    "leader": null
+  }
+},
+{
+  "model": "members.department",
+  "pk": 17,
+  "fields": {
+    "name": "Marrieds",
+    "description": "Married couples link up for courage and serving the LORD",
+    "leader": null
+  }
+},
+{
+  "model": "members.member",
+  "pk": 1,
+  "fields": {
+    "user": null,
+    "first_name": "John",
+    "last_name": "Kato",
+    "gender": "M",
+    "department": null,
+    "role": null,
+    "status": "ACTIVE",
+    "phone_number": "0777056453",
+    "email": "kjohn@gmail.com",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2024-11-03",
+    "is_active": true,
+    "created_at": "2026-06-01T22:05:16.096Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 2,
+  "fields": {
+    "user": null,
+    "first_name": "Mary",
+    "last_name": "Namusoke",
+    "gender": "F",
+    "department": null,
+    "role": null,
+    "status": "VISITOR",
+    "phone_number": "0781213146",
+    "email": "nmary@gmail.com",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2026-01-05",
+    "is_active": true,
+    "created_at": "2026-06-01T22:10:00.396Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 3,
+  "fields": {
+    "user": null,
+    "first_name": "Peter",
+    "last_name": "Senfuma",
+    "gender": "M",
+    "department": null,
+    "role": null,
+    "status": "ACTIVE",
+    "phone_number": "0790121314",
+    "email": "speter@gmail.com",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2026-05-03",
+    "is_active": true,
+    "created_at": "2026-06-01T22:14:51.907Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 4,
+  "fields": {
+    "user": 7,
+    "first_name": "Robina",
+    "last_name": "Ddumba",
+    "gender": "F",
+    "department": 5,
+    "role": 8,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "r.ddumba@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-16T11:11:17.737Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 5,
+  "fields": {
+    "user": 10,
+    "first_name": "Willy",
+    "last_name": "Lukanga",
+    "gender": "M",
+    "department": 7,
+    "role": 10,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "wlukanga@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-16T11:25:47.483Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 6,
+  "fields": {
+    "user": 11,
+    "first_name": "Suzan",
+    "last_name": "Kyenalaba",
+    "gender": "F",
+    "department": 17,
+    "role": 21,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "skyenalaba@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-16T11:35:07.649Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 7,
+  "fields": {
+    "user": 13,
+    "first_name": "John Baptist",
+    "last_name": "Sewante",
+    "gender": "M",
+    "department": 9,
+    "role": 12,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "jbsewante@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1996-06-09",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "",
+    "date_joined": "2021-06-17",
+    "is_active": true,
+    "created_at": "2026-06-16T12:19:32.262Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 8,
+  "fields": {
+    "user": 14,
+    "first_name": "Steven",
+    "last_name": "Tamale",
+    "gender": "M",
+    "department": 12,
+    "role": 15,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "stamale@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1993-06-10",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2020-06-10",
+    "is_active": true,
+    "created_at": "2026-06-16T12:22:39.860Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 9,
+  "fields": {
+    "user": 15,
+    "first_name": "Geofrey",
+    "last_name": "Tabera",
+    "gender": "F",
+    "department": 10,
+    "role": 13,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "gtabera@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1996-06-12",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2021-06-17",
+    "is_active": true,
+    "created_at": "2026-06-16T12:25:10.050Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 10,
+  "fields": {
+    "user": 16,
+    "first_name": "Jane",
+    "last_name": "Nabagulanyi",
+    "gender": "F",
+    "department": 11,
+    "role": 14,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "jnabagulanyi@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1998-06-04",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2016-06-09",
+    "is_active": true,
+    "created_at": "2026-06-16T12:28:30.325Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 11,
+  "fields": {
+    "user": 17,
+    "first_name": "Brenda",
+    "last_name": "Wesonga",
+    "gender": "F",
+    "department": 8,
+    "role": 11,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "bwesonga@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1994-06-04",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2015-06-20",
+    "is_active": true,
+    "created_at": "2026-06-16T12:31:20.728Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 12,
+  "fields": {
+    "user": 18,
+    "first_name": "Ephraim",
+    "last_name": ".",
+    "gender": "M",
+    "department": 4,
+    "role": 7,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "e@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1990-06-18",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2020-06-10",
+    "is_active": true,
+    "created_at": "2026-06-16T12:50:58.459Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 13,
+  "fields": {
+    "user": 19,
+    "first_name": "Moses",
+    "last_name": "Byamukama",
+    "gender": "M",
+    "department": 16,
+    "role": 22,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "mbyamukama@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1996-06-15",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2010-06-17",
+    "is_active": true,
+    "created_at": "2026-06-16T12:54:51.824Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 14,
+  "fields": {
+    "user": 20,
+    "first_name": "Rehema",
+    "last_name": "Namuddu",
+    "gender": "F",
+    "department": 13,
+    "role": 16,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "rnamuddu@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1987-06-10",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2020-06-10",
+    "is_active": true,
+    "created_at": "2026-06-16T12:58:33.848Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 15,
+  "fields": {
+    "user": 21,
+    "first_name": "Willy",
+    "last_name": "Ssande",
+    "gender": "M",
+    "department": 1,
+    "role": 2,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "wssande@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1980-06-22",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "",
+    "date_joined": "2000-06-15",
+    "is_active": true,
+    "created_at": "2026-06-16T13:03:57.411Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 16,
+  "fields": {
+    "user": 22,
+    "first_name": "Jenifer",
+    "last_name": "Rubahinda",
+    "gender": "F",
+    "department": 1,
+    "role": 2,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "jrubahinda@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1966-06-08",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2000-06-02",
+    "is_active": true,
+    "created_at": "2026-06-16T13:07:18.842Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 17,
+  "fields": {
+    "user": 23,
+    "first_name": "Joseph",
+    "last_name": "Ekot",
+    "gender": "M",
+    "department": 1,
+    "role": 4,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "jekot@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1980-06-10",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "Mityana",
+    "date_joined": "2021-06-17",
+    "is_active": true,
+    "created_at": "2026-06-16T13:09:38.364Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 18,
+  "fields": {
+    "user": 24,
+    "first_name": "Peter",
+    "last_name": "Enyipu",
+    "gender": "F",
+    "department": 1,
+    "role": 4,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "penyipu@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1980-06-23",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2019-06-09",
+    "is_active": true,
+    "created_at": "2026-06-16T13:12:07.333Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 19,
+  "fields": {
+    "user": 25,
+    "first_name": "Fred",
+    "last_name": "Kawuma",
+    "gender": "M",
+    "department": 1,
+    "role": 4,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "fkawuma@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1983-06-22",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2010-06-18",
+    "is_active": true,
+    "created_at": "2026-06-16T13:14:24.593Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 20,
+  "fields": {
+    "user": 26,
+    "first_name": "Josephine",
+    "last_name": "Nakasumba",
+    "gender": "F",
+    "department": 1,
+    "role": 4,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "jnakasumba@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1974-06-02",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "mityana",
+    "date_joined": "2000-06-10",
+    "is_active": true,
+    "created_at": "2026-06-16T13:18:24.056Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 21,
+  "fields": {
+    "user": 27,
+    "first_name": "David",
+    "last_name": "Rubahinda",
+    "gender": "M",
+    "department": 1,
+    "role": 23,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "drubahinda@mpc.org",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1950-06-17",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "Mityana",
+    "date_joined": "1990-06-02",
+    "is_active": true,
+    "created_at": "2026-06-16T13:22:10.974Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 24,
+  "fields": {
+    "user": 28,
+    "first_name": "Harriet",
+    "last_name": "Nakatte",
+    "gender": "F",
+    "department": 8,
+    "role": null,
+    "status": "ACTIVE",
+    "phone_number": "0708657549",
+    "email": "nkarietn@gmail.com",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "Wakiso",
+    "birthday": "1989-06-15",
+    "marital_status": "SINGLE",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "kyengera",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-17T13:36:14.521Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 25,
+  "fields": {
+    "user": 29,
+    "first_name": "grace",
+    "last_name": "nakito",
+    "gender": "F",
+    "department": 3,
+    "role": null,
+    "status": "ACTIVE",
+    "phone_number": "0708657549",
+    "email": "harysinguzi1@gmail.com",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": null,
+    "marital_status": "SINGLE",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "full gospel",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": 3,
+    "years_at_mpc": 0,
+    "address": "",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-17T13:41:59.263Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 26,
+  "fields": {
+    "user": 30,
+    "first_name": "Harriet",
+    "last_name": "Nakate",
+    "gender": "F",
+    "department": null,
+    "role": null,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "hsibitenda@umu.ac.ug",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1990-05-05",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-18T08:15:20.337Z"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 27,
+  "fields": {
+    "user": 31,
+    "first_name": "jane",
+    "last_name": "nakato",
+    "gender": "F",
+    "department": null,
+    "role": null,
+    "status": "ACTIVE",
+    "phone_number": "",
+    "email": "jnakato@gmail.com",
+    "whatsapp_number": "",
+    "next_of_kin": "",
+    "next_of_kin_contact": "",
+    "village": "",
+    "parish": "",
+    "sub_county": "",
+    "district": "",
+    "birthday": "1890-12-12",
+    "marital_status": "",
+    "number_of_children": 0,
+    "occupation": "",
+    "employer": "",
+    "place_of_work": "",
+    "education_level": "",
+    "is_student": false,
+    "school_name": "",
+    "is_renting": false,
+    "landlord_name": "",
+    "date_saved": null,
+    "church_where_saved": "",
+    "is_baptized": false,
+    "baptism_date": null,
+    "baptism_place": "",
+    "former_church": "",
+    "former_pastor": "",
+    "previous_ministry": "",
+    "desired_ministry": null,
+    "years_at_mpc": 0,
+    "address": "",
+    "date_joined": null,
+    "is_active": true,
+    "created_at": "2026-06-25T05:32:00.615Z"
+  }
+},
+{
+  "model": "attendance.service",
+  "pk": 1,
+  "fields": {
+    "name": "Sunday Worship",
+    "service_type": "PRAYER",
+    "service_date": "2025-08-03",
+    "description": "",
+    "created_at": "2026-06-02T07:48:28.311Z"
+  }
+},
+{
+  "model": "attendance.service",
+  "pk": 2,
+  "fields": {
+    "name": "Wednesday Bible Study",
+    "service_type": "BIBLE_STUDY",
+    "service_date": "2026-06-03",
+    "description": "",
+    "created_at": "2026-06-02T07:48:59.175Z"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 1,
+  "fields": {
+    "member": 1,
+    "service": 2,
+    "status": "PRESENT",
+    "remarks": "Attended Bible study",
+    "recorded_at": "2026-06-02T07:15:44.922Z"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 2,
+  "fields": {
+    "member": 2,
+    "service": 1,
+    "status": "PRESENT",
+    "remarks": "Attended first service",
+    "recorded_at": "2026-06-02T07:16:59.215Z"
+  }
+},
+{
+  "model": "prayers.prayerrequest",
+  "pk": 1,
+  "fields": {
+    "member": 28,
+    "title": "fasting",
+    "request": "i need LORD's grace",
+    "status": "PENDING",
+    "created_at": "2026-06-18T14:49:00.032Z",
+    "pastor_comment": "",
+    "prayed_by": "",
+    "prayed_at": null,
+    "is_confidential": false,
+    "follow_up_required": false,
+    "answered_testimony": "",
+    "updated_at": "2026-06-23T19:17:56.480Z",
+    "assigned_to": null
+  }
+},
+{
+  "model": "prayers.prayerrequest",
+  "pk": 2,
+  "fields": {
+    "member": 29,
+    "title": "seeds",
+    "request": "How is this LORD",
+    "status": "PENDING",
+    "created_at": "2026-06-18T15:14:03.582Z",
+    "pastor_comment": "",
+    "prayed_by": "",
+    "prayed_at": null,
+    "is_confidential": false,
+    "follow_up_required": false,
+    "answered_testimony": "",
+    "updated_at": "2026-06-23T19:17:56.480Z",
+    "assigned_to": null
+  }
+},
+{
+  "model": "prayers.prayerrequest",
+  "pk": 3,
+  "fields": {
+    "member": 29,
+    "title": "Money",
+    "request": "LORD you know",
+    "status": "PENDING",
+    "created_at": "2026-06-18T15:38:34.306Z",
+    "pastor_comment": "",
+    "prayed_by": "",
+    "prayed_at": null,
+    "is_confidential": false,
+    "follow_up_required": false,
+    "answered_testimony": "",
+    "updated_at": "2026-06-23T19:17:56.480Z",
+    "assigned_to": null
+  }
+},
+{
+  "model": "prayers.prayerrequest",
+  "pk": 4,
+  "fields": {
+    "member": 29,
+    "title": "school fees",
+    "request": "I have candidates in p7",
+    "status": "PENDING",
+    "created_at": "2026-06-18T15:42:16.913Z",
+    "pastor_comment": "",
+    "prayed_by": "",
+    "prayed_at": null,
+    "is_confidential": false,
+    "follow_up_required": false,
+    "answered_testimony": "",
+    "updated_at": "2026-06-23T19:17:56.480Z",
+    "assigned_to": null
+  }
+},
+{
+  "model": "prayers.prayerrequest",
+  "pk": 5,
+  "fields": {
+    "member": 29,
+    "title": "Family",
+    "request": "Lord cover all my loved ones in your blood, Amen",
+    "status": "PRAYED",
+    "created_at": "2026-06-23T19:51:04.020Z",
+    "pastor_comment": "",
+    "prayed_by": "w.ssande",
+    "prayed_at": "2026-06-24T06:25:50.889Z",
+    "is_confidential": true,
+    "follow_up_required": false,
+    "answered_testimony": "",
+    "updated_at": "2026-06-24T06:25:50.889Z",
+    "assigned_to": 21
+  }
+},
+{
+  "model": "prayers.prayernote",
+  "pk": 1,
+  "fields": {
+    "prayer": 5,
+    "staff": 21,
+    "note": "    Prayer finished, thank you",
+    "created_at": "2026-06-23T19:53:35.222Z"
+  }
+},
+{
+  "model": "counselling.counsellingrequest",
+  "pk": 1,
+  "fields": {
+    "member": 29,
+    "assigned_to": 21,
+    "subject": "family courage",
+    "details": "Seeking the LORD's covering",
+    "status": "SCHEDULED",
+    "pastor_notes": "",
+    "created_at": "2026-06-24T08:03:26.697Z",
+    "scheduled_date": "2026-06-25",
+    "scheduled_time": "12:29:00",
+    "location": "inside church"
+  }
+},
+{
+  "model": "counselling.counsellingrequest",
+  "pk": 2,
+  "fields": {
+    "member": 29,
+    "assigned_to": 21,
+    "subject": "school",
+    "details": "My grades require wisdom uplift",
+    "status": "PENDING",
+    "pastor_notes": "",
+    "created_at": "2026-06-24T08:32:35.034Z",
+    "scheduled_date": null,
+    "scheduled_time": null,
+    "location": ""
+  }
+},
+{
+  "model": "followup.memberfollowup",
+  "pk": 1,
+  "fields": {
+    "member": 31,
+    "assigned_to": 21,
+    "followup_type": "NEW_MEMBER",
+    "reason": "Welcome the new member, introduce them to the church, and encourage participation in discipleship and ministry.",
+    "status": "COMPLETED",
+    "pastor_notes": "You are most welcome to our church Jane. Feel at home",
+    "visit_required": true,
+    "visit_type": "Home Visit",
+    "visit_time": "08:35:00",
+    "visit_location": "mityana",
+    "visit_completed": true,
+    "visit_date": "2026-06-26",
+    "created_at": "2026-06-25T05:32:00.627Z",
+    "updated_at": "2026-06-25T06:14:49.235Z"
+  }
+},
+{
+  "model": "followup.membernotification",
+  "pk": 1,
+  "fields": {
+    "member": 31,
+    "title": "Pastoral Visit Scheduled",
+    "message": "A Marriage Counselling has been scheduled for 2026-06-26 at 09:45.",
+    "is_read": false,
+    "created_at": "2026-06-25T06:46:20.417Z"
+  }
+},
+{
+  "model": "visitations.pastoralvisit",
+  "pk": 1,
+  "fields": {
+    "member": 31,
+    "pastor": 21,
+    "visit_type": "MARRIAGE",
+    "visit_date": "2026-06-26",
+    "visit_time": "09:45:00",
+    "location": "church",
+    "purpose": "Gather to hear God's will",
+    "notes": "",
+    "status": "SCHEDULED",
+    "created_at": "2026-06-25T06:46:20.407Z"
+  }
+}
+]
