@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import cloudinary
+# import cloudinary
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
 
     # 'cloudinary_storage',
-    'cloudinary',
+    # 'cloudinary',
     'django.contrib.staticfiles',
 
 
@@ -136,11 +136,11 @@ DATABASES = {
     )
 }
 
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    "API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
-    "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
-}
+# CLOUDINARY_STORAGE = {
+#     "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
+#     "API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
+#     "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
+# }
 
 # cloudinary.config(
 #     cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
