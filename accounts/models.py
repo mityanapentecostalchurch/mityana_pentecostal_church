@@ -50,6 +50,10 @@ class User(AbstractUser):
         blank=True,
         null=True
     )
+    # profile_photo = models.URLField(
+    #     blank=True,
+    #     null=True
+    # )
 
     position = models.CharField(
         max_length=120,

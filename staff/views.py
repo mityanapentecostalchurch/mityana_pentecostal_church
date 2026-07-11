@@ -33,6 +33,7 @@ from accounts.models import User
 from django.contrib import messages
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+# from accounts.cloudinary_utils import upload_profile_photo
 
 
 STAFF_ROLES = [
@@ -639,11 +640,18 @@ def edit_staff_profile(request):
             "biography"
         )
 
+        # if request.FILES.get("profile_photo"):
+
+        #     user.profile_photo = request.FILES.get(
+        #         "profile_photo"
+        #     )
         if request.FILES.get("profile_photo"):
 
-            user.profile_photo = request.FILES.get(
-                "profile_photo"
-            )
+            photo = request.FILES.get("profile_photo")
+
+            result = upload_profile_photo(photo)
+
+            user.profile_photo = result["public_id"]
 
         user.save()
 
