@@ -21,27 +21,45 @@ class SupabaseStorage(Storage):
 
     def _save(self, name, content):
 
-        # Preserve Django's upload_to folder
-        folder = os.path.dirname(name)
-
         extension = os.path.splitext(name)[1]
-
         filename = f"{uuid.uuid4()}{extension}"
 
-        if folder:
-            path = f"{folder}/{filename}"
-        else:
-            path = filename
+        print("=" * 60)
+        print("Uploading to Supabase...")
+        print("Bucket:", SUPABASE_BUCKET)
+        print("Filename:", filename)
+        print("Content-Type:", getattr(content, "content_type", None))
 
-        supabase.storage.from_(SUPABASE_BUCKET).upload(
-            path,
-            content.read(),
-            file_options={
-                "content-type": getattr(content, "content_type", "application/octet-stream")
-            },
-        )
+        try:
 
-        return path
+            response = (
+                supabase.storage
+                .from_(SUPABASE_BUCKET)
+                .upload(
+                    path=filename,
+                    file=content.read(),
+                    file_options={
+                        "content-type": getattr(
+                            content,
+                            "content_type",
+                            "application/octet-stream"
+                        )
+                    }
+                )
+            )
+
+            print("Upload response:")
+            print(response)
+
+        except Exception as e:
+
+            print("SUPABASE ERROR:")
+            print(type(e))
+            print(e)
+
+            raise
+
+        return filename
 
 
     def url(self, name):
