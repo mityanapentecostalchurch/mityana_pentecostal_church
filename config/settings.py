@@ -208,14 +208,14 @@ STATICFILES_DIRS = [
 # }
 STORAGES = {
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "BACKEND": "config.storage.supabase_storage.SupabaseStorage",
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 
-MEDIA_URL = "/media/"
+# MEDIA_URL = "/media/"
 
 
 # Default primary key field type
