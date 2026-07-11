@@ -71,87 +71,7 @@ body {
 
 }
 
-/* ==========================================
-   HERO SECTION
-========================================== */
-/* .hero-banner {
 
-    position: relative;
-
-    min-height: 650px;
-
-    background: url("/static/images/church2.jpeg");
-
-    background-size: cover;
-
-    background-position: center center;
-
-    background-repeat: no-repeat;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-}
-
-.hero-banner::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    background: rgba(0,0,0,0.45);
-
-}
-
-.hero-banner .overlay {
-
-    position: relative;
-
-    z-index: 2;
-
-    color: white;
-
-    max-width: 900px;
-
-    padding: 40px;
-
-}
-
-.hero-banner h1 {
-
-    color: white;
-
-    font-size: 4rem;
-
-    font-weight: 700;
-
-}
-
-.hero-banner p {
-
-    color: white;
-
-    font-size: 1.4rem;
-
-} */
- /* HERO BANNER */
-
-/* HERO IMAGE */
 
 .hero-section {
 
@@ -167,7 +87,7 @@ body {
             rgba(0,0,0,0.55)
         ),
         url('/static/images/church2.png');
-    /* background: url("/static/images/church21.png"); */
+   
 
     background-size: cover;
 
