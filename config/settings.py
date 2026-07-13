@@ -16,6 +16,7 @@ import dj_database_url
 # import cloudinary
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-$-)m7b$qz5vwwxf3!&6-1bju90j$0k$0kl67x_c=lk-w8ze22!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 # DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # ALLOWED_HOSTS = []
@@ -128,11 +130,17 @@ WSGI_APPLICATION = "config.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+#         conn_max_age=600,
+#         ssl_require=False,
+#     )
+# }
+
 DATABASES = {
-    "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=False,
+    "default": dj_database_url.parse(
+        os.getenv("DATABASE_URL")
     )
 }
 
