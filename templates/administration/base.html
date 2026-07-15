@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid mt-4">
+
+    <div class="row">
+
+        <!-- Sidebar -->
+
+        <div class="col-md-3 col-lg-2">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-dark text-white">
+
+                    <strong>Administration</strong>
+
+                </div>
+
+                <div class="list-group list-group-flush">
+
+                    <a href="/administration/"
+                       class="list-group-item list-group-item-action">
+
+                        📊 Dashboard
+
+                    </a>
+
+                    <a href="/administration/members/"
+                       class="list-group-item list-group-item-action">
+
+                        👥 Members
+
+                    </a>
+
+                    <a href="/administration/staff/"
+                       class="list-group-item list-group-item-action">
+
+                        👨‍💼 Staff
+
+                    </a>
+
+                    <a href="/administration/departments/"
+                       class="list-group-item list-group-item-action">
+
+                        🏢 Departments
+
+                    </a>
+
+                    <a href="/administration/events/"
+                       class="list-group-item list-group-item-action">
+
+                        📅 Events
+
+                    </a>
+
+                    <a href="/administration/announcements/"
+                       class="list-group-item list-group-item-action">
+
+                        📢 Announcements
+
+                    </a>
+
+                    <a href="/administration/prayers/"
+                       class="list-group-item list-group-item-action">
+
+                        🙏 Prayer Requests
+
+                    </a>
+
+                    <a href="/administration/counselling/"
+                       class="list-group-item list-group-item-action">
+
+                        ❤️ Counselling
+
+                    </a>
+
+                    <a href="/administration/giving/"
+                       class="list-group-item list-group-item-action">
+
+                        💰 Giving
+
+                    </a>
+
+                    <a href="/administration/reports/"
+                       class="list-group-item list-group-item-action">
+
+                        📈 Reports
+
+                    </a>
+
+                    <a href="/administration/settings/"
+                       class="list-group-item list-group-item-action">
+
+                        ⚙️ Settings
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="col-md-9 col-lg-10">
+
+            {% block admin_content %}
+
+            {% endblock %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

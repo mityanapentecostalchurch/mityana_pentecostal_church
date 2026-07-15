@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     'followup',
     'visitations',
     'staff',
+    'administration',
     'api',
     'activity',
     'corsheaders',

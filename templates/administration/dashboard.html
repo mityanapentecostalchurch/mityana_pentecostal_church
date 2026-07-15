@@ -1,0 +1,149 @@
+{% extends "administration/base.html" %}
+
+{% block admin_content %}
+
+<h2>
+
+    Church Administration Dashboard
+
+</h2>
+
+<hr>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card border-primary shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Members</h5>
+
+                <h2>{{ members }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card border-success shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Staff</h5>
+
+                <h2>{{ staff }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card border-danger shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Administrators</h5>
+
+                <h2>{{ administrators }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card border-warning shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Departments</h5>
+
+                <h2>{{ departments }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Prayer Requests</h5>
+
+                <h2>{{ prayer_requests }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Counselling</h5>
+
+                <h2>{{ counselling }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Events</h5>
+
+                <h2>{{ events }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5>Sermons</h5>
+
+                <h2>{{ sermons }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

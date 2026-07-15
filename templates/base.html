@@ -313,7 +313,7 @@
                                 <a class="dropdown-item"
                                 href="/members/register/">
 
-                                    Join MPC
+                                    Become a Member
 
                                 </a>
 
@@ -336,6 +336,28 @@
                                 href="/staff/login/">
 
                                     Staff Login
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a class="dropdown-item"
+                                href="/administration/login/">
+
+                                    Administrator Login
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a class="dropdown-item"
+                                href="/administration/profile/">
+
+                                    My Profile
 
                                 </a>
 
@@ -384,23 +406,20 @@
                     role="button"
                     data-bs-toggle="dropdown">
 
-                        👤
-
+                        
                         {{ user.first_name|default:user.username }}
 
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end">
 
-                        {% if user.is_superuser %}
+                        {% if user.role == "ADMINISTRATOR" %}
 
                             <li>
 
                                 <a class="dropdown-item"
-                                href="/dashboard/">
-
-                                    Church Management
-
+                                    href="/administration/dashboard/">
+                                    Administration Dashboard
                                 </a>
 
                             </li>

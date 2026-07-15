@@ -1,0 +1,327 @@
+{% extends "administration/base.html" %}
+
+{% load static %}
+
+{% block admin_content %}
+
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between mb-4">
+
+        <div>
+
+            <h2>
+
+                Member Management
+
+            </h2>
+
+            <p>
+
+                View and manage church members.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <a href="/members/register/"
+
+               class="btn btn-success">
+
+                + Register Member
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+
+            <form method="get">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <input
+                            type="text"
+                            name="search"
+                            class="form-control"
+                            placeholder="Search name, phone or email..."
+                            value="{{ search }}">
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <select
+                            name="department"
+                            class="form-select">
+
+                            <option value="">
+
+                                All Departments
+
+                            </option>
+
+                            {% for dept in departments %}
+
+                            <option
+
+                                value="{{ dept.id }}"
+
+                                {% if selected_department == dept.id|stringformat:"s" %}
+
+                                    selected
+
+                                {% endif %}>
+
+                                {{ dept.name }}
+
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <select
+
+                            name="status"
+
+                            class="form-select">
+
+                            <option value="">
+
+                                All Status
+
+                            </option>
+
+                            <option value="ACTIVE">
+
+                                Active
+
+                            </option>
+
+                            <option value="VISITOR">
+
+                                Visitor
+
+                            </option>
+
+                            <option value="INACTIVE">
+
+                                Inactive
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <button
+                            class="btn btn-primary w-100">
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-hover table-bordered">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Photo</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Phone</th>
+
+                        <th>Department</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for member in members %}
+
+                    <tr>
+
+                        <td width="90">
+
+                            {% if member.user.profile_photo %}
+
+                                <img
+
+                                    src="{{ member.user.profile_photo.url }}"
+
+                                    class="rounded-circle"
+
+                                    width="60"
+
+                                    height="60"
+
+                                    style="object-fit:cover;">
+
+                            {% else %}
+
+                                <img
+
+                                    src="{% static 'images/default_user.png' %}"
+
+                                    class="rounded-circle"
+
+                                    width="60"
+
+                                    height="60">
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {{ member.first_name }}
+
+                            {{ member.last_name }}
+
+                        </td>
+
+                        <td>
+
+                            {{ member.email }}
+
+                        </td>
+
+                        <td>
+
+                            {{ member.phone_number }}
+
+                        </td>
+
+                        <td>
+
+                            {{ member.department }}
+
+                        </td>
+
+                        <td>
+
+                            
+                            {% if member.status == "ACTIVE" %}
+
+                            <span class="badge bg-success">
+
+                                Active
+
+                            </span>
+
+                            {% elif member.status == "VISITOR" %}
+
+                            <span class="badge bg-warning text-dark">
+
+                                Visitor
+
+                            </span>
+
+                            {% else %}
+
+                            <span class="badge bg-danger">
+
+                                Inactive
+
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            <a
+
+                                
+                                href="/administration/members/{{ member.id }}/"
+
+
+                                class="btn btn-primary btn-sm">
+
+                                View
+
+                            </a>
+
+                            <a
+
+                                
+                                href="/administration/members/{{ member.id }}/edit/"
+
+
+                                class="btn btn-warning btn-sm">
+
+                                Edit
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                {% empty %}
+
+                    <tr>
+
+                        <td colspan="7">
+
+                            No members found.
+
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

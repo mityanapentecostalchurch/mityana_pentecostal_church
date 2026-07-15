@@ -46,6 +46,7 @@ urlpatterns = [
     path('counselling/', include( 'counselling.urls' )),
     path('followup/', include('followup.urls')),
     path('visitations/', include('visitations.urls')),
+    path("administration/", include("administration.urls"),),
     
 
 ]

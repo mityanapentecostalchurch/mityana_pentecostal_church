@@ -72,7 +72,7 @@ def member_login(request):
 
             if user.is_superuser:
 
-                return redirect('/admin/')
+                return redirect('/administration/')
 
             elif user.is_staff:
 

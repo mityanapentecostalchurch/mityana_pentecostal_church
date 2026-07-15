@@ -8,19 +8,23 @@ class User(AbstractUser):
 
         ('STAFF', 'Staff'),
         ('VISITOR', 'Visitor'),
+        ('ADMINISTRATOR', 'Administrator'),
 
     ]
 
     ROLE_CHOICES = [
 
-        ('MEMBER', 'Member'),
-        ('PASTOR', 'Pastor'),
-        ('SECRETARY', 'Secretary'),
-        ('TREASURER', 'Treasurer'),
-        ('MINISTRY_LEADER', 'Ministry Leader'),
-        ('INTERCESSOR', 'Intercessor'),
-        ('SUPER_ADMIN', 'Super Admin'),
+        ("ADMINISTRATOR", "Administrator"),
 
+        ("SECRETARY", "Secretary"),
+
+        ("PASTOR", "Pastor"),
+
+        ("TREASURER", "Treasurer"),
+
+        ("MEDIA", "Media"),
+
+        ("MEMBER", "Member"),
     ]
 
     phone_number = models.CharField(
@@ -40,6 +44,8 @@ class User(AbstractUser):
         choices=ROLE_CHOICES,
         default='MEMBER'
     )
+
+    
 
     # --------------------------
     # NEW PROFILE INFORMATION
