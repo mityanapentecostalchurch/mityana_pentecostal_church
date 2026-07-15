@@ -1,61 +1,94 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 {% if member %}
 
-<div class="card mb-4 border-primary">
+<div class="card mb-4 shadow">
 
     <div class="card-body">
 
-        <h2>
+        <div class="row align-items-center">
 
-            Welcome,
-            {{ member.first_name }}
-            {{ member.last_name }}
+            <div class="col-md-3 text-center">
 
-        </h2>
+                {% if request.user.profile_photo %}
 
-        <p>
+                    <img src="{{ request.user.profile_photo.url }}"
+                         class="rounded-circle border shadow"
+                         width="180"
+                         height="180"
+                         style="object-fit:cover;">
 
-            We are delighted to have you as part of the
-            Mityana Pentecostal Church family.
+                {% else %}
 
-        </p>
+                    <img src="{% static 'images/default_user.png' %}"
+                         class="rounded-circle border shadow"
+                         width="180"
+                         height="180"
+                         style="object-fit:cover;">
 
-        <hr>
-
-        <div class="row">
-
-            <div class="col-md-3">
-
-                <strong>Email</strong><br>
-
-                {{ member.email }}
+                {% endif %}
 
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-9">
 
-                <strong>Phone</strong><br>
+                <h2>
 
-                {{ member.phone_number }}
+                    Welcome,
+                    
+                    {{ request.user.first_name }}
+                    
+                    {{ request.user.last_name }}
 
-            </div>
+                </h2>
 
-            <div class="col-md-3">
+                <p class="text-muted">
 
-                <strong>Department</strong><br>
+                    We are delighted to have you as part of the
+                    Mityana Pentecostal Church family.
 
-                {{ member.department }}
+                </p>
 
-            </div>
+                <hr>
 
-            <div class="col-md-3">
+                <div class="row">
 
-                <strong>Status</strong><br>
+                    <div class="col-md-6">
 
-                {{ member.status }}
+                        <strong>Email</strong><br>
+
+                        {{ request.user.email }}
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <strong>Phone</strong><br>
+
+                        {{ member.phone_number }}
+
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+
+                        <strong>Department</strong><br>
+
+                        {{ member.department }}
+
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+
+                        <strong>Status</strong><br>
+
+                        {{ member.status }}
+
+                    </div>
+
+                </div>
 
             </div>
 

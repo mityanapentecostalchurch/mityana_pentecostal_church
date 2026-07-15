@@ -303,11 +303,13 @@ def member_register(request):
 def edit_profile(request):
 
     member = request.user.member
+    user = request.user
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
         form = MemberProfileForm(
             request.POST,
+            request.FILES,
             instance=member
         )
 
@@ -315,9 +317,28 @@ def edit_profile(request):
 
             form.save()
 
-            return redirect(
-                '/members/dashboard/'
+            # Upload profile photo
+            if request.FILES.get("profile_photo"):
+                user.profile_photo = request.FILES["profile_photo"]
+
+            user.first_name = request.POST.get(
+                "first_name",
+                user.first_name
             )
+
+            user.last_name = request.POST.get(
+                "last_name",
+                user.last_name
+            )
+
+            user.save()
+            member.first_name = user.first_name
+            member.last_name = user.last_name
+            member.email = user.email
+
+            member.save()
+
+            return redirect("/members/dashboard/")
 
     else:
 
@@ -327,21 +348,25 @@ def edit_profile(request):
 
     return render(
         request,
-        'members/edit_profile.html',
+        "members/edit_profile.html",
         {
-            'form': form
-        }
+            "form": form,
+            "user": user,
+        },
     )
+
+@login_required
 def member_logout(request):
 
     logout(request)
 
-    return redirect('/')
+    return redirect("/")
+
 
 @login_required
 def change_password(request):
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
         form = PasswordChangeForm(
             request.user,
@@ -357,7 +382,7 @@ def change_password(request):
                 user
             )
 
-            return redirect('/')
+            return redirect("/members/dashboard/")
 
     else:
 
@@ -367,12 +392,11 @@ def change_password(request):
 
     return render(
         request,
-        'members/change_password.html',
+        "members/change_password.html",
         {
-            'form': form
+            "form": form
         }
     )
-
 
 
 @login_required
@@ -380,13 +404,13 @@ def notifications(request):
 
     counselling = CounsellingRequest.objects.filter(
         member=request.user,
-        status='SCHEDULED'
-    ).order_by('-created_at')
+        status="SCHEDULED"
+    ).order_by("-created_at")
 
     return render(
         request,
-        'members/notifications.html',
+        "members/notifications.html",
         {
-            'counselling': counselling
+            "counselling": counselling
         }
     )
