@@ -22,90 +22,101 @@
 
                 <div class="list-group list-group-flush">
 
-                    <a href="/administration/"
+
+                    <a href="{% url 'admin-dashboard' %}"
                        class="list-group-item list-group-item-action">
 
                         📊 Dashboard
 
                     </a>
-                    <!-- {% if user.is_superuser or user.role == "ADMINISTRATOR" or user.role == "PASTOR" or user.role == "SECRETARY" %} -->
 
-                    <a href="/administration/members/"
+
+                    <a href="{% url 'admin-members' %}"
                        class="list-group-item list-group-item-action">
 
                         👥 Members
 
                     </a>
-                    <!-- {% endif %} -->
 
-                    <a href="/administration/staff/"
+
+                    <a href="{% url 'admin-staff' %}"
                        class="list-group-item list-group-item-action">
 
                         👨‍💼 Staff
 
                     </a>
 
-                    <a href="/administration/departments/"
+
+                    <a href="{% url 'admin-departments' %}"
                        class="list-group-item list-group-item-action">
 
                         🏢 Departments
 
                     </a>
 
-                    <a href="/administration/events/"
+
+                    <a href="{% url 'admin-events' %}"
                        class="list-group-item list-group-item-action">
 
                         📅 Events
 
                     </a>
 
-                    <a href="/administration/announcements/"
+
+                    <a href="{% url 'admin-announcements' %}"
                        class="list-group-item list-group-item-action">
 
                         📢 Announcements
 
                     </a>
 
-                    <a href="/administration/prayers/"
+
+                    <a href="{% url 'admin-prayers' %}"
                        class="list-group-item list-group-item-action">
 
                         🙏 Prayer Requests
 
                     </a>
 
-                    <a href="/administration/counselling/"
+
+                    <a href="{% url 'admin-counselling' %}"
                        class="list-group-item list-group-item-action">
 
                         ❤️ Counselling
 
                     </a>
 
-                    <a href="/administration/giving/"
+
+                    <a href="{% url 'admin-giving' %}"
                        class="list-group-item list-group-item-action">
 
                         💰 Giving
 
                     </a>
 
-                    <a href="/administration/reports/"
+
+                    <a href="{% url 'admin-reports' %}"
                        class="list-group-item list-group-item-action">
 
                         📈 Reports
 
                     </a>
 
-                    <a href="/administration/settings/"
+
+                    <a href="{% url 'admin-settings' %}"
                        class="list-group-item list-group-item-action">
 
                         ⚙️ Settings
 
                     </a>
 
+
                 </div>
 
             </div>
 
         </div>
+
 
         <!-- Main Content -->
 
@@ -116,6 +127,7 @@
             {% endblock %}
 
         </div>
+
 
         {% endif %}
 

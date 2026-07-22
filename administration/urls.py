@@ -80,4 +80,10 @@ urlpatterns = [
         views.member_details,
         name="admin-member-details",
     ),
+
+    path(
+        "members/<int:member_id>/edit/",
+        views.edit_member,
+        name="admin-edit-member"
+    ),
 ]
