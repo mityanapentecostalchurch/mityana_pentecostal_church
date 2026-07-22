@@ -13,6 +13,19 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 
+from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404
+from django.contrib.auth import authenticate, login
+from members.forms import MemberProfileForm
+from django.contrib import messages
+from administration.permissions import (
+    full_admin_required,
+    member_management_required,
+    finance_required,
+    secretary_required,
+)
+
+
 def admin_login(request):
 
     error = None
@@ -32,11 +45,22 @@ def admin_login(request):
 
             error = "Invalid username or password."
 
+        elif not user.is_active:
+
+            error = "This account has been disabled."
+
+        elif user.is_superuser:
+
+            login(request, user)
+
+            return redirect("/administration/dashboard/")
+
         elif user.role in [
+            "SUPER_ADMIN",
             "ADMINISTRATOR",
             "SECRETARY",
-            "TREASURER",
-            "PASTOR",
+            "TREASURER"
+            
         ]:
 
             login(request, user)
@@ -45,7 +69,10 @@ def admin_login(request):
 
         else:
 
-            error = "You are not authorized to access the Administration Portal."
+            error = (
+                "You are not authorized to access the "
+                "Administration Portal."
+            )
 
     return render(
         request,
@@ -58,6 +85,7 @@ def admin_login(request):
 
 
 @login_required
+@full_admin_required
 def dashboard(request):
 
     context = {
@@ -68,10 +96,11 @@ def dashboard(request):
 
         "administrators": User.objects.filter(
             role__in=[
-                "Administrator",
-                "Secretary",
-                "Treasurer",
-                "Pastor"
+                "ADMINISTRATOR",
+                "SECRETARY",
+                "TREASURER",
+                "PASTOR",
+                "SUPER_ADMIN"
             ]
         ).count(),
 
@@ -100,6 +129,7 @@ def dashboard(request):
 
 
 @login_required
+@member_management_required
 def members(request):
 
     members = Member.objects.select_related(
@@ -177,6 +207,83 @@ def members(request):
     )
 
 @login_required
+@member_management_required
+def member_details(request, member_id):
+
+    member = get_object_or_404(
+        Member,
+        id=member_id
+    )
+
+    return render(
+
+        request,
+
+        "administration/member_details.html",
+
+        {
+
+            "member": member
+
+        }
+
+    )
+
+@login_required
+@member_management_required
+def edit_member(request, member_id):
+
+    member = get_object_or_404(
+        Member,
+        id=member_id
+    )
+
+    if request.method == "POST":
+
+        form = MemberProfileForm(
+            request.POST,
+            request.FILES,
+            instance=member
+        )
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.success(
+                request,
+                "Member information updated successfully."
+            )
+
+            return redirect(
+                "admin-member-details",
+                member.id
+            )
+
+    else:
+
+        form = MemberProfileForm(
+            instance=member
+        )
+
+    return render(
+
+        request,
+
+        "administration/edit_member.html",
+
+        {
+
+            "member": member,
+
+            "form": form
+
+        }
+
+    )
+
+@login_required
+@full_admin_required
 def staff(request):
 
     return render(
@@ -184,7 +291,7 @@ def staff(request):
         "administration/staff.html"
     )
 
-
+@full_admin_required
 @login_required
 def departments(request):
 
@@ -195,6 +302,7 @@ def departments(request):
 
 
 @login_required
+@secretary_required
 def events(request):
 
     return render(
@@ -204,6 +312,7 @@ def events(request):
 
 
 @login_required
+@secretary_required
 def announcements(request):
 
     return render(
@@ -213,6 +322,7 @@ def announcements(request):
 
 
 @login_required
+@secretary_required
 def prayers(request):
 
     return render(
@@ -222,6 +332,7 @@ def prayers(request):
 
 
 @login_required
+@secretary_required
 def counselling(request):
 
     return render(
@@ -231,6 +342,7 @@ def counselling(request):
 
 
 @login_required
+@finance_required
 def giving(request):
 
     return render(
@@ -240,6 +352,7 @@ def giving(request):
 
 
 @login_required
+@secretary_required
 def reports(request):
 
     return render(
@@ -249,6 +362,7 @@ def reports(request):
 
 
 @login_required
+@full_admin_required
 def settings(request):
 
     return render(

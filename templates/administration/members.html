@@ -272,15 +272,16 @@
 
                         <td>
 
-                            <a
+                            <a>
 
                                 
-                                href="/administration/members/{{ member.id }}/"
+                                <a
+                                    href="{% url 'admin-edit-member' member.id %}"
+                                    class="btn btn-warning">
 
+                                    Edit Member
 
-                                class="btn btn-primary btn-sm">
-
-                                View
+                                </a>
 
                             </a>
 

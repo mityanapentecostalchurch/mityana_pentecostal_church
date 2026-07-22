@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2>
+
+                {{ member.first_name }}
+                {{ member.last_name }}
+
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-3 text-center">
+
+                    {% if member.user.profile_photo %}
+
+                        <img
+
+                            src="{{ member.user.profile_photo.url }}"
+
+                            class="img-fluid rounded-circle">
+
+                    {% else %}
+
+                        <img
+
+                            src="{% static 'images/default_user.png' %}"
+
+                            class="img-fluid rounded-circle">
+
+                    {% endif %}
+
+                </div>
+
+                <div class="col-md-9">
+
+                    <table class="table">
+
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ member.email }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Phone</th>
+                            <td>{{ member.phone_number }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Department</th>
+                            <td>{{ member.department }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ member.status }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Occupation</th>
+                            <td>{{ member.occupation }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Address</th>
+                            <td>{{ member.address }}</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card mt-4">
+
+    <div class="card-header">
+
+        <h5>Member Actions</h5>
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="d-grid gap-2">
+
+            <a
+                href="{% url 'admin-edit-member' member.id %}"
+                class="btn btn-warning">
+
+                Edit Member
+
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-primary">
+
+                Assign Department
+
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-info">
+
+                Assign Ministry
+
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-secondary">
+
+                Change Status
+
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-danger">
+
+                Deactivate Member
+
+            </a>
+
+            <a
+                href="#"
+                class="btn btn-success">
+
+                🖨 Print Profile
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

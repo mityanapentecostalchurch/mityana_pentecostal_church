@@ -75,4 +75,9 @@ urlpatterns = [
         name="admin-settings"
     ),
 
+    path(
+        "members/<int:member_id>/",
+        views.member_details,
+        name="admin-member-details",
+    ),
 ]

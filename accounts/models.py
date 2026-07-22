@@ -22,7 +22,7 @@ class User(AbstractUser):
 
         ("TREASURER", "Treasurer"),
 
-        ("MEDIA", "Media"),
+        ("MINISTER", "Minister"),
 
         ("MEMBER", "Member"),
     ]
