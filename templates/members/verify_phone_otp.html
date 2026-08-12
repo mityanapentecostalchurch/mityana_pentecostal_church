@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 col-lg-5">
+
+            <div class="card shadow">
+
+                <div
+                    class="card-header text-white text-center"
+                    style="
+                        background:
+                        linear-gradient(
+                            90deg,
+                            #663399,
+                            #c62828,
+                            #0b4f8a
+                        );
+                    "
+                >
+
+                    <h4 class="mb-0">
+                        🔐 Verify Your Phone
+                    </h4>
+
+                    <small>
+                        Mityana Pentecostal Church
+                    </small>
+
+                </div>
+
+
+                <div class="card-body p-4">
+
+                    <div class="text-center mb-4">
+
+                        <p class="text-muted">
+
+                            We have sent a verification
+                            code to:
+
+                        </p>
+
+                        <strong>
+                            {{ phone_number }}
+                        </strong>
+
+                    </div>
+
+
+                    {% if error %}
+
+                        <div class="alert alert-danger">
+
+                            {{ error }}
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <form
+                        method="POST"
+                    >
+
+                        {% csrf_token %}
+
+
+                        <div class="mb-4">
+
+                            <label
+                                for="otp"
+                                class="form-label"
+                            >
+
+                                Verification Code
+
+                            </label>
+
+                            <input
+                                type="text"
+                                name="otp"
+                                id="otp"
+                                class="form-control text-center"
+                                placeholder="Enter 6-digit OTP"
+                                maxlength="6"
+                                inputmode="numeric"
+                                autocomplete="one-time-code"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100"
+                        >
+
+                            ✓ Verify & Login
+
+                        </button>
+
+                    </form>
+
+
+                    <hr class="my-4">
+
+
+                    <div class="text-center">
+
+                        <a
+                            href="{% url 'phone-login' %}"
+                            class="btn btn-outline-success"
+                        >
+
+                            📱 Request New OTP
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="text-center mt-3">
+
+                        <a
+                            href="{% url 'member-login' %}"
+                            class="text-muted"
+                        >
+
+                            ← Back to Member Login
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

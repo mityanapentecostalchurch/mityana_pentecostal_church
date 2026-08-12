@@ -1,29 +1,343 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load socialaccount %}
+
+{% block title %}
+    Member Login | Mityana Pentecostal Church
+{% endblock %}
+
 
 {% block content %}
 
-<h2>Member Login</h2>
+<div class="container py-5">
 
-<form method="post">
+    <div class="row justify-content-center">
 
-    {% csrf_token %}
+        <div class="col-md-6 col-lg-5">
 
-    <p>
-        Email
-        <input type="email"
-               name="email">
-    </p>
 
-    <p>
-        Password
-        <input type="password"
-               name="password">
-    </p>
+            <div class="card shadow-lg border-0">
 
-    <button type="submit">
-        Login
-    </button>
+                <!-- =================================================
+                     HEADER
+                ================================================== -->
 
-</form>
+                <div class="card-header text-center py-4">
+
+                    <i class="bi bi-person-circle fs-1 text-white"></i>
+
+                    <h3 class="text-white mt-2 mb-0">
+
+                        Member Login
+
+                    </h3>
+
+                    <p class="text-white-50 mb-0">
+
+                        Welcome back to Mityana Pentecostal Church
+
+                    </p>
+
+                </div>
+
+
+                <div class="card-body p-4 p-md-5">
+
+
+                    <!-- =================================================
+                         ERROR MESSAGE
+                    ================================================== -->
+
+                    {% if error %}
+
+                    <div class="alert alert-danger">
+
+                        <i class="bi bi-exclamation-circle me-2"></i>
+
+                        {{ error }}
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- Django messages -->
+
+                    {% if messages %}
+
+                        {% for message in messages %}
+
+                        <div class="alert alert-{{ message.tags }}">
+
+                            {{ message }}
+
+                        </div>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+
+
+                    <!-- =================================================
+                         EMAIL + PASSWORD LOGIN
+                    ================================================== -->
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+
+                        <div class="mb-3">
+
+                            <label
+                                for="username"
+                                class="form-label"
+                            >
+
+                                Email Address
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-envelope"></i>
+
+                                </span>
+
+
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="password"
+                                class="form-label"
+                            >
+
+                                Password
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-lock"></i>
+
+                                </span>
+
+
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- REMEMBER / FORGOT -->
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+                            <div class="form-check">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="remember_me"
+                                    name="remember_me"
+                                >
+
+                                <label
+                                    class="form-check-label"
+                                    for="remember_me"
+                                >
+
+                                    Remember me
+
+                                </label>
+
+                            </div>
+
+
+                            <a
+                                href="/members/forgot-password/"
+                                class="small"
+                            >
+
+                                Forgot Password?
+
+                            </a>
+
+
+                        </div>
+
+
+
+                        <!-- LOGIN BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-lg w-100"
+                        >
+
+                            <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                            Sign In
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- =================================================
+                         DIVIDER
+                    ================================================== -->
+
+                    <div class="d-flex align-items-center my-4">
+
+                        <hr class="flex-grow-1">
+
+                        <span class="px-3 text-muted">
+
+                            OR
+
+                        </span>
+
+                        <hr class="flex-grow-1">
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         GOOGLE LOGIN
+                    ================================================== -->
+
+                    
+                    <form
+                        method="post"
+                        action="{% provider_login_url 'google' %}"
+                        class="mb-3"
+                    >
+
+                        {% csrf_token %}
+
+                        <button
+                            type="submit"
+                            class="btn btn-outline-dark btn-lg w-100"
+                        >
+
+                            <i class="bi bi-google me-2"></i>
+
+                            Continue with Google
+
+                        </button>
+
+                    </form>
+
+
+
+                    <!-- =================================================
+                         PHONE LOGIN
+                    ================================================== -->
+
+                    <a
+                        href="/members/login/phone/"
+                        class="btn btn-outline-success btn-lg w-100"
+                    >
+
+                        <i class="bi bi-phone me-2"></i>
+
+                        Sign in with Phone
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         REGISTRATION
+                    ================================================== -->
+
+                    <div class="text-center mt-4">
+
+                        <p class="mb-1">
+
+                            Don't have an MPC account?
+
+                        </p>
+
+
+                        <a
+                            href="/members/register/"
+                            class="fw-bold mpc-purple"
+                        >
+
+                            Become a Member
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 HELP MESSAGE
+            ================================================== -->
+
+            <div class="text-center mt-4 text-muted">
+
+                <small>
+
+                    <i class="bi bi-info-circle me-1"></i>
+
+                    You can sign in using your email,
+                    Google account, or mobile phone.
+
+                </small>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}

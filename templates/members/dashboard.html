@@ -176,34 +176,93 @@
         </div>
 
     </div> -->
+    
     <div class="card mb-4">
 
         <div class="card-body">
 
-            <h2>
-                Welcome {{ member.first_name }}
-                {{ member.last_name }}
-            </h2>
+            {% if member %}
 
-            <p>
-                <strong>Email:</strong>
-                {{ member.email }}
-            </p>
+                <h2>
 
-            <p>
-                <strong>Phone:</strong>
-                {{ member.phone_number }}
-            </p>
+                    Welcome
+                    {{ member.first_name }}
+                    {{ member.last_name }}
 
-            <p>
-                <strong>Department:</strong>
-                {{ member.department }}
-            </p>
+                </h2>
 
-            <p>
-                <strong>Status:</strong>
-                {{ member.status }}
-            </p>
+                <p>
+
+                    <strong>Email:</strong>
+
+                    {{ member.email|default:request.user.email }}
+
+                </p>
+
+                <p>
+
+                    <strong>Phone:</strong>
+
+                    {{ member.phone_number|default:"Not provided" }}
+
+                </p>
+
+                <p>
+
+                    <strong>Department:</strong>
+
+                    {{ member.department|default:"Not assigned" }}
+
+                </p>
+
+                <p>
+
+                    <strong>Status:</strong>
+
+                    {{ member.status }}
+
+                </p>
+
+            {% else %}
+
+                <h2>
+
+                    Welcome
+                    {{ request.user.first_name }}
+                    {{ request.user.last_name }}
+
+                </h2>
+
+                <div class="alert alert-warning">
+
+                    <h5>
+
+                        <i class="bi bi-person-exclamation me-2"></i>
+
+                        Complete Your MPC Member Profile
+
+                    </h5>
+
+                    <p class="mb-3">
+
+                        Your account has been successfully created,
+                        but your church member profile has not yet
+                        been completed.
+
+                    </p>
+
+                    <a
+                        href="/members/profile/edit/"
+                        class="btn btn-primary"
+                    >
+
+                        Complete My Profile
+
+                    </a>
+
+                </div>
+
+            {% endif %}
 
         </div>
 

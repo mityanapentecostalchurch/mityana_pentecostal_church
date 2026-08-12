@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class Role(models.Model):
 
     name = models.CharField(
@@ -15,19 +16,6 @@ class Role(models.Model):
     def __str__(self):
         return self.name
 
-# class Department(models.Model):
-
-#     name = models.CharField(
-#         max_length=100,
-#         unique=True
-#     )
-
-#     description = models.TextField(
-#         blank=True
-#     )
-
-#     def __str__(self):
-#         return self.name
 
 class Department(models.Model):
 
@@ -54,7 +42,6 @@ class Department(models.Model):
 
 class Member(models.Model):
 
-    
     MEMBERSHIP_STATUS = [
         ('ACTIVE', 'Active'),
         ('VISITOR', 'Visitor'),
@@ -63,14 +50,18 @@ class Member(models.Model):
 
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         null=True,
         blank=True
     )
-    
-    first_name = models.CharField(max_length=100)
 
-    last_name = models.CharField(max_length=100)
+    first_name = models.CharField(
+        max_length=100
+    )
+
+    last_name = models.CharField(
+        max_length=100
+    )
 
     gender = models.CharField(
         max_length=1,
@@ -88,10 +79,10 @@ class Member(models.Model):
     )
 
     role = models.ForeignKey(
-    Role,
-    on_delete=models.SET_NULL,
-    null=True,
-    blank=True
+        Role,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
     )
 
     status = models.CharField(
@@ -108,48 +99,59 @@ class Member(models.Model):
     email = models.EmailField(
         blank=True
     )
+
+    # ---------------------------------------------------------
     # Contact Information
+    # ---------------------------------------------------------
+
     whatsapp_number = models.CharField(
-       max_length=20,
-       blank=True
+        max_length=20,
+        blank=True
     )
 
     next_of_kin = models.CharField(
-       max_length=255,
-       blank=True
+        max_length=255,
+        blank=True
     )
 
     next_of_kin_contact = models.CharField(
-       max_length=20,
-       blank=True
+        max_length=20,
+        blank=True
     )
 
+    # ---------------------------------------------------------
     # Residence Information
+    # ---------------------------------------------------------
+
     village = models.CharField(
-       max_length=100,
-       blank=True
+        max_length=100,
+        blank=True
     )
 
     parish = models.CharField(
-       max_length=100,
-       blank=True
+        max_length=100,
+        blank=True
     )
 
     sub_county = models.CharField(
-       max_length=100,
-       blank=True
+        max_length=100,
+        blank=True
     )
 
     district = models.CharField(
-       max_length=100,
-       blank=True
+        max_length=100,
+        blank=True
     )
- 
+
     birthday = models.DateField(
         null=True,
         blank=True
     )
+
+    # ---------------------------------------------------------
     # Family Information
+    # ---------------------------------------------------------
+
     MARITAL_STATUS_CHOICES = [
         ('SINGLE', 'Single'),
         ('MARRIED', 'Married'),
@@ -167,7 +169,9 @@ class Member(models.Model):
         default=0
     )
 
+    # ---------------------------------------------------------
     # Employment Information
+    # ---------------------------------------------------------
 
     occupation = models.CharField(
         max_length=100,
@@ -184,7 +188,9 @@ class Member(models.Model):
         blank=True
     )
 
+    # ---------------------------------------------------------
     # Education Information
+    # ---------------------------------------------------------
 
     education_level = models.CharField(
         max_length=100,
@@ -209,13 +215,16 @@ class Member(models.Model):
         blank=True
     )
 
+    # ---------------------------------------------------------
+    # Salvation / Church Information
+    # ---------------------------------------------------------
+
     date_saved = models.DateField(
         null=True,
         blank=True
     )
 
     church_where_saved = models.CharField(
-
         max_length=255,
         blank=True
     )
@@ -261,6 +270,10 @@ class Member(models.Model):
         default=0
     )
 
+    # ---------------------------------------------------------
+    # Address / Membership
+    # ---------------------------------------------------------
+
     address = models.CharField(
         max_length=255,
         blank=True
@@ -281,3 +294,35 @@ class Member(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+# =============================================================
+# PHONE OTP
+# =============================================================
+
+class PhoneOTP(models.Model):
+
+    phone_number = models.CharField(
+        max_length=20
+    )
+
+    otp = models.CharField(
+        max_length=6
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    expires_at = models.DateTimeField()
+
+    is_verified = models.BooleanField(
+        default=False
+    )
+
+    attempts = models.PositiveIntegerField(
+        default=0
+    )
+
+    def __str__(self):
+        return f"{self.phone_number} - {self.otp}"

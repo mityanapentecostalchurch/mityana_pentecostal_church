@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+
 
     # 'cloudinary_storage',
     # 'cloudinary',
@@ -84,9 +86,13 @@ INSTALLED_APPS = [
     'api',
     'activity',
     'corsheaders',
-    
-]
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
+    'allauth.socialaccount.providers.google',
+]
+SITE_ID = 1
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # "django.middleware.security.SecurityMiddleware",
@@ -99,6 +105,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -224,6 +231,15 @@ STORAGES = {
     },
 }
 
+AUTHENTICATION_BACKENDS = [
+
+    # Normal Django username/password authentication
+    'django.contrib.auth.backends.ModelBackend',
+
+    # Google/social authentication
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 # MEDIA_URL = "/media/"
 
 
@@ -233,7 +249,10 @@ STORAGES = {
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = 'accounts.User'
 # LOGIN_URL = '/admin/login/'
-LOGIN_URL = '/members/login/'
+LOGIN_REDIRECT_URL = "/members/dashboard/"
+
+LOGOUT_REDIRECT_URL = "/"
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -244,3 +263,72 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+# ============================================================
+# DJANGO ALLAUTH
+# ============================================================
+
+ACCOUNT_LOGIN_METHODS = {'email'}
+
+ACCOUNT_SIGNUP_FIELDS = [
+    'email*',
+    'password1*',
+    'password2*',
+]
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "mityanapentecostalc@gmail.com"
+
+EMAIL_HOST_PASSWORD = "xpsyykolwescjzgz"
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+SOCIALACCOUNT_AUTO_SIGNUP = True
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+SOCIALACCOUNT_LOGIN_ON_GET = False
+
+SOCIALACCOUNT_PROVIDERS = {
+
+    "google": {
+
+        "APP": {
+
+            "client_id": os.environ.get(
+                "GOOGLE_CLIENT_ID"
+            ),
+
+            "secret": os.environ.get(
+                "GOOGLE_CLIENT_SECRET"
+            ),
+
+            "key": "",
+
+        },
+
+        "SCOPE": [
+
+            "openid",
+
+            "email",
+
+            "profile",
+
+        ],
+
+        "AUTH_PARAMS": {
+
+            "access_type": "online",
+
+        },
+
+    }
+
+}

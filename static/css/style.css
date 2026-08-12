@@ -1,101 +1,281 @@
-/* ==========================================
-   MITYANA PENTECOSTAL CHURCH WEBSITE
-========================================== */
+/* =========================================================
+   MITYANA PENTECOSTAL CHURCH
+   MAIN WEBSITE STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   MPC BRAND COLORS
+   ========================================================= */
+
+:root {
+
+    /* Primary Blue */
+    --mpc-blue: #0f4c81;
+    --mpc-blue-dark: #083b66;
+    --mpc-blue-light: #1f6fae;
+
+    /* Green */
+    --mpc-green: #0b8f5a;
+    --mpc-green-dark: #067044;
+    --mpc-green-light: #22a66f;
+
+    /* Red */
+    --mpc-red: #b83232;
+    --mpc-red-dark: #8f2222;
+    --mpc-red-light: #d94b4b;
+
+    /* Purple */
+    --mpc-purple: #6a3d91;
+    --mpc-purple-dark: #4d286f;
+    --mpc-purple-light: #8b5bb3;
+
+    /* Gold */
+    --mpc-gold: #f4b942;
+
+    /* Neutral */
+    --mpc-white: #ffffff;
+    --mpc-light: #f5f7fa;
+    --mpc-dark: #20252b;
+    --mpc-text: #333333;
+    --mpc-muted: #6c757d;
+    --mpc-border: #e1e5ea;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 
 body {
 
-    background-color: #f5f7fa;
+    background-color: var(--mpc-light);
 
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-    color: #333;
+    color: var(--mpc-text);
 
     margin: 0;
 
     padding: 0;
 
+    line-height: 1.6;
+
 }
 
-/* ==========================================
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+
+    color: var(--mpc-blue);
+
+    text-decoration: none;
+
+}
+
+
+a:hover {
+
+    color: var(--mpc-purple);
+
+}
+
+
+/* =========================================================
    NAVIGATION
-========================================== */
+   ========================================================= */
 
 .navbar {
 
-    background: linear-gradient(
-        90deg,
-        #0f3460,
-        #1f5f9b
-    ) !important;
+    background:
+        linear-gradient(
+            90deg,
+            var(--mpc-blue-dark),
+            var(--mpc-blue),
+            var(--mpc-purple)
+        ) !important;
 
-    box-shadow: 0 2px 10px rgba(
-        0,
-        0,
-        0,
-        0.15
-    );
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.18);
+
+    padding-top: 10px;
+
+    padding-bottom: 10px;
 
 }
+
 
 .navbar-brand {
 
-    font-size: 1.6rem;
+    font-size: 1.45rem;
 
-    font-weight: bold;
+    font-weight: 700;
 
-    color: white !important;
+    color: var(--mpc-white) !important;
+
+    display: flex;
+
+    align-items: center;
+
+    white-space: nowrap;
 
 }
+
 
 .navbar-brand img {
 
+    width: 44px;
+
+    height: 44px;
+
+    object-fit: cover;
+
     border-radius: 50%;
+
+    border: 2px solid var(--mpc-white);
 
 }
 
+
 .nav-link {
 
-    color: white !important;
+    color: var(--mpc-white) !important;
 
     font-size: 1rem;
 
     font-weight: 500;
 
-    margin-left: 10px;
+    margin-left: 8px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 
 }
+
 
 .nav-link:hover {
 
-    color: #ffd54f !important;
+    color: var(--mpc-gold) !important;
+
+    transform: translateY(-1px);
 
 }
 
 
+/* =========================================================
+   NAVIGATION BUTTON
+   ========================================================= */
+
+.navbar .btn-success {
+
+    background-color: var(--mpc-green) !important;
+
+    border-color: var(--mpc-green) !important;
+
+    color: white !important;
+
+    font-weight: 600;
+
+}
+
+
+.navbar .btn-success:hover {
+
+    background-color: var(--mpc-green-dark) !important;
+
+    border-color: var(--mpc-green-dark) !important;
+
+}
+
+
+/* =========================================================
+   DROPDOWN MENUS
+   ========================================================= */
+
+.dropdown-menu {
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 8px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.dropdown-item {
+
+    border-radius: 8px;
+
+    padding: 9px 14px;
+
+    color: var(--mpc-text);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.dropdown-item:hover {
+
+    background-color:
+        rgba(106, 61, 145, 0.10);
+
+    color: var(--mpc-purple);
+
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
 .hero-section {
 
-    min-height: 650px;
+    min-height: 700px;
 
-    padding: 120px 20px;
+    padding: 70px 20px 100px;
 
     text-align: center;
 
     background:
+
         linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.55)
+            rgba(8, 59, 102, 0.62),
+            rgba(77, 40, 111, 0.58)
         ),
-        url('/static/images/church2.png');
-   
+
+        url("/static/images/church1.png");
 
     background-size: cover;
 
-    background-position: center center;
+    background-position: center;
 
     background-repeat: no-repeat;
 
-    color: white;
+    background-attachment: fixed;
+
+    color: var(--mpc-white);
 
     border-radius: 15px;
 
@@ -109,87 +289,280 @@ body {
 
     margin-bottom: 40px;
 
+    overflow: hidden;
+
 }
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
 
 .hero-section h1 {
 
     font-size: 4rem;
 
-    font-weight: bold;
+    font-weight: 800;
 
-    color: white;
+    color: var(--mpc-white);
 
     text-shadow:
-        2px 2px 10px rgba(
-            0,
-            0,
-            0,
-            0.8
-        );
+        2px 3px 10px rgba(0, 0, 0, 0.75);
 
 }
+
 
 .hero-section p {
 
     font-size: 1.5rem;
 
-    color: white;
+    color: var(--mpc-white);
 
     margin-top: 15px;
 
     margin-bottom: 30px;
 
     text-shadow:
-        1px 1px 6px rgba(
-            0,
-            0,
-            0,
-            0.8
-        );
+        1px 2px 6px rgba(0, 0, 0, 0.8);
 
 }
 
 
-.hero-section img {
+/* =========================================================
+   CHURCH PHOTO GALLERY
+   ========================================================= */
 
-    background: rgba(
-        255,
-        255,
-        255,
-        0.9
-    );
+.church-gallery {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: 500px;
+
+    margin: 0 auto 35px auto;
+
+    background: var(--mpc-white);
+
+    border: 8px solid rgba(255, 255, 255, 0.95);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.28);
+
+}
+
+
+.church-gallery .carousel-inner {
+
+    height: 100%;
+
+}
+
+
+.church-gallery .carousel-item {
+
+    height: 100%;
+
+}
+
+
+.church-gallery img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+/* =========================================================
+   GALLERY INDICATORS
+   ========================================================= */
+
+.church-gallery .carousel-indicators {
+
+    margin-bottom: 10px;
+
+}
+
+
+.church-gallery .carousel-indicators button {
+
+    width: 10px;
+
+    height: 10px;
 
     border-radius: 50%;
 
-    padding: 10px;
-
-    margin-bottom: 25px;
+    border: none;
 
 }
-.hero-section {
 
-    background-attachment: fixed;
+
+/* =========================================================
+   GALLERY CONTROLS
+   ========================================================= */
+
+.church-gallery .carousel-control-prev,
+.church-gallery .carousel-control-next {
+
+    width: 9%;
 
 }
-/* ==========================================
-   BUTTONS
-========================================== */
+
+
+.church-gallery .carousel-control-prev-icon,
+.church-gallery .carousel-control-next-icon {
+
+    background-color:
+        rgba(8, 59, 102, 0.65);
+
+    border-radius: 50%;
+
+    padding: 20px;
+
+    background-size: 55%;
+
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-section .btn {
+
+    border-radius: 8px;
+
+    padding: 12px 30px;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    margin: 5px;
+
+    border: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.hero-section .btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================================
+   BUTTON COLORS
+   ========================================================= */
 
 .btn-primary {
 
-    background-color: #0d6efd;
+    background-color: var(--mpc-blue) !important;
 
-    border: none;
+    border-color: var(--mpc-blue) !important;
+
+    color: white !important;
 
 }
+
+
+.btn-primary:hover {
+
+    background-color: var(--mpc-blue-dark) !important;
+
+}
+
 
 .btn-success {
 
-    background-color: #198754;
+    background-color: var(--mpc-green) !important;
 
-    border: none;
+    border-color: var(--mpc-green) !important;
+
+    color: white !important;
 
 }
+
+
+.btn-success:hover {
+
+    background-color: var(--mpc-green-dark) !important;
+
+}
+
+
+.btn-danger {
+
+    background-color: var(--mpc-red) !important;
+
+    border-color: var(--mpc-red) !important;
+
+    color: white !important;
+
+}
+
+
+.btn-danger:hover {
+
+    background-color: var(--mpc-red-dark) !important;
+
+}
+
+
+.btn-purple {
+
+    background-color: var(--mpc-purple);
+
+    border-color: var(--mpc-purple);
+
+    color: white;
+
+}
+
+
+.btn-purple:hover {
+
+    background-color: var(--mpc-purple-dark);
+
+    border-color: var(--mpc-purple-dark);
+
+    color: white;
+
+}
+
+
+.btn-warning {
+
+    background-color: var(--mpc-gold) !important;
+
+    border-color: var(--mpc-gold) !important;
+
+    color: #222 !important;
+
+}
+
+
+/* =========================================================
+   LARGE BUTTONS
+   ========================================================= */
 
 .btn-lg {
 
@@ -199,21 +572,23 @@ body {
 
 }
 
-/* ==========================================
+
+/* =========================================================
    HEADINGS
-========================================== */
+   ========================================================= */
 
 h1 {
 
-    font-weight: bold;
+    font-weight: 700;
 
 }
 
+
 h2 {
 
-    color: #0d6efd;
+    color: var(--mpc-blue);
 
-    font-weight: bold;
+    font-weight: 700;
 
     margin-top: 30px;
 
@@ -221,21 +596,79 @@ h2 {
 
 }
 
+
 h3 {
 
-    color: #0f3460;
+    color: var(--mpc-purple);
+
+    font-weight: 700;
 
 }
+
 
 h4 {
 
-    color: #0f3460;
+    color: var(--mpc-blue);
+
+    font-weight: 600;
 
 }
 
-/* ==========================================
+
+h5 {
+
+    color: var(--mpc-green);
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.section-title {
+
+    color: var(--mpc-blue);
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.section-title::after {
+
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 4px;
+
+    margin: 10px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--mpc-red),
+            var(--mpc-purple),
+            var(--mpc-green)
+        );
+
+    border-radius: 5px;
+
+}
+
+
+/* =========================================================
    CARDS
-========================================== */
+   ========================================================= */
 
 .card {
 
@@ -246,30 +679,24 @@ h4 {
     overflow: hidden;
 
     box-shadow:
-        0 4px 12px rgba(
-            0,
-            0,
-            0,
-            0.08
-        );
+        0 4px 12px rgba(0, 0, 0, 0.08);
 
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
 }
+
 
 .card:hover {
 
     transform: translateY(-5px);
 
     box-shadow:
-        0 10px 20px rgba(
-            0,
-            0,
-            0,
-            0.12
-        );
+        0 10px 25px rgba(0, 0, 0, 0.14);
 
 }
+
 
 .card-body {
 
@@ -277,9 +704,26 @@ h4 {
 
 }
 
-/* ==========================================
+
+.card-header {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--mpc-blue-dark),
+            var(--mpc-purple)
+        );
+
+    color: white;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
    STATISTICS
-========================================== */
+   ========================================================= */
 
 .stats-card {
 
@@ -292,26 +736,34 @@ h4 {
     text-align: center;
 
     box-shadow:
-        0 4px 12px rgba(
-            0,
-            0,
-            0,
-            0.08
-        );
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    border-top: 4px solid var(--mpc-blue);
 
 }
+
 
 .stats-card h2 {
 
-    color: #0d6efd;
+    color: var(--mpc-blue);
 
     font-size: 2.5rem;
 
+    margin-top: 0;
+
 }
 
-/* ==========================================
+
+.stats-card:nth-child(2n) {
+
+    border-top-color: var(--mpc-green);
+
+}
+
+
+/* =========================================================
    TABLES
-========================================== */
+   ========================================================= */
 
 .table {
 
@@ -319,25 +771,52 @@ h4 {
 
     border-radius: 10px;
 
+    overflow: hidden;
+
 }
+
 
 .table th {
 
-    background-color: #0f3460;
+    background:
+        linear-gradient(
+            90deg,
+            var(--mpc-blue-dark),
+            var(--mpc-blue)
+        );
 
     color: white;
 
+    border: none;
+
 }
 
-/* ==========================================
+
+.table td {
+
+    vertical-align: middle;
+
+}
+
+
+.table tbody tr:hover {
+
+    background-color:
+        rgba(106, 61, 145, 0.06);
+
+}
+
+
+/* =========================================================
    IMAGES
-========================================== */
+   ========================================================= */
 
 .img-fluid {
 
     border-radius: 15px;
 
 }
+
 
 .card-img-top {
 
@@ -347,9 +826,10 @@ h4 {
 
 }
 
-/* ==========================================
+
+/* =========================================================
    FORMS
-========================================== */
+   ========================================================= */
 
 input,
 select,
@@ -357,25 +837,307 @@ textarea {
 
     border-radius: 8px !important;
 
+    border: 1px solid var(--mpc-border);
+
 }
 
-/* ==========================================
-   FOOTER
-========================================== */
 
-.footer {
+input:focus,
+select:focus,
+textarea:focus {
 
-    margin-top: 60px;
+    border-color: var(--mpc-purple) !important;
+
+    box-shadow:
+        0 0 0 0.2rem
+        rgba(106, 61, 145, 0.15) !important;
+
+}
+
+
+label {
+
+    font-weight: 600;
+
+    color: var(--mpc-blue-dark);
+
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.alert-success {
+
+    background-color:
+        rgba(11, 143, 90, 0.12);
+
+    border-color:
+        var(--mpc-green);
+
+    color:
+        var(--mpc-green-dark);
+
+}
+
+
+.alert-danger {
+
+    background-color:
+        rgba(184, 50, 50, 0.12);
+
+    border-color:
+        var(--mpc-red);
+
+    color:
+        var(--mpc-red-dark);
+
+}
+
+
+.alert-info {
+
+    background-color:
+        rgba(15, 76, 129, 0.10);
+
+    border-color:
+        var(--mpc-blue);
+
+    color:
+        var(--mpc-blue-dark);
+
+}
+
+
+/* =========================================================
+   ADMINISTRATION SIDEBAR
+   ========================================================= */
+
+.admin-sidebar {
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.admin-sidebar .card-header {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--mpc-blue-dark),
+            var(--mpc-purple)
+        );
+
+}
+
+
+.admin-sidebar .list-group-item {
+
+    border-left: none;
+
+    border-right: none;
+
+    padding: 13px 15px;
+
+}
+
+
+.admin-sidebar .list-group-item:hover {
+
+    background-color:
+        rgba(11, 143, 90, 0.08);
+
+    color: var(--mpc-green-dark);
+
+}
+
+
+/* =========================================================
+   ADMINISTRATION DASHBOARD
+   ========================================================= */
+
+.admin-dashboard-title {
+
+    color: var(--mpc-blue);
+
+    font-weight: 700;
+
+}
+
+
+.admin-stat-card {
+
+    background: white;
+
+    border-radius: 15px;
 
     padding: 25px;
 
     text-align: center;
 
-    background-color: #1c1f26;
+    border-top: 5px solid var(--mpc-blue);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.admin-stat-card:nth-child(2) {
+
+    border-top-color: var(--mpc-green);
+
+}
+
+
+.admin-stat-card:nth-child(3) {
+
+    border-top-color: var(--mpc-purple);
+
+}
+
+
+.admin-stat-card:nth-child(4) {
+
+    border-top-color: var(--mpc-red);
+
+}
+
+
+.admin-stat-card h2 {
+
+    font-size: 2.6rem;
+
+    color: var(--mpc-blue);
+
+    margin: 10px 0;
+
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.profile-photo {
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--mpc-purple);
+
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+   ========================================================= */
+
+.notification-header {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--mpc-green-dark),
+            var(--mpc-green)
+        );
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 12px 12px 0 0;
+
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge-mpc-blue {
+
+    background-color: var(--mpc-blue);
 
     color: white;
 
 }
+
+
+.badge-mpc-green {
+
+    background-color: var(--mpc-green);
+
+    color: white;
+
+}
+
+
+.badge-mpc-red {
+
+    background-color: var(--mpc-red);
+
+    color: white;
+
+}
+
+
+.badge-mpc-purple {
+
+    background-color: var(--mpc-purple);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+    margin-top: 60px;
+
+    padding: 40px 25px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--mpc-blue-dark),
+            var(--mpc-purple-dark)
+        );
+
+    color: white;
+
+}
+
 
 .footer a {
 
@@ -385,53 +1147,37 @@ textarea {
 
 }
 
+
 .footer a:hover {
 
-    color: gold;
+    color: var(--mpc-gold);
 
 }
+
 
 .footer h4,
 .footer h5 {
 
-    color: gold;
+    color: var(--mpc-gold);
+
+    font-weight: 700;
 
 }
 
-.dropdown-menu {
 
-    border-radius: 12px;
+.footer hr {
 
-}
-
-.navbar {
-
-    box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    border-color:
+        rgba(255, 255, 255, 0.25);
 
 }
-/* ==========================================
-   MOBILE
-========================================== */
 
-@media (max-width: 768px) {
 
-    .hero-banner {
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
 
-        min-height: 400px;
-
-    }
-
-    .hero-banner h1 {
-
-        font-size: 2rem;
-
-    }
-
-    .hero-banner p {
-
-        font-size: 1rem;
-
-    }
+@media (max-width: 991px) {
 
     .navbar-brand {
 
@@ -439,4 +1185,214 @@ textarea {
 
     }
 
+
+    .navbar-nav {
+
+        padding-top: 10px;
+
+    }
+
+
+    .nav-link {
+
+        margin-left: 0;
+
+        padding: 10px 5px;
+
+    }
+
+
+    .navbar .btn {
+
+        margin-top: 8px;
+
+    }
+
 }
+
+
+/* =========================================================
+   MOBILE HERO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+
+        min-height: 600px;
+
+        padding:
+            50px 15px 70px;
+
+        background-attachment: scroll;
+
+    }
+
+
+    .hero-section h1 {
+
+        font-size: 2.4rem;
+
+    }
+
+
+    .hero-section p {
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .church-gallery {
+
+        width: 94%;
+
+        height: 230px;
+
+        border-width: 5px;
+
+    }
+
+
+    .hero-section .btn {
+
+        width: 90%;
+
+        max-width: 300px;
+
+        margin: 5px auto;
+
+    }
+
+
+    .card-body {
+
+        padding: 20px;
+
+    }
+
+
+    .footer {
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar-brand {
+
+        font-size: 1rem;
+
+    }
+
+
+    .navbar-brand img {
+
+        width: 36px;
+
+        height: 36px;
+
+    }
+
+
+    .hero-section {
+
+        min-height: 550px;
+
+    }
+
+
+    .hero-section h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .hero-section p {
+
+        font-size: 1rem;
+
+    }
+
+
+    .church-gallery {
+
+        height: 200px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MPC COLOR UTILITY CLASSES
+   ========================================================= */
+
+.mpc-blue {
+
+    color: var(--mpc-blue) !important;
+
+}
+
+
+.mpc-green {
+
+    color: var(--mpc-green) !important;
+
+}
+
+
+.mpc-red {
+
+    color: var(--mpc-red) !important;
+
+}
+
+
+.mpc-purple {
+
+    color: var(--mpc-purple) !important;
+
+}
+
+
+.bg-mpc-blue {
+
+    background-color: var(--mpc-blue) !important;
+
+}
+
+
+.bg-mpc-green {
+
+    background-color: var(--mpc-green) !important;
+
+}
+
+
+.bg-mpc-red {
+
+    background-color: var(--mpc-red) !important;
+
+}
+
+
+.bg-mpc-purple {
+
+    background-color: var(--mpc-purple) !important;
+
+}
+
+
+/* =========================================================
+   END OF MPC STYLESHEET
+   ========================================================= */
