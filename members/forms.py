@@ -1,7 +1,6 @@
-# members/forms.py
-
 from django import forms
 from django.contrib.auth import get_user_model
+from django.contrib.auth.password_validation import validate_password
 
 from .models import Member
 
@@ -9,9 +8,28 @@ from .models import Member
 User = get_user_model()
 
 
-# ============================================================
-# MEMBER REGISTRATION FORM
-# ============================================================
+def normalize_phone(phone):
+    if not phone:
+        return ""
+
+    phone = (
+        phone
+        .strip()
+        .replace(" ", "")
+        .replace("-", "")
+    )
+
+    if phone.startswith("+256"):
+        return phone
+
+    if phone.startswith("256"):
+        return "+" + phone
+
+    if phone.startswith("0") and len(phone) == 10:
+        return "+256" + phone[1:]
+
+    return phone
+
 
 class MemberRegistrationForm(forms.ModelForm):
 
@@ -21,10 +39,10 @@ class MemberRegistrationForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "placeholder": "Create a password",
+                "autocomplete": "new-password",
             }
         ),
-        min_length=6,
-        required=True,
+        validators=[validate_password],
     )
 
     confirm_password = forms.CharField(
@@ -33,13 +51,12 @@ class MemberRegistrationForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "placeholder": "Confirm your password",
+                "autocomplete": "new-password",
             }
         ),
-        required=True,
     )
 
     class Meta:
-
         model = Member
 
         fields = [
@@ -48,22 +65,20 @@ class MemberRegistrationForm(forms.ModelForm):
             "gender",
             "phone_number",
             "email",
-            "address",
         ]
 
         widgets = {
-
             "first_name": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Enter your first name",
+                    "placeholder": "Enter first name",
                 }
             ),
 
             "last_name": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Enter your last name",
+                    "placeholder": "Enter last name",
                 }
             ),
 
@@ -76,128 +91,92 @@ class MemberRegistrationForm(forms.ModelForm):
             "phone_number": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "e.g. 0700123456",
+                    "placeholder": "e.g. 0772123456",
+                    "autocomplete": "tel",
                 }
             ),
 
             "email": forms.EmailInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Optional: yourname@gmail.com",
-                }
-            ),
-
-            "address": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Village / Address",
+                    "placeholder": "Optional",
+                    "autocomplete": "email",
                 }
             ),
         }
 
         labels = {
-
             "first_name": "First Name",
-
             "last_name": "Last Name",
-
             "gender": "Gender",
-
-            "phone_number": "Mobile Phone Number",
-
+            "phone_number": "Phone Number",
             "email": "Email Address (Optional)",
-
-            "address": "Address",
         }
 
     def __init__(self, *args, **kwargs):
-
         super().__init__(*args, **kwargs)
 
-        # Email is OPTIONAL
+        self.fields["first_name"].required = True
+        self.fields["last_name"].required = True
+        self.fields["gender"].required = True
+        self.fields["phone_number"].required = True
         self.fields["email"].required = False
 
-        # Phone number is REQUIRED
-        self.fields["phone_number"].required = True
-
     def clean_phone_number(self):
-
-        phone = self.cleaned_data.get("phone_number")
-
-        if not phone:
-
-            raise forms.ValidationError(
-                "Mobile phone number is required."
-            )
-
-        # Remove spaces and hyphens
-        phone = (
-            phone
-            .strip()
-            .replace(" ", "")
-            .replace("-", "")
+        phone = self.cleaned_data.get(
+            "phone_number"
         )
 
-        # Convert +256XXXXXXXXX to 0XXXXXXXXX
-        if phone.startswith("+256"):
+        phone = normalize_phone(phone)
 
-            phone = "0" + phone[4:]
-
-        # Convert 256XXXXXXXXX to 0XXXXXXXXX
-        elif phone.startswith("256"):
-
-            phone = "0" + phone[3:]
-
-        # Basic Ugandan mobile validation
-        if not phone.startswith("07"):
-
+        if not phone:
             raise forms.ValidationError(
-                "Please enter a valid Ugandan mobile number, "
-                "for example 0700123456."
+                "Please enter your phone number."
             )
 
-        if len(phone) != 10:
-
+        if not phone.startswith("+256"):
             raise forms.ValidationError(
-                "A Ugandan mobile number should contain 10 digits."
+                "Please enter a valid Ugandan phone number."
             )
 
-        if not phone.isdigit():
-
+        if len(phone) != 13:
             raise forms.ValidationError(
-                "Phone number should contain numbers only."
+                "Please enter a valid Ugandan phone number."
             )
 
-        # Check for an existing member
+        if not phone[1:].isdigit():
+            raise forms.ValidationError(
+                "Please enter a valid phone number."
+            )
+
         if Member.objects.filter(
             phone_number=phone
         ).exists():
 
             raise forms.ValidationError(
-                "This phone number is already registered. "
-                "Please use the login option instead."
+                "An account already exists with this "
+                "phone number. Please login instead."
             )
 
         return phone
 
     def clean_email(self):
+        email = self.cleaned_data.get(
+            "email"
+        )
 
-        email = self.cleaned_data.get("email")
-
-        # Email is optional
         if not email:
-
             return ""
 
         email = email.strip().lower()
 
-        # Check existing account
         if User.objects.filter(
             email__iexact=email
         ).exists():
 
             raise forms.ValidationError(
-                "An account with this email already exists."
+                "An account already exists with this "
+                "email address."
             )
 
         return email
@@ -206,7 +185,9 @@ class MemberRegistrationForm(forms.ModelForm):
 
         cleaned_data = super().clean()
 
-        password = cleaned_data.get("password")
+        password = cleaned_data.get(
+            "password"
+        )
 
         confirm_password = cleaned_data.get(
             "confirm_password"
@@ -223,139 +204,110 @@ class MemberRegistrationForm(forms.ModelForm):
 
         return cleaned_data
 
+    def save(self, commit=True):
 
-# ============================================================
-# MEMBER PROFILE FORM
-# ============================================================
+        member = super().save(
+            commit=False
+        )
+
+        member.phone_number = normalize_phone(
+            self.cleaned_data["phone_number"]
+        )
+
+        member.email = (
+            self.cleaned_data.get("email")
+            or ""
+        )
+
+        if commit:
+            member.save()
+
+        return member
+
 
 class MemberProfileForm(forms.ModelForm):
 
     class Meta:
-
         model = Member
 
-        fields = [
-
-            "first_name",
-            "last_name",
-            "gender",
-
-            "phone_number",
-            "email",
-            "whatsapp_number",
-
-            "next_of_kin",
-            "next_of_kin_contact",
-
-            "village",
-            "parish",
-            "sub_county",
-            "district",
-
-            "birthday",
-
-            "marital_status",
-            "number_of_children",
-
-            "occupation",
-            "employer",
-            "place_of_work",
-
-            "education_level",
-            "is_student",
-            "school_name",
-
-            "is_renting",
-            "landlord_name",
-
-            "date_saved",
-            "church_where_saved",
-
-            "is_baptized",
-            "baptism_date",
-            "baptism_place",
-
-            "former_church",
-            "former_pastor",
-            "previous_ministry",
-
-            "desired_ministry",
-            "years_at_mpc",
-
-            "address",
+        exclude = [
+            "user",
+            "role",
+            "status",
+            "is_active",
+            "created_at",
         ]
 
         widgets = {
-
             "first_name": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "last_name": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "gender": forms.Select(
                 attrs={
-                    "class": "form-select"
+                    "class": "form-select",
                 }
             ),
 
             "phone_number": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "email": forms.EmailInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "whatsapp_number": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "next_of_kin": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "next_of_kin_contact": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "village": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "parish": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "sub_county": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "district": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
@@ -368,62 +320,62 @@ class MemberProfileForm(forms.ModelForm):
 
             "marital_status": forms.Select(
                 attrs={
-                    "class": "form-select"
+                    "class": "form-select",
                 }
             ),
 
             "number_of_children": forms.NumberInput(
                 attrs={
                     "class": "form-control",
-                    "min": "0",
+                    "min": 0,
                 }
             ),
 
             "occupation": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "employer": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "place_of_work": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "education_level": forms.TextInput(
                 attrs={
-                    "class": "form-control"
-                }
-            ),
-
-            "is_student": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input"
+                    "class": "form-control",
                 }
             ),
 
             "school_name": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
+                }
+            ),
+
+            "is_student": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
                 }
             ),
 
             "is_renting": forms.CheckboxInput(
                 attrs={
-                    "class": "form-check-input"
+                    "class": "form-check-input",
                 }
             ),
 
             "landlord_name": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
@@ -436,13 +388,13 @@ class MemberProfileForm(forms.ModelForm):
 
             "church_where_saved": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "is_baptized": forms.CheckboxInput(
                 attrs={
-                    "class": "form-check-input"
+                    "class": "form-check-input",
                 }
             ),
 
@@ -455,44 +407,51 @@ class MemberProfileForm(forms.ModelForm):
 
             "baptism_place": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "former_church": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "former_pastor": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "previous_ministry": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
                 }
             ),
 
             "desired_ministry": forms.Select(
                 attrs={
-                    "class": "form-select"
+                    "class": "form-select",
                 }
             ),
 
             "years_at_mpc": forms.NumberInput(
                 attrs={
                     "class": "form-control",
-                    "min": "0",
+                    "min": 0,
                 }
             ),
 
             "address": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
+                }
+            ),
+
+            "date_joined": forms.DateInput(
+                attrs={
+                    "class": "form-control",
+                    "type": "date",
                 }
             ),
         }

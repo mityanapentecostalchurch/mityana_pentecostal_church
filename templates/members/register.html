@@ -1,21 +1,271 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
 
-<h2>Church Membership Registration</h2>
+<div class="container mt-5 mb-5">
 
-{{ form.errors }}
+    <div class="row justify-content-center">
 
-<form method="post">
+        <div class="col-md-8 col-lg-6">
 
-    {% csrf_token %}
+            <div class="card shadow">
 
-    {{ form.as_p }}
+                <div
+                    class="card-header text-white text-center"
+                    style="background: linear-gradient(90deg, #0b4f8a, #663399);"
+                >
 
-    <button type="submit">
-        Register
-    </button>
+                    <h4 class="mb-0">
+                        Become a Member
+                    </h4>
 
-</form>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <p class="text-center text-muted mb-4">
+                        Create your Mityana Pentecostal Church
+                        member account.
+                    </p>
+
+                    {% if form.non_field_errors %}
+
+                        <div class="alert alert-danger">
+
+                            {% for error in form.non_field_errors %}
+
+                                <div>
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                    {% endif %}
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label
+                                    for="{{ form.first_name.id_for_label }}"
+                                    class="form-label"
+                                >
+                                    First Name
+                                </label>
+
+                                {{ form.first_name }}
+
+                                {% for error in form.first_name.errors %}
+
+                                    <div class="text-danger small mt-1">
+                                        {{ error }}
+                                    </div>
+
+                                {% endfor %}
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label
+                                    for="{{ form.last_name.id_for_label }}"
+                                    class="form-label"
+                                >
+                                    Last Name
+                                </label>
+
+                                {{ form.last_name }}
+
+                                {% for error in form.last_name.errors %}
+
+                                    <div class="text-danger small mt-1">
+                                        {{ error }}
+                                    </div>
+
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label
+                                for="{{ form.gender.id_for_label }}"
+                                class="form-label"
+                            >
+                                Gender
+                            </label>
+
+                            {{ form.gender }}
+
+                            {% for error in form.gender.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label
+                                for="{{ form.phone_number.id_for_label }}"
+                                class="form-label"
+                            >
+                                Phone Number
+                            </label>
+
+                            {{ form.phone_number }}
+
+                            <small class="text-muted d-block mt-1">
+                                Enter your Ugandan phone number,
+                                for example 0772123456.
+                            </small>
+
+                            {% for error in form.phone_number.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label
+                                for="{{ form.email.id_for_label }}"
+                                class="form-label"
+                            >
+                                Email Address
+                                <span class="text-muted">
+                                    (Optional)
+                                </span>
+                            </label>
+
+                            {{ form.email }}
+
+                            <small class="text-muted d-block mt-1">
+                                You may leave this blank if you
+                                do not use email.
+                            </small>
+
+                            {% for error in form.email.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label
+                                for="{{ form.password.id_for_label }}"
+                                class="form-label"
+                            >
+                                Password
+                            </label>
+
+                            {{ form.password }}
+
+                            <small class="text-muted d-block mt-1">
+                                Choose a password that you can
+                                remember but others cannot easily guess.
+                            </small>
+
+                            {% for error in form.password.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label
+                                for="{{ form.confirm_password.id_for_label }}"
+                                class="form-label"
+                            >
+                                Confirm Password
+                            </label>
+
+                            {{ form.confirm_password }}
+
+                            {% for error in form.confirm_password.errors %}
+
+                                <div class="text-danger small mt-1">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100"
+                        >
+                            Create Member Account
+                        </button>
+
+                    </form>
+
+                    <hr class="my-4">
+
+                    <div class="text-center">
+
+                        <p class="mb-2">
+                            Already have a member account?
+                        </p>
+
+                        <a
+                            href="{% url 'member-login' %}"
+                            class="btn btn-outline-primary"
+                        >
+                            Sign In
+                        </a>
+
+                    </div>
+
+                    <div class="text-center mt-3">
+
+                        <p class="text-muted mb-2">
+                            Prefer to use your Google account?
+                        </p>
+
+                        <a
+                            href="/accounts/google/login/"
+                            class="btn btn-outline-danger w-100"
+                        >
+                            Continue with Google
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
