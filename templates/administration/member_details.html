@@ -1,45 +1,87 @@
-{% extends "base.html" %}
+{% extends "administration/base.html" %}
 
 {% load static %}
 
-{% block content %}
+{% block admin_content %}
 
-<div class="container mt-4">
+<div class="container-fluid">
 
-    <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
 
-        <div class="card-header">
+        <div>
 
             <h2>
-
                 {{ member.first_name }}
                 {{ member.last_name }}
-
             </h2>
 
+            <p class="text-muted mb-0">
+                Member profile and church information
+            </p>
+
         </div>
+
+        <div>
+
+            <a
+                href="{% url 'admin-members' %}"
+                class="btn btn-secondary"
+            >
+                Back to Members
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow">
 
         <div class="card-body">
 
             <div class="row">
 
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center mb-4">
 
-                    {% if member.user.profile_photo %}
+                    {% if member.user and member.user.profile_photo %}
 
                         <img
-
                             src="{{ member.user.profile_photo.url }}"
-
-                            class="img-fluid rounded-circle">
+                            class="img-fluid rounded-circle"
+                            style="width: 180px; height: 180px; object-fit: cover;"
+                        >
 
                     {% else %}
 
                         <img
-
                             src="{% static 'images/default_user.png' %}"
+                            class="img-fluid rounded-circle"
+                            style="width: 180px; height: 180px; object-fit: cover;"
+                        >
 
-                            class="img-fluid rounded-circle">
+                    {% endif %}
+
+                    <h4 class="mt-3">
+                        {{ member.first_name }}
+                        {{ member.last_name }}
+                    </h4>
+
+                    {% if member.status == "ACTIVE" %}
+
+                        <span class="badge bg-success">
+                            Active
+                        </span>
+
+                    {% elif member.status == "VISITOR" %}
+
+                        <span class="badge bg-warning text-dark">
+                            Visitor
+                        </span>
+
+                    {% else %}
+
+                        <span class="badge bg-danger">
+                            Inactive
+                        </span>
 
                     {% endif %}
 
@@ -47,39 +89,205 @@
 
                 <div class="col-md-9">
 
-                    <table class="table">
+                    <h5 class="border-bottom pb-2 mb-3">
+                        Contact Information
+                    </h5>
 
-                        <tr>
-                            <th>Email</th>
-                            <td>{{ member.email }}</td>
-                        </tr>
+                    <div class="row">
 
-                        <tr>
-                            <th>Phone</th>
-                            <td>{{ member.phone_number }}</td>
-                        </tr>
+                        <div class="col-md-6 mb-3">
 
-                        <tr>
-                            <th>Department</th>
-                            <td>{{ member.department }}</td>
-                        </tr>
+                            <strong>Phone:</strong>
 
-                        <tr>
-                            <th>Status</th>
-                            <td>{{ member.status }}</td>
-                        </tr>
+                            <div>
+                                {{ member.phone_number|default:"Not provided" }}
+                            </div>
 
-                        <tr>
-                            <th>Occupation</th>
-                            <td>{{ member.occupation }}</td>
-                        </tr>
+                        </div>
 
-                        <tr>
-                            <th>Address</th>
-                            <td>{{ member.address }}</td>
-                        </tr>
+                        <div class="col-md-6 mb-3">
 
-                    </table>
+                            <strong>Email:</strong>
+
+                            <div>
+                                {{ member.email|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>WhatsApp:</strong>
+
+                            <div>
+                                {{ member.whatsapp_number|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Next of Kin:</strong>
+
+                            <div>
+                                {{ member.next_of_kin|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <h5 class="border-bottom pb-2 mb-3 mt-3">
+                        Church Information
+                    </h5>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Department:</strong>
+
+                            <div>
+                                {% if member.department %}
+                                    {{ member.department.name }}
+                                {% else %}
+                                    Not assigned
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Role:</strong>
+
+                            <div>
+                                {% if member.role %}
+                                    {{ member.role.name }}
+                                {% else %}
+                                    Not assigned
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Date Joined:</strong>
+
+                            <div>
+                                {{ member.date_joined|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Years at MPC:</strong>
+
+                            <div>
+                                {{ member.years_at_mpc }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <h5 class="border-bottom pb-2 mb-3 mt-3">
+                        Personal Information
+                    </h5>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Gender:</strong>
+
+                            <div>
+                                {{ member.get_gender_display }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Birthday:</strong>
+
+                            <div>
+                                {{ member.birthday|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Marital Status:</strong>
+
+                            <div>
+                                {{ member.get_marital_status_display|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Children:</strong>
+
+                            <div>
+                                {{ member.number_of_children }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <h5 class="border-bottom pb-2 mb-3 mt-3">
+                        Employment & Education
+                    </h5>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Occupation:</strong>
+
+                            <div>
+                                {{ member.occupation|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Employer:</strong>
+
+                            <div>
+                                {{ member.employer|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>Education Level:</strong>
+
+                            <div>
+                                {{ member.education_level|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <strong>School:</strong>
+
+                            <div>
+                                {{ member.school_name|default:"Not provided" }}
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -89,67 +297,35 @@
 
     </div>
 
-</div>
+    <div class="card shadow mt-4">
 
-<div class="card mt-4">
+        <div class="card-header">
 
-    <div class="card-header">
+            <h5 class="mb-0">
+                Member Actions
+            </h5>
 
-        <h5>Member Actions</h5>
+        </div>
 
-    </div>
+        <div class="card-body">
 
-    <div class="card-body">
+            <div class="d-flex gap-2 flex-wrap">
 
-        <div class="d-grid gap-2">
+                <a
+                    href="{% url 'admin-edit-member' member.id %}"
+                    class="btn btn-warning"
+                >
+                    Edit Member
+                </a>
 
-            <a
-                href="{% url 'admin-edit-member' member.id %}"
-                class="btn btn-warning">
+                <a
+                    href="{% url 'admin-members' %}"
+                    class="btn btn-secondary"
+                >
+                    Back to Members
+                </a>
 
-                Edit Member
-
-            </a>
-
-            <a
-                href="#"
-                class="btn btn-primary">
-
-                Assign Department
-
-            </a>
-
-            <a
-                href="#"
-                class="btn btn-info">
-
-                Assign Ministry
-
-            </a>
-
-            <a
-                href="#"
-                class="btn btn-secondary">
-
-                Change Status
-
-            </a>
-
-            <a
-                href="#"
-                class="btn btn-danger">
-
-                Deactivate Member
-
-            </a>
-
-            <a
-                href="#"
-                class="btn btn-success">
-
-                🖨 Print Profile
-
-            </a>
+            </div>
 
         </div>
 

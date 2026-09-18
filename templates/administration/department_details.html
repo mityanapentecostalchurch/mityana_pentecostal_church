@@ -1,0 +1,244 @@
+{% extends "administration/base.html" %}
+
+{% block admin_content %}
+
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2>
+                {{ department.name }}
+            </h2>
+
+            <p class="text-muted mb-0">
+                Department Information
+            </p>
+
+        </div>
+
+        <div>
+
+            <a
+                href="{% url 'admin-departments' %}"
+                class="btn btn-secondary"
+            >
+                ← Back to Departments
+            </a>
+
+        </div>
+
+    </div>
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="alert alert-{{ message.tags }}">
+
+                {{ message }}
+
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    <div class="row">
+
+        <div class="col-md-8 mb-4">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    <h5 class="mb-0">
+                        Department Information
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+
+                            <th width="35%">
+                                Department Name
+                            </th>
+
+                            <td>
+                                {{ department.name }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Description
+                            </th>
+
+                            <td>
+
+                                {% if department.description %}
+
+                                    {{ department.description|linebreaks }}
+
+                                {% else %}
+
+                                    <span class="text-muted">
+                                        No description provided.
+                                    </span>
+
+                                {% endif %}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Department Leader
+                            </th>
+
+                            <td>
+
+                                {% if department.leader %}
+
+                                    {% if department.leader.first_name or department.leader.last_name %}
+
+                                        {{ department.leader.first_name }}
+                                        {{ department.leader.last_name }}
+
+                                    {% else %}
+
+                                        {{ department.leader.username }}
+
+                                    {% endif %}
+
+                                {% else %}
+
+                                    <span class="text-muted">
+                                        No leader assigned.
+                                    </span>
+
+                                {% endif %}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Number of Members
+                            </th>
+
+                            <td>
+                                {{ members_count }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Number of Staff
+                            </th>
+
+                            <td>
+                                {{ staff_count }}
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    <h5 class="mb-0">
+                        Department Actions
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="d-grid gap-2">
+
+                        <a
+                            href="{% url 'admin-edit-department' department.id %}"
+                            class="btn btn-warning"
+                        >
+                            Edit Department
+                        </a>
+
+                        {% if members_count == 0 %}
+
+                            <form
+                                method="post"
+                                action="{% url 'admin-delete-department' department.id %}"
+                            >
+
+                                {% csrf_token %}
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-danger w-100"
+                                    onclick="return confirm('Are you sure you want to delete this department?');"
+                                >
+                                    Delete Department
+                                </button>
+
+                            </form>
+
+                        {% else %}
+
+                            <button
+                                type="button"
+                                class="btn btn-danger w-100"
+                                disabled
+                            >
+                                Delete Department
+                            </button>
+
+                            <small class="text-muted text-center">
+                                This department has members assigned to it.
+                            </small>
+
+                        {% endif %}
+
+                        <a
+                            href="{% url 'admin-departments' %}"
+                            class="btn btn-secondary"
+                        >
+                            Back to Departments
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

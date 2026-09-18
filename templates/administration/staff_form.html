@@ -1,0 +1,443 @@
+{% extends "administration/base.html" %}
+
+{% block admin_content %}
+
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2>
+                {{ title }}
+            </h2>
+
+            <p class="text-muted mb-0">
+                {% if staff_member %}
+                    Update staff member information.
+                {% else %}
+                    Create a new church staff account.
+                {% endif %}
+            </p>
+
+        </div>
+
+        <div>
+
+            <a
+                href="{% url 'admin-staff' %}"
+                class="btn btn-secondary"
+            >
+                ← Back to Staff
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+                Staff Information
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if form.non_field_errors %}
+
+                <div class="alert alert-danger">
+
+                    {% for error in form.non_field_errors %}
+
+                        <div>
+                            {{ error }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+            <form
+                method="post"
+                enctype="multipart/form-data"
+            >
+
+                {% csrf_token %}
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.first_name.id_for_label }}"
+                            class="form-label"
+                        >
+                            First Name
+                        </label>
+
+                        {{ form.first_name }}
+
+                        {% for error in form.first_name.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.last_name.id_for_label }}"
+                            class="form-label"
+                        >
+                            Last Name
+                        </label>
+
+                        {{ form.last_name }}
+
+                        {% for error in form.last_name.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.username.id_for_label }}"
+                            class="form-label"
+                        >
+                            Username
+                        </label>
+
+                        {{ form.username }}
+
+                        {% for error in form.username.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.email.id_for_label }}"
+                            class="form-label"
+                        >
+                            Email Address
+                        </label>
+
+                        {{ form.email }}
+
+                        {% for error in form.email.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.phone_number.id_for_label }}"
+                            class="form-label"
+                        >
+                            Phone Number
+                        </label>
+
+                        {{ form.phone_number }}
+
+                        {% for error in form.phone_number.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.role.id_for_label }}"
+                            class="form-label"
+                        >
+                            Staff Role
+                        </label>
+
+                        {{ form.role }}
+
+                        {% for error in form.role.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.position.id_for_label }}"
+                            class="form-label"
+                        >
+                            Position
+                        </label>
+
+                        {{ form.position }}
+
+                        {% for error in form.position.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.department.id_for_label }}"
+                            class="form-label"
+                        >
+                            Department
+                        </label>
+
+                        {{ form.department }}
+
+                        {% for error in form.department.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.office.id_for_label }}"
+                            class="form-label"
+                        >
+                            Office
+                        </label>
+
+                        {{ form.office }}
+
+                        {% for error in form.office.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label
+                            for="{{ form.profile_photo.id_for_label }}"
+                            class="form-label"
+                        >
+                            Profile Photo
+                        </label>
+
+                        {{ form.profile_photo }}
+
+                        {% for error in form.profile_photo.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label
+                        for="{{ form.biography.id_for_label }}"
+                        class="form-label"
+                    >
+                        Biography
+                    </label>
+
+                    {{ form.biography }}
+
+                    {% for error in form.biography.errors %}
+
+                        <div class="text-danger small">
+                            {{ error }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                {% if form.password %}
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label
+                                for="{{ form.password.id_for_label }}"
+                                class="form-label"
+                            >
+                                Password
+                            </label>
+
+                            {{ form.password }}
+
+                            {% for error in form.password.errors %}
+
+                                <div class="text-danger small">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label
+                                for="{{ form.confirm_password.id_for_label }}"
+                                class="form-label"
+                            >
+                                Confirm Password
+                            </label>
+
+                            {{ form.confirm_password }}
+
+                            {% for error in form.confirm_password.errors %}
+
+                                <div class="text-danger small">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-info">
+
+                        The password will be securely encrypted using
+                        Django's password hashing system.
+
+                    </div>
+
+                {% endif %}
+
+                <div class="form-check mb-4">
+
+                    {{ form.is_active }}
+
+                    <label
+                        for="{{ form.is_active.id_for_label }}"
+                        class="form-check-label"
+                    >
+                        Account is active
+                    </label>
+
+                    {% for error in form.is_active.errors %}
+
+                        <div class="text-danger small">
+                            {{ error }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <hr>
+
+                <div class="d-flex gap-2">
+
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                    >
+                        {{ button_text }}
+                    </button>
+
+                    {% if staff_member %}
+
+                        <a
+                            href="{% url 'admin-staff-details' staff_member.id %}"
+                            class="btn btn-secondary"
+                        >
+                            Cancel
+                        </a>
+
+                    {% else %}
+
+                        <a
+                            href="{% url 'admin-staff' %}"
+                            class="btn btn-secondary"
+                        >
+                            Cancel
+                        </a>
+
+                    {% endif %}
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

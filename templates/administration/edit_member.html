@@ -1,46 +1,107 @@
-{% extends "base.html" %}
+{% extends "administration/base.html" %}
 
-{% block content %}
+{% block admin_content %}
 
-<div class="container mt-4">
+<div class="container-fluid">
 
-    <div class="card shadow">
+    <div class="d-flex justify-content-between align-items-center mb-4">
 
-        <div class="card-header">
+        <div>
 
-            <h3>
+            <h2>Edit Member</h2>
 
-                Edit Member
-
-            </h3>
+            <p class="text-muted mb-0">
+                Update member information.
+            </p>
 
         </div>
 
+        <a
+            href="{% url 'admin-member-details' member.id %}"
+            class="btn btn-secondary"
+        >
+            Back to Member
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
         <div class="card-body">
+
+            {% if form.non_field_errors %}
+
+                <div class="alert alert-danger">
+
+                    {% for error in form.non_field_errors %}
+
+                        <div>
+                            {{ error }}
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
 
             <form
                 method="post"
-                enctype="multipart/form-data">
+                enctype="multipart/form-data"
+            >
 
                 {% csrf_token %}
 
-                {{ form.as_p }}
+                {% for field in form %}
 
-                <button
-                    type="submit"
-                    class="btn btn-success">
+                    <div class="mb-3">
 
-                    Save Changes
+                        <label
+                            for="{{ field.id_for_label }}"
+                            class="form-label"
+                        >
+                            {{ field.label }}
+                        </label>
 
-                </button>
+                        {{ field }}
 
-                <a
-                    href="{% url 'admin-member-details' member.id %}"
-                    class="btn btn-secondary">
+                        {% if field.help_text %}
 
-                    Cancel
+                            <small class="form-text text-muted">
+                                {{ field.help_text }}
+                            </small>
 
-                </a>
+                        {% endif %}
+
+                        {% for error in field.errors %}
+
+                            <div class="text-danger small">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endfor %}
+
+                <div class="mt-4">
+
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                    >
+                        Save Changes
+                    </button>
+
+                    <a
+                        href="{% url 'admin-member-details' member.id %}"
+                        class="btn btn-secondary"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
 
             </form>
 

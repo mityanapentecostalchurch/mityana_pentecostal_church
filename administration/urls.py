@@ -28,9 +28,59 @@ urlpatterns = [
     ),
 
     path(
+        "staff/add/",
+        views.add_staff,
+        name="admin-add-staff"
+    ),
+
+    path(
+        "staff/<int:staff_id>/",
+        views.staff_details,
+        name="admin-staff-details"
+    ),
+
+    path(
+        "staff/<int:staff_id>/edit/",
+        views.edit_staff,
+        name="admin-edit-staff"
+    ),
+
+    path(
+        "staff/<int:staff_id>/toggle-status/",
+        views.toggle_staff_status,
+        name="admin-toggle-staff-status"
+    ),
+
+
+   
+    path(
         "departments/",
         views.departments,
         name="admin-departments"
+    ),
+
+    path(
+        "departments/add/",
+        views.add_department,
+        name="admin-add-department"
+    ),
+
+    path(
+        "departments/<int:department_id>/",
+        views.department_details,
+        name="admin-department-details"
+    ),
+
+    path(
+        "departments/<int:department_id>/edit/",
+        views.edit_department,
+        name="admin-edit-department"
+    ),
+
+    path(
+        "departments/<int:department_id>/delete/",
+        views.delete_department,
+        name="admin-delete-department"
     ),
 
     path(

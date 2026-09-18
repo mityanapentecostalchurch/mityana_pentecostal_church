@@ -1,0 +1,400 @@
+{% extends "administration/base.html" %}
+
+{% load static %}
+
+{% block admin_content %}
+
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2>
+                Staff Profile
+            </h2>
+
+            <p class="text-muted mb-0">
+                View staff member information and account status.
+            </p>
+
+        </div>
+
+        <div>
+
+            <a
+                href="{% url 'admin-staff' %}"
+                class="btn btn-secondary"
+            >
+                ← Back to Staff
+            </a>
+
+        </div>
+
+    </div>
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="alert alert-{{ message.tags }}">
+
+                {{ message }}
+
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    {% if staff_member.profile_photo %}
+
+                        <img
+                            src="{{ staff_member.profile_photo.url }}"
+                            class="rounded-circle mb-3"
+                            width="160"
+                            height="160"
+                            style="object-fit: cover;"
+                        >
+
+                    {% else %}
+
+                        <img
+                            src="{% static 'images/default_user.png' %}"
+                            class="rounded-circle mb-3"
+                            width="160"
+                            height="160"
+                        >
+
+                    {% endif %}
+
+                    <h3>
+
+                        {% if staff_member.first_name or staff_member.last_name %}
+
+                            {{ staff_member.first_name }}
+                            {{ staff_member.last_name }}
+
+                        {% else %}
+
+                            {{ staff_member.username }}
+
+                        {% endif %}
+
+                    </h3>
+
+                    <p class="text-muted">
+
+                        {{ staff_member.position|default:"Church Staff" }}
+
+                    </p>
+
+                    {% if staff_member.role == "ADMINISTRATOR" %}
+
+                        <span class="badge bg-primary">
+                            Administrator
+                        </span>
+
+                    {% elif staff_member.role == "PASTOR" %}
+
+                        <span class="badge bg-success">
+                            Pastor
+                        </span>
+
+                    {% elif staff_member.role == "MINISTRY_LEADER" %}
+
+                        <span class="badge bg-info text-dark">
+                            Ministry Leader
+                        </span>
+
+                    {% elif staff_member.role == "INTERCESSOR" %}
+
+                        <span class="badge bg-warning text-dark">
+                            Intercessor
+                        </span>
+
+                    {% endif %}
+
+                    <div class="mt-3">
+
+                        {% if staff_member.is_active %}
+
+                            <span class="badge bg-success">
+                                Active Account
+                            </span>
+
+                        {% else %}
+
+                            <span class="badge bg-danger">
+                                Inactive Account
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-8 mb-4">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    <h4 class="mb-0">
+                        Personal & Church Information
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+
+                            <th width="35%">
+                                First Name
+                            </th>
+
+                            <td>
+                                {{ staff_member.first_name|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Last Name
+                            </th>
+
+                            <td>
+                                {{ staff_member.last_name|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Username
+                            </th>
+
+                            <td>
+                                {{ staff_member.username }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <td>
+                                {{ staff_member.email|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <td>
+                                {{ staff_member.phone_number|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Role
+                            </th>
+
+                            <td>
+                                {{ staff_member.get_role_display }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Position
+                            </th>
+
+                            <td>
+                                {{ staff_member.position|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <td>
+                                {{ staff_member.department|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Office
+                            </th>
+
+                            <td>
+                                {{ staff_member.office|default:"—" }}
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+                                Date Joined
+                            </th>
+
+                            <td>
+                                {{ staff_member.date_joined|date:"d M Y" }}
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="card shadow">
+
+                <div class="card-header">
+
+                    <h4 class="mb-0">
+                        Biography
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    {% if staff_member.biography %}
+
+                        {{ staff_member.biography|linebreaks }}
+
+                    {% else %}
+
+                        <p class="text-muted mb-0">
+                            No biography has been provided.
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow mt-4 mb-4">
+
+        <div class="card-header">
+
+            <h4 class="mb-0">
+                Account Actions
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="d-flex flex-wrap gap-2">
+
+                <a
+                    href="{% url 'admin-edit-staff' staff_member.id %}"
+                    class="btn btn-warning"
+                >
+                    Edit Staff
+                </a>
+
+                <form
+                    method="post"
+                    action="{% url 'admin-toggle-staff-status' staff_member.id %}"
+                    class="d-inline"
+                >
+
+                    {% csrf_token %}
+
+                    {% if staff_member.is_active %}
+
+                        <button
+                            type="submit"
+                            class="btn btn-danger"
+                            onclick="return confirm('Deactivate this staff account?');"
+                        >
+                            Deactivate Account
+                        </button>
+
+                    {% else %}
+
+                        <button
+                            type="submit"
+                            class="btn btn-success"
+                            onclick="return confirm('Activate this staff account?');"
+                        >
+                            Activate Account
+                        </button>
+
+                    {% endif %}
+
+                </form>
+
+                <a
+                    href="{% url 'admin-staff' %}"
+                    class="btn btn-secondary"
+                >
+                    Back to Staff List
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
